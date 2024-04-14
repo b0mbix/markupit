@@ -3,3 +3,4 @@ __pycache__/
 __vscode__/
 .ruff_cache/
 .pytest_cache/
+docs/build/
