@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "markup-converter"
+version = "0.0.1"
+description = "Markup convertion tool"
+authors = [
+	"Jakub Bąba <jakub.baba.stud@pw.edu.pl>",
+	"Hubert Brzóskniewicz <hubert.brzoskniewicz.stud@pw.edu.pl>",
+	"Nikita Sushko <nikita.sushko.stud@pw.edu.pl>"
+]
+keywords = ["Markup", "md", "Converter"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.3.7"
+pre-commit = "^3.7.0"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.1.1"
+
+[tool.ruff]
+line-length = 120
+indent-width = 4
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+]
+
+[tool.ruff.lint.isort]
+order-by-type = true
+relative-imports-order = "closest-to-furthest"
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
+known-first-party = []
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
