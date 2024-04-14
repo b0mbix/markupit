@@ -44,4 +44,18 @@ poetry add <package_name>
 
 Keep in mind that some packages might be installed as dev dependencies, so you might want to add `--group dev` flag (`--group test ` for test dependencies).
 
+Also I've added some pre-commit hooks. They check for code formatting and linting. If you want to run them manually, you can run the following command:
+
+```bash
+pre-commit run --all-files
+```
+
+Also, if u want this hooks to run automatically before commit, you can install them with the following command:
+
+```bash
+pre-commit install
+```
+
+Note: they will not let u commit if there are any issues with formatting or linting that can be fixed automatically.
+
 That's it for now! ᕦ(ò_óˇ)ᕤ

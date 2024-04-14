@@ -3,7 +3,7 @@ name = "markup-converter"
 version = "0.0.1"
 description = "Markup convertion tool"
 authors = [
-	"Jakub Bąba <jakub.baba.stud@pw.edu.pl>", 
+	"Jakub Bąba <jakub.baba.stud@pw.edu.pl>",
 	"Hubert Brzóskniewicz <hubert.brzoskniewicz.stud@pw.edu.pl>",
 	"Nikita Sushko <nikita.sushko.stud@pw.edu.pl>"
 ]
@@ -16,6 +16,7 @@ python = "^3.10"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.3.7"
+pre-commit = "^3.7.0"
 
 
 [tool.poetry.group.test.dependencies]
