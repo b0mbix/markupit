@@ -1,0 +1,848 @@
+{
+  "formatVersion": 3,
+  "id": "root",
+  "ideas": {
+    "1": {
+      "title": "Element",
+      "id": 1,
+      "attr": {
+        "position": [
+          -111,
+          -29,
+          1
+        ]
+      },
+      "ideas": {
+        "1": {
+          "title": "Inline",
+          "id": 2,
+          "ideas": {
+            "1": {
+              "title": "No content\n",
+              "id": 16,
+              "ideas": {
+                "1": {
+                  "title": "Space",
+                  "id": 17,
+                  "ideas": {}
+                },
+                "3": {
+                  "title": "SoftBreak",
+                  "id": 20
+                },
+                "4": {
+                  "title": "LineBreak",
+                  "id": 21
+                }
+              }
+            },
+            "2": {
+              "title": "Simple content\n",
+              "id": 38,
+              "ideas": {
+                "1": {
+                  "title": "Emph",
+                  "id": 39,
+                  "attr": {},
+                  "ideas": {
+                    "1": {
+                      "title": "List<Inline>",
+                      "id": 130
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Underline",
+                  "id": 40,
+                  "attr": {},
+                  "ideas": {
+                    "1": {
+                      "title": "List<Inline>",
+                      "id": 131,
+                      "attr": {}
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Strikeout",
+                  "id": 41,
+                  "attr": {},
+                  "ideas": {
+                    "1": {
+                      "title": "List<Inline>",
+                      "id": 132,
+                      "attr": {}
+                    }
+                  }
+                },
+                "4": {
+                  "title": "Superscript",
+                  "id": 42,
+                  "attr": {},
+                  "ideas": {
+                    "1": {
+                      "title": "List<Inline>",
+                      "id": 133,
+                      "attr": {}
+                    }
+                  }
+                },
+                "5": {
+                  "title": "SmallCaps",
+                  "id": 43,
+                  "attr": {},
+                  "ideas": {
+                    "1": {
+                      "title": "List<Inline>",
+                      "id": 134,
+                      "attr": {}
+                    }
+                  }
+                },
+                "6": {
+                  "title": "Strong",
+                  "id": 44,
+                  "attr": {},
+                  "ideas": {
+                    "1": {
+                      "title": "List<Inline>",
+                      "id": 135,
+                      "attr": {}
+                    }
+                  }
+                },
+                "7": {
+                  "title": "Note",
+                  "id": 48,
+                  "attr": {},
+                  "ideas": {
+                    "1": {
+                      "title": "List<Block>",
+                      "id": 141
+                    }
+                  }
+                },
+                "0.5": {
+                  "title": "Str",
+                  "id": 128,
+                  "attr": {},
+                  "ideas": {
+                    "1": {
+                      "title": "String\n",
+                      "id": 129
+                    }
+                  }
+                }
+              }
+            },
+            "3": {
+              "title": "Advanced content\n",
+              "id": 53,
+              "ideas": {
+                "2": {
+                  "title": "Span",
+                  "id": 55,
+                  "ideas": {
+                    "1": {
+                      "title": "Attr, List<Inline>\n",
+                      "id": 137
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#FFCC99"
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Quoted",
+                  "id": 56,
+                  "ideas": {
+                    "1": {
+                      "title": "QuoteType, List<Inline>\n",
+                      "id": 136
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#FFCC99"
+                    }
+                  }
+                },
+                "4": {
+                  "title": "Cite",
+                  "id": 57,
+                  "ideas": {
+                    "1": {
+                      "title": "List<Citation>, List<Inline>\n",
+                      "id": 138
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#FFCC99"
+                    }
+                  }
+                },
+                "5": {
+                  "title": "Link",
+                  "id": 62,
+                  "ideas": {
+                    "1": {
+                      "title": "Attr, List<Inline>, Target\n",
+                      "id": 139
+                    }
+                  }
+                },
+                "6": {
+                  "title": "Image",
+                  "id": 63,
+                  "ideas": {
+                    "1": {
+                      "title": "Attr, List<Inline>, Target\n",
+                      "id": 140
+                    }
+                  }
+                },
+                "7": {
+                  "title": "Code\n",
+                  "id": 75,
+                  "ideas": {
+                    "1": {
+                      "title": "Attr, String\n",
+                      "id": 142
+                    }
+                  },
+                  "attr": {}
+                },
+                "8": {
+                  "title": "Math\n",
+                  "id": 76,
+                  "ideas": {
+                    "1": {
+                      "title": "MathType, String\n",
+                      "id": 143
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#FFCC99"
+                    }
+                  }
+                },
+                "9": {
+                  "title": "RawInline",
+                  "id": 77,
+                  "ideas": {
+                    "1": {
+                      "title": "Format, String\n",
+                      "id": 144
+                    }
+                  },
+                  "attr": {}
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "backgroundColor": "#99CC00"
+            }
+          }
+        },
+        "2": {
+          "title": "MetaValue",
+          "id": 5,
+          "ideas": {
+            "1": {
+              "title": "MetaList",
+              "id": 101,
+              "ideas": {
+                "1": {
+                  "title": "List<MetaValue>",
+                  "id": 108
+                }
+              },
+              "attr": {
+                "position": [
+                  102,
+                  -77,
+                  2
+                ],
+                "style": {
+                  "backgroundColor": "#FFCC99"
+                }
+              }
+            },
+            "2": {
+              "title": "MetaBool",
+              "id": 106,
+              "attr": {
+                "style": {
+                  "backgroundColor": "#FFCC99"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "Bool",
+                  "id": 109
+                }
+              }
+            },
+            "3": {
+              "title": "MetaInlines",
+              "id": 103,
+              "ideas": {
+                "1": {
+                  "title": "List<Inline>",
+                  "id": 111
+                }
+              },
+              "attr": {
+                "style": {
+                  "backgroundColor": "#FFCC99"
+                }
+              }
+            },
+            "4": {
+              "title": "MetaBlocks",
+              "id": 104,
+              "ideas": {
+                "1": {
+                  "title": "List<Block>",
+                  "id": 112
+                }
+              },
+              "attr": {
+                "style": {
+                  "backgroundColor": "#FFCC99"
+                }
+              }
+            },
+            "0.5": {
+              "title": "MetaMap",
+              "id": 102,
+              "attr": {
+                "position": [
+                  96,
+                  -118,
+                  3
+                ],
+                "style": {
+                  "backgroundColor": "#FFCC99"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "Map<String, MetaValue>",
+                  "id": 107
+                }
+              }
+            },
+            "2.5": {
+              "title": "MetaString",
+              "id": 105,
+              "attr": {
+                "position": [
+                  91,
+                  4,
+                  4
+                ],
+                "style": {
+                  "backgroundColor": "#FFCC99"
+                }
+              },
+              "ideas": {
+                "1": {
+                  "title": "String",
+                  "id": 110
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "backgroundColor": "#99CC00"
+            }
+          }
+        },
+        "3": {
+          "title": "Enums\n",
+          "id": 183,
+          "attr": {
+            "style": {
+              "backgroundColor": "#99CC00"
+            }
+          },
+          "ideas": {
+            "1": {
+              "title": "ColWidth",
+              "id": 184,
+              "ideas": {
+                "1": {
+                  "title": "ColWidth: Double / ColWidthDefault",
+                  "id": 188
+                }
+              }
+            },
+            "2": {
+              "title": "MathType",
+              "id": 190,
+              "ideas": {
+                "1": {
+                  "title": "DisplayMath / InlineMath\n",
+                  "id": 191
+                }
+              },
+              "attr": {
+                "style": {
+                  "backgroundColor": "#FFCC99"
+                }
+              }
+            },
+            "3": {
+              "title": "Alignment",
+              "id": 192,
+              "ideas": {
+                "1": {
+                  "title": "AlignLeft / AlignRight / AlignCenter / AlignDefault\n",
+                  "id": 194
+                }
+              }
+            },
+            "4": {
+              "title": "CitationMode",
+              "id": 195,
+              "ideas": {
+                "1": {
+                  "title": "AuthorInText / SuppressAuthor / NormalCitation",
+                  "id": 196
+                }
+              },
+              "attr": {
+                "style": {
+                  "backgroundColor": "#FFCC99"
+                }
+              }
+            },
+            "5": {
+              "title": "ListNumberStyle",
+              "id": 199,
+              "ideas": {
+                "1": {
+                  "title": "DefaultStyle / Example / Decimal / LowerRoman / UpperRoman / LowerAlpha / UpperAlpha\n",
+                  "id": 201
+                }
+              }
+            },
+            "6": {
+              "title": "ListNumberDelim",
+              "id": 200,
+              "ideas": {
+                "1": {
+                  "title": "DefaultDelim / Period / OneParen / TwoParens\n",
+                  "id": 202
+                }
+              }
+            },
+            "7": {
+              "title": "QuoteType",
+              "id": 203,
+              "ideas": {
+                "1": {
+                  "title": "SingleQuote / DoubleQuote\n",
+                  "id": 204
+                }
+              },
+              "attr": {
+                "style": {
+                  "backgroundColor": "#FFCC99"
+                }
+              }
+            }
+          }
+        },
+        "-1": {
+          "title": "Block",
+          "id": 4,
+          "ideas": {
+            "1": {
+              "title": "No content",
+              "id": 24,
+              "ideas": {
+                "1": {
+                  "title": "Null",
+                  "id": 27,
+                  "ideas": {},
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#FFCC99"
+                    }
+                  }
+                },
+                "2": {
+                  "title": "HorizontalRule",
+                  "id": 19,
+                  "attr": {}
+                }
+              }
+            },
+            "2": {
+              "title": "Simple content\n",
+              "id": 26,
+              "ideas": {
+                "1": {
+                  "title": "Plain\n",
+                  "id": 28,
+                  "ideas": {
+                    "1": {
+                      "title": "List<Inline>",
+                      "id": 113
+                    }
+                  }
+                },
+                "2": {
+                  "title": "Para",
+                  "id": 29,
+                  "ideas": {
+                    "1": {
+                      "title": "List<Inline>",
+                      "id": 114,
+                      "attr": {}
+                    }
+                  }
+                },
+                "3": {
+                  "title": "BlockQuote",
+                  "id": 30,
+                  "ideas": {
+                    "1": {
+                      "title": "List<Block>",
+                      "id": 115
+                    }
+                  }
+                }
+              },
+              "attr": {}
+            },
+            "4": {
+              "title": "Advanced content\n",
+              "id": 69,
+              "ideas": {
+                "1": {
+                  "title": "CodeBlock",
+                  "id": 72,
+                  "ideas": {
+                    "1": {
+                      "title": "Attr, String",
+                      "id": 118
+                    }
+                  }
+                },
+                "2": {
+                  "title": "RawBlock",
+                  "id": 73,
+                  "ideas": {
+                    "1": {
+                      "title": "Format, String\n",
+                      "id": 119
+                    }
+                  }
+                },
+                "3": {
+                  "title": "Figure",
+                  "id": 98,
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#FFCC99"
+                    }
+                  },
+                  "ideas": {
+                    "1": {
+                      "title": "Attr, Caption, List<Block>\n",
+                      "id": 123
+                    }
+                  }
+                },
+                "4": {
+                  "title": "Div",
+                  "id": 52,
+                  "ideas": {
+                    "1": {
+                      "title": "Attr, List<Block>",
+                      "id": 125,
+                      "attr": {}
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "width": 19,
+                      "backgroundColor": "#FFCC99"
+                    }
+                  }
+                },
+                "5": {
+                  "title": "Table",
+                  "id": 126,
+                  "ideas": {
+                    "1": {
+                      "title": "Attr, Caption, List<ColSpec>, TableHead, List<TableBody> TableFoot\n",
+                      "id": 127
+                    }
+                  }
+                },
+                "3.5": {
+                  "title": "Header",
+                  "id": 51,
+                  "ideas": {
+                    "1": {
+                      "title": "Int, Attr, List<Inline>\n",
+                      "id": 124
+                    }
+                  },
+                  "attr": {
+                    "position": [
+                      61,
+                      33,
+                      1
+                    ]
+                  }
+                }
+              }
+            },
+            "5": {
+              "title": "Lists\n",
+              "id": 82,
+              "ideas": {
+                "1": {
+                  "title": "BulletList",
+                  "id": 84,
+                  "ideas": {
+                    "1": {
+                      "title": "List<List<Block>>",
+                      "id": 121
+                    }
+                  }
+                },
+                "2": {
+                  "title": "OrderedList",
+                  "id": 85,
+                  "ideas": {
+                    "1": {
+                      "title": "ListAttributes, List<List<Block>>\n",
+                      "id": 120
+                    }
+                  }
+                },
+                "3": {
+                  "title": "DefinitionList",
+                  "id": 89,
+                  "ideas": {
+                    "1": {
+                      "title": "List<(List<Inline>, List<List<Block>>)>\n",
+                      "id": 122
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#FFCC99"
+                    }
+                  }
+                },
+                "4": {
+                  "title": "LineBlock",
+                  "id": 92,
+                  "ideas": {
+                    "2": {
+                      "title": "List<List<Inline>>",
+                      "id": 117
+                    }
+                  },
+                  "attr": {
+                    "style": {
+                      "backgroundColor": "#FFCC99"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "backgroundColor": "#99CC00"
+            }
+          }
+        },
+        "-2": {
+          "title": "Without \"t:\"\n",
+          "id": 46,
+          "ideas": {
+            "3": {
+              "title": "Caption",
+              "id": 148,
+              "ideas": {
+                "1": {
+                  "title": "List<Inline> / null, List<Block>",
+                  "id": 149
+                }
+              }
+            },
+            "4": {
+              "title": "Attr",
+              "id": 151,
+              "ideas": {
+                "1": {
+                  "title": "String, List<String>, List<String, String>\n",
+                  "id": 159
+                }
+              }
+            },
+            "5": {
+              "title": "Format",
+              "id": 152,
+              "ideas": {
+                "1": {
+                  "title": "String",
+                  "id": 160
+                }
+              }
+            },
+            "6": {
+              "title": "ColSpec",
+              "id": 153,
+              "ideas": {
+                "1": {
+                  "title": "Alignment, ColWidth\n",
+                  "id": 161,
+                  "ideas": {}
+                }
+              }
+            },
+            "7": {
+              "title": "TableHead",
+              "id": 154,
+              "ideas": {
+                "1": {
+                  "title": "Attr, List<Row>",
+                  "id": 162
+                }
+              },
+              "attr": {}
+            },
+            "8": {
+              "title": "TableBody",
+              "id": 155,
+              "ideas": {
+                "1": {
+                  "title": "Attr, Int, List<Row>, List<Row>\n",
+                  "id": 180,
+                  "ideas": {
+                    "1": {
+                      "title": "Attr, RowHeadColumns, List<Row>, List<Row>",
+                      "id": 164
+                    }
+                  }
+                }
+              }
+            },
+            "9": {
+              "title": "TableFoot",
+              "id": 156,
+              "ideas": {
+                "1": {
+                  "title": "Attr, List<Row>\n",
+                  "id": 165
+                }
+              }
+            },
+            "11": {
+              "title": "Target\n",
+              "id": 158,
+              "ideas": {
+                "1": {
+                  "title": "String, String\n",
+                  "id": 169,
+                  "ideas": {
+                    "1": {
+                      "title": "URL, title",
+                      "id": 170
+                    }
+                  }
+                }
+              }
+            },
+            "12": {
+              "title": "Row\n",
+              "id": 173,
+              "ideas": {
+                "1": {
+                  "title": "Attr, List<Cell>\n",
+                  "id": 174
+                }
+              }
+            },
+            "13": {
+              "title": "Cell",
+              "id": 176,
+              "ideas": {
+                "1": {
+                  "title": "Attr, Enum, Int, Int, List<Block>",
+                  "id": 179,
+                  "ideas": {
+                    "1": {
+                      "title": "Attr, Alignment, RowSpan, ColSpan, List<Block>\n",
+                      "id": 177,
+                      "ideas": {},
+                      "attr": {}
+                    }
+                  },
+                  "attr": {}
+                }
+              },
+              "attr": {}
+            },
+            "14": {
+              "title": "ListAttributes",
+              "id": 197,
+              "ideas": {
+                "1": {
+                  "title": "Int, ListNumberStyle, ListNumberDelim\n",
+                  "id": 198
+                }
+              }
+            },
+            "9.5": {
+              "title": "Citation",
+              "id": 60,
+              "ideas": {
+                "1": {
+                  "title": "String, List<Inline>, List<Inline>, Enum, Int, Int",
+                  "id": 167,
+                  "ideas": {
+                    "1": {
+                      "title": "citationId, citationPrefix, citationSuffix, citationMode, citationNoteNum, citationHash\n",
+                      "id": 172
+                    }
+                  },
+                  "attr": {}
+                }
+              },
+              "attr": {
+                "style": {
+                  "backgroundColor": "#FFCC99"
+                }
+              }
+            }
+          },
+          "attr": {
+            "style": {
+              "backgroundColor": "#99CC00"
+            }
+          }
+        }
+      }
+    }
+  },
+  "title": "Element",
+  "links": []
+}

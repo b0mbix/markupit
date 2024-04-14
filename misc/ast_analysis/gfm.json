@@ -1,0 +1,4709 @@
+{
+    "pandoc-api-version": [
+        1,
+        23,
+        1
+    ],
+    "meta": {},
+    "blocks": [
+        {
+            "t": "Header",
+            "c": [
+                1,
+                [
+                    "h1",
+                    [],
+                    []
+                ],
+                [
+                    {
+                        "t": "Str",
+                        "c": "H1"
+                    }
+                ]
+            ]
+        },
+        {
+            "t": "Header",
+            "c": [
+                2,
+                [
+                    "h2",
+                    [],
+                    []
+                ],
+                [
+                    {
+                        "t": "Str",
+                        "c": "H2"
+                    }
+                ]
+            ]
+        },
+        {
+            "t": "Header",
+            "c": [
+                3,
+                [
+                    "h3",
+                    [],
+                    []
+                ],
+                [
+                    {
+                        "t": "Str",
+                        "c": "H3"
+                    }
+                ]
+            ]
+        },
+        {
+            "t": "Header",
+            "c": [
+                4,
+                [
+                    "h4",
+                    [],
+                    []
+                ],
+                [
+                    {
+                        "t": "Str",
+                        "c": "H4"
+                    }
+                ]
+            ]
+        },
+        {
+            "t": "Header",
+            "c": [
+                5,
+                [
+                    "h5",
+                    [],
+                    []
+                ],
+                [
+                    {
+                        "t": "Str",
+                        "c": "H5"
+                    }
+                ]
+            ]
+        },
+        {
+            "t": "Header",
+            "c": [
+                6,
+                [
+                    "h6",
+                    [],
+                    []
+                ],
+                [
+                    {
+                        "t": "Str",
+                        "c": "H6"
+                    }
+                ]
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "Alternatively,"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "for"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "H1"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "and"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "H2,"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "an"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "underline-ish"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "style:"
+                }
+            ]
+        },
+        {
+            "t": "Header",
+            "c": [
+                1,
+                [
+                    "alt-h1",
+                    [],
+                    []
+                ],
+                [
+                    {
+                        "t": "Str",
+                        "c": "Alt-H1"
+                    }
+                ]
+            ]
+        },
+        {
+            "t": "Header",
+            "c": [
+                2,
+                [
+                    "alt-h2",
+                    [],
+                    []
+                ],
+                [
+                    {
+                        "t": "Str",
+                        "c": "Alt-H2"
+                    }
+                ]
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "Emphasis,"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "aka"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "italics,"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "with"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Emph",
+                    "c": [
+                        {
+                            "t": "Str",
+                            "c": "asterisks"
+                        }
+                    ]
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "or"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Emph",
+                    "c": [
+                        {
+                            "t": "Str",
+                            "c": "underscores,"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "right"
+                        }
+                    ]
+                },
+                {
+                    "t": "Str",
+                    "c": "."
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "Strong"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "emphasis,"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "aka"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "bold,"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "with"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Strong",
+                    "c": [
+                        {
+                            "t": "Str",
+                            "c": "asterisks"
+                        }
+                    ]
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "or"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Strong",
+                    "c": [
+                        {
+                            "t": "Str",
+                            "c": "underscores"
+                        }
+                    ]
+                },
+                {
+                    "t": "Str",
+                    "c": "."
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "Combined"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "emphasis"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "with"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Strong",
+                    "c": [
+                        {
+                            "t": "Str",
+                            "c": "asterisks"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "and"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Emph",
+                            "c": [
+                                {
+                                    "t": "Str",
+                                    "c": "underscores"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "t": "Str",
+                    "c": "."
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "Strikethrough"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "uses"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "two"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "tildes."
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Strikeout",
+                    "c": [
+                        {
+                            "t": "Str",
+                            "c": "Scratch"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "this."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "t": "OrderedList",
+            "c": [
+                [
+                    1,
+                    {
+                        "t": "Decimal"
+                    },
+                    {
+                        "t": "Period"
+                    }
+                ],
+                [
+                    [
+                        {
+                            "t": "Para",
+                            "c": [
+                                {
+                                    "t": "Str",
+                                    "c": "First"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "ordered"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "list"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "item"
+                                }
+                            ]
+                        }
+                    ],
+                    [
+                        {
+                            "t": "Para",
+                            "c": [
+                                {
+                                    "t": "Str",
+                                    "c": "Another"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "item"
+                                }
+                            ]
+                        },
+                        {
+                            "t": "BulletList",
+                            "c": [
+                                [
+                                    {
+                                        "t": "Plain",
+                                        "c": [
+                                            {
+                                                "t": "Str",
+                                                "c": "Unordered"
+                                            },
+                                            {
+                                                "t": "Space"
+                                            },
+                                            {
+                                                "t": "Str",
+                                                "c": "sub-list."
+                                            }
+                                        ]
+                                    }
+                                ]
+                            ]
+                        }
+                    ],
+                    [
+                        {
+                            "t": "Para",
+                            "c": [
+                                {
+                                    "t": "Str",
+                                    "c": "Actual"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "numbers"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "don't"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "matter,"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "just"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "that"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "it's"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "a"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "number"
+                                }
+                            ]
+                        },
+                        {
+                            "t": "OrderedList",
+                            "c": [
+                                [
+                                    1,
+                                    {
+                                        "t": "Decimal"
+                                    },
+                                    {
+                                        "t": "Period"
+                                    }
+                                ],
+                                [
+                                    [
+                                        {
+                                            "t": "Plain",
+                                            "c": [
+                                                {
+                                                    "t": "Str",
+                                                    "c": "Ordered"
+                                                },
+                                                {
+                                                    "t": "Space"
+                                                },
+                                                {
+                                                    "t": "Str",
+                                                    "c": "sub-list"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                ]
+                            ]
+                        }
+                    ],
+                    [
+                        {
+                            "t": "Para",
+                            "c": [
+                                {
+                                    "t": "Str",
+                                    "c": "And"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "another"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "item."
+                                }
+                            ]
+                        },
+                        {
+                            "t": "Para",
+                            "c": [
+                                {
+                                    "t": "Str",
+                                    "c": "You"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "can"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "have"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "properly"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "indented"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "paragraphs"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "within"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "list"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "items."
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "Notice"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "the"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "blank"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "line"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "above,"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "and"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "the"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "leading"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "spaces"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "(at"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "least"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "one,"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "but"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "we'll"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "use"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "three"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "here"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "to"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "also"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "align"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "the"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "raw"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "Markdown)."
+                                }
+                            ]
+                        },
+                        {
+                            "t": "Para",
+                            "c": [
+                                {
+                                    "t": "Str",
+                                    "c": "To"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "have"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "a"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "line"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "break"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "without"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "a"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "paragraph,"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "you"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "will"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "need"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "to"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "use"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "two"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "trailing"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "spaces."
+                                },
+                                {
+                                    "t": "LineBreak"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "Note"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "that"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "this"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "line"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "is"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "separate,"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "but"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "within"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "the"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "same"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "paragraph."
+                                },
+                                {
+                                    "t": "LineBreak"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "(This"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "is"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "contrary"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "to"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "the"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "typical"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "GFM"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "line"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "break"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "behaviour,"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "where"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "trailing"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "spaces"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "are"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "not"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "required.)"
+                                }
+                            ]
+                        }
+                    ]
+                ]
+            ]
+        },
+        {
+            "t": "BulletList",
+            "c": [
+                [
+                    {
+                        "t": "Plain",
+                        "c": [
+                            {
+                                "t": "Str",
+                                "c": "Unordered"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "list"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "can"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "use"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "asterisks"
+                            }
+                        ]
+                    }
+                ]
+            ]
+        },
+        {
+            "t": "BulletList",
+            "c": [
+                [
+                    {
+                        "t": "Plain",
+                        "c": [
+                            {
+                                "t": "Str",
+                                "c": "Or"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "minuses"
+                            }
+                        ]
+                    }
+                ]
+            ]
+        },
+        {
+            "t": "BulletList",
+            "c": [
+                [
+                    {
+                        "t": "Plain",
+                        "c": [
+                            {
+                                "t": "Str",
+                                "c": "Or"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "pluses"
+                            }
+                        ]
+                    }
+                ]
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Link",
+                    "c": [
+                        [
+                            "",
+                            [],
+                            []
+                        ],
+                        [
+                            {
+                                "t": "Str",
+                                "c": "I'm"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "an"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "inline-style"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "link"
+                            }
+                        ],
+                        [
+                            "https://www.google.com",
+                            ""
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Link",
+                    "c": [
+                        [
+                            "",
+                            [],
+                            []
+                        ],
+                        [
+                            {
+                                "t": "Str",
+                                "c": "I'm"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "an"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "inline-style"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "link"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "with"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "title"
+                            }
+                        ],
+                        [
+                            "https://www.google.com",
+                            "Google's Homepage"
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Link",
+                    "c": [
+                        [
+                            "",
+                            [],
+                            []
+                        ],
+                        [
+                            {
+                                "t": "Str",
+                                "c": "I'm"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "a"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "reference-style"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "link"
+                            }
+                        ],
+                        [
+                            "https://www.mozilla.org",
+                            ""
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Link",
+                    "c": [
+                        [
+                            "",
+                            [],
+                            []
+                        ],
+                        [
+                            {
+                                "t": "Str",
+                                "c": "I'm"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "a"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "relative"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "reference"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "to"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "a"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "repository"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "file"
+                            }
+                        ],
+                        [
+                            "../blob/master/LICENSE",
+                            ""
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Link",
+                    "c": [
+                        [
+                            "",
+                            [],
+                            []
+                        ],
+                        [
+                            {
+                                "t": "Str",
+                                "c": "You"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "can"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "use"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "numbers"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "for"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "reference-style"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "link"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "definitions"
+                            }
+                        ],
+                        [
+                            "http://slashdot.org",
+                            ""
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "Or"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "leave"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "it"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "empty"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "and"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "use"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "the"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Link",
+                    "c": [
+                        [
+                            "",
+                            [],
+                            []
+                        ],
+                        [
+                            {
+                                "t": "Str",
+                                "c": "link"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "text"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "itself"
+                            }
+                        ],
+                        [
+                            "http://www.reddit.com",
+                            ""
+                        ]
+                    ]
+                },
+                {
+                    "t": "Str",
+                    "c": "."
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "URLs"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "and"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "URLs"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "in"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "angle"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "brackets"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "will"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "automatically"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "get"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "turned"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "into"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "links."
+                },
+                {
+                    "t": "SoftBreak"
+                },
+                {
+                    "t": "Link",
+                    "c": [
+                        [
+                            "",
+                            [],
+                            []
+                        ],
+                        [
+                            {
+                                "t": "Str",
+                                "c": "http://www.example.com"
+                            }
+                        ],
+                        [
+                            "http://www.example.com",
+                            ""
+                        ]
+                    ]
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "or"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Link",
+                    "c": [
+                        [
+                            "",
+                            [],
+                            []
+                        ],
+                        [
+                            {
+                                "t": "Str",
+                                "c": "http://www.example.com"
+                            }
+                        ],
+                        [
+                            "http://www.example.com",
+                            ""
+                        ]
+                    ]
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "and"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "sometimes"
+                },
+                {
+                    "t": "SoftBreak"
+                },
+                {
+                    "t": "Str",
+                    "c": "example.com"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "(but"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "not"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "on"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "Github,"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "for"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "example)."
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "Some"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "text"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "to"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "show"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "that"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "the"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "reference"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "links"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "can"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "follow"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "later."
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Image",
+                    "c": [
+                        [
+                            "",
+                            [],
+                            []
+                        ],
+                        [
+                            {
+                                "t": "Str",
+                                "c": "Cat"
+                            }
+                        ],
+                        [
+                            "Untitled.jpg",
+                            ""
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "Here's"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "our"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "logo"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "(hover"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "to"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "see"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "the"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "title"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "text):"
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "Inline-style:"
+                },
+                {
+                    "t": "SoftBreak"
+                },
+                {
+                    "t": "Image",
+                    "c": [
+                        [
+                            "",
+                            [],
+                            []
+                        ],
+                        [
+                            {
+                                "t": "Str",
+                                "c": "alt"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "text"
+                            }
+                        ],
+                        [
+                            "https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png",
+                            "Logo Title Text 1"
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "Reference-style:"
+                },
+                {
+                    "t": "SoftBreak"
+                },
+                {
+                    "t": "Image",
+                    "c": [
+                        [
+                            "",
+                            [],
+                            []
+                        ],
+                        [
+                            {
+                                "t": "Str",
+                                "c": "alt"
+                            },
+                            {
+                                "t": "Space"
+                            },
+                            {
+                                "t": "Str",
+                                "c": "text"
+                            }
+                        ],
+                        [
+                            "https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png",
+                            "Logo Title Text 2"
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "Inline"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Code",
+                    "c": [
+                        [
+                            "",
+                            [],
+                            []
+                        ],
+                        "code"
+                    ]
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "has"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Code",
+                    "c": [
+                        [
+                            "",
+                            [],
+                            []
+                        ],
+                        "back-ticks around"
+                    ]
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "it."
+                }
+            ]
+        },
+        {
+            "t": "CodeBlock",
+            "c": [
+                [
+                    "",
+                    [
+                        "javascript"
+                    ],
+                    []
+                ],
+                "var s = \"JavaScript syntax highlighting\";\nalert(s);"
+            ]
+        },
+        {
+            "t": "CodeBlock",
+            "c": [
+                [
+                    "",
+                    [
+                        "python"
+                    ],
+                    []
+                ],
+                "s = \"Python syntax highlighting\"\nprint s"
+            ]
+        },
+        {
+            "t": "CodeBlock",
+            "c": [
+                [
+                    "",
+                    [],
+                    []
+                ],
+                "No language indicated, so no syntax highlighting. \nBut let's throw in a <b>tag</b>."
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "Here"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "is"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "a"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "simple"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "footnote"
+                },
+                {
+                    "t": "Note",
+                    "c": [
+                        {
+                            "t": "Para",
+                            "c": [
+                                {
+                                    "t": "Str",
+                                    "c": "My"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "reference."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "t": "Str",
+                    "c": "."
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "A"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "footnote"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "can"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "also"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "have"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "multiple"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "lines"
+                },
+                {
+                    "t": "Note",
+                    "c": [
+                        {
+                            "t": "Para",
+                            "c": [
+                                {
+                                    "t": "Str",
+                                    "c": "Every"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "new"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "line"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "should"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "be"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "prefixed"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "with"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "2"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "spaces."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "t": "Str",
+                    "c": "."
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "You"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "can"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "also"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "use"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "words,"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "to"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "fit"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "your"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "writing"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "style"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "more"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "closely"
+                },
+                {
+                    "t": "Note",
+                    "c": [
+                        {
+                            "t": "Para",
+                            "c": [
+                                {
+                                    "t": "Str",
+                                    "c": "Named"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "footnotes"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "will"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "still"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "render"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "with"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "numbers"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "instead"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "of"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "the"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "text"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "but"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "allow"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "easier"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "identification"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "and"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "linking."
+                                },
+                                {
+                                    "t": "LineBreak"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "This"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "footnote"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "also"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "has"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "been"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "made"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "with"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "a"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "different"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "syntax"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "using"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "4"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "spaces"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "for"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "new"
+                                },
+                                {
+                                    "t": "Space"
+                                },
+                                {
+                                    "t": "Str",
+                                    "c": "lines."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "t": "Str",
+                    "c": "."
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "Colons"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "can"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "be"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "used"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "to"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "align"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "columns."
+                }
+            ]
+        },
+        {
+            "t": "Table",
+            "c": [
+                [
+                    "",
+                    [],
+                    []
+                ],
+                [
+                    null,
+                    []
+                ],
+                [
+                    [
+                        {
+                            "t": "AlignDefault"
+                        },
+                        {
+                            "t": "ColWidthDefault"
+                        }
+                    ],
+                    [
+                        {
+                            "t": "AlignCenter"
+                        },
+                        {
+                            "t": "ColWidthDefault"
+                        }
+                    ],
+                    [
+                        {
+                            "t": "AlignRight"
+                        },
+                        {
+                            "t": "ColWidthDefault"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        "",
+                        [],
+                        []
+                    ],
+                    [
+                        [
+                            [
+                                "",
+                                [],
+                                []
+                            ],
+                            [
+                                [
+                                    [
+                                        "",
+                                        [],
+                                        []
+                                    ],
+                                    {
+                                        "t": "AlignDefault"
+                                    },
+                                    1,
+                                    1,
+                                    [
+                                        {
+                                            "t": "Plain",
+                                            "c": [
+                                                {
+                                                    "t": "Str",
+                                                    "c": "Tables"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                ],
+                                [
+                                    [
+                                        "",
+                                        [],
+                                        []
+                                    ],
+                                    {
+                                        "t": "AlignDefault"
+                                    },
+                                    1,
+                                    1,
+                                    [
+                                        {
+                                            "t": "Plain",
+                                            "c": [
+                                                {
+                                                    "t": "Str",
+                                                    "c": "Are"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                ],
+                                [
+                                    [
+                                        "",
+                                        [],
+                                        []
+                                    ],
+                                    {
+                                        "t": "AlignDefault"
+                                    },
+                                    1,
+                                    1,
+                                    [
+                                        {
+                                            "t": "Plain",
+                                            "c": [
+                                                {
+                                                    "t": "Str",
+                                                    "c": "Cool"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        [
+                            "",
+                            [],
+                            []
+                        ],
+                        0,
+                        [],
+                        [
+                            [
+                                [
+                                    "",
+                                    [],
+                                    []
+                                ],
+                                [
+                                    [
+                                        [
+                                            "",
+                                            [],
+                                            []
+                                        ],
+                                        {
+                                            "t": "AlignDefault"
+                                        },
+                                        1,
+                                        1,
+                                        [
+                                            {
+                                                "t": "Plain",
+                                                "c": [
+                                                    {
+                                                        "t": "Str",
+                                                        "c": "col"
+                                                    },
+                                                    {
+                                                        "t": "Space"
+                                                    },
+                                                    {
+                                                        "t": "Str",
+                                                        "c": "3"
+                                                    },
+                                                    {
+                                                        "t": "Space"
+                                                    },
+                                                    {
+                                                        "t": "Str",
+                                                        "c": "is"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    ],
+                                    [
+                                        [
+                                            "",
+                                            [],
+                                            []
+                                        ],
+                                        {
+                                            "t": "AlignDefault"
+                                        },
+                                        1,
+                                        1,
+                                        [
+                                            {
+                                                "t": "Plain",
+                                                "c": [
+                                                    {
+                                                        "t": "Str",
+                                                        "c": "right-aligned"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    ],
+                                    [
+                                        [
+                                            "",
+                                            [],
+                                            []
+                                        ],
+                                        {
+                                            "t": "AlignDefault"
+                                        },
+                                        1,
+                                        1,
+                                        [
+                                            {
+                                                "t": "Plain",
+                                                "c": [
+                                                    {
+                                                        "t": "Str",
+                                                        "c": "$1600"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    ]
+                                ]
+                            ],
+                            [
+                                [
+                                    "",
+                                    [],
+                                    []
+                                ],
+                                [
+                                    [
+                                        [
+                                            "",
+                                            [],
+                                            []
+                                        ],
+                                        {
+                                            "t": "AlignDefault"
+                                        },
+                                        1,
+                                        1,
+                                        [
+                                            {
+                                                "t": "Plain",
+                                                "c": [
+                                                    {
+                                                        "t": "Str",
+                                                        "c": "col"
+                                                    },
+                                                    {
+                                                        "t": "Space"
+                                                    },
+                                                    {
+                                                        "t": "Str",
+                                                        "c": "2"
+                                                    },
+                                                    {
+                                                        "t": "Space"
+                                                    },
+                                                    {
+                                                        "t": "Str",
+                                                        "c": "is"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    ],
+                                    [
+                                        [
+                                            "",
+                                            [],
+                                            []
+                                        ],
+                                        {
+                                            "t": "AlignDefault"
+                                        },
+                                        1,
+                                        1,
+                                        [
+                                            {
+                                                "t": "Plain",
+                                                "c": [
+                                                    {
+                                                        "t": "Str",
+                                                        "c": "centered"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    ],
+                                    [
+                                        [
+                                            "",
+                                            [],
+                                            []
+                                        ],
+                                        {
+                                            "t": "AlignDefault"
+                                        },
+                                        1,
+                                        1,
+                                        [
+                                            {
+                                                "t": "Plain",
+                                                "c": [
+                                                    {
+                                                        "t": "Str",
+                                                        "c": "$12"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    ]
+                                ]
+                            ],
+                            [
+                                [
+                                    "",
+                                    [],
+                                    []
+                                ],
+                                [
+                                    [
+                                        [
+                                            "",
+                                            [],
+                                            []
+                                        ],
+                                        {
+                                            "t": "AlignDefault"
+                                        },
+                                        1,
+                                        1,
+                                        [
+                                            {
+                                                "t": "Plain",
+                                                "c": [
+                                                    {
+                                                        "t": "Str",
+                                                        "c": "zebra"
+                                                    },
+                                                    {
+                                                        "t": "Space"
+                                                    },
+                                                    {
+                                                        "t": "Str",
+                                                        "c": "stripes"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    ],
+                                    [
+                                        [
+                                            "",
+                                            [],
+                                            []
+                                        ],
+                                        {
+                                            "t": "AlignDefault"
+                                        },
+                                        1,
+                                        1,
+                                        [
+                                            {
+                                                "t": "Plain",
+                                                "c": [
+                                                    {
+                                                        "t": "Str",
+                                                        "c": "are"
+                                                    },
+                                                    {
+                                                        "t": "Space"
+                                                    },
+                                                    {
+                                                        "t": "Str",
+                                                        "c": "neat"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    ],
+                                    [
+                                        [
+                                            "",
+                                            [],
+                                            []
+                                        ],
+                                        {
+                                            "t": "AlignDefault"
+                                        },
+                                        1,
+                                        1,
+                                        [
+                                            {
+                                                "t": "Plain",
+                                                "c": [
+                                                    {
+                                                        "t": "Str",
+                                                        "c": "$1"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "",
+                        [],
+                        []
+                    ],
+                    []
+                ]
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "There"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "must"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "be"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "at"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "least"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "3"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "dashes"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "separating"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "each"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "header"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "cell."
+                },
+                {
+                    "t": "SoftBreak"
+                },
+                {
+                    "t": "Str",
+                    "c": "The"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "outer"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "pipes"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "(|)"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "are"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "optional,"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "and"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "you"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "don't"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "need"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "to"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "make"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "the"
+                },
+                {
+                    "t": "SoftBreak"
+                },
+                {
+                    "t": "Str",
+                    "c": "raw"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "Markdown"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "line"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "up"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "prettily."
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "You"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "can"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "also"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "use"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "inline"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "Markdown."
+                }
+            ]
+        },
+        {
+            "t": "Table",
+            "c": [
+                [
+                    "",
+                    [],
+                    []
+                ],
+                [
+                    null,
+                    []
+                ],
+                [
+                    [
+                        {
+                            "t": "AlignDefault"
+                        },
+                        {
+                            "t": "ColWidthDefault"
+                        }
+                    ],
+                    [
+                        {
+                            "t": "AlignDefault"
+                        },
+                        {
+                            "t": "ColWidthDefault"
+                        }
+                    ],
+                    [
+                        {
+                            "t": "AlignDefault"
+                        },
+                        {
+                            "t": "ColWidthDefault"
+                        }
+                    ]
+                ],
+                [
+                    [
+                        "",
+                        [],
+                        []
+                    ],
+                    [
+                        [
+                            [
+                                "",
+                                [],
+                                []
+                            ],
+                            [
+                                [
+                                    [
+                                        "",
+                                        [],
+                                        []
+                                    ],
+                                    {
+                                        "t": "AlignDefault"
+                                    },
+                                    1,
+                                    1,
+                                    [
+                                        {
+                                            "t": "Plain",
+                                            "c": [
+                                                {
+                                                    "t": "Str",
+                                                    "c": "Markdown"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                ],
+                                [
+                                    [
+                                        "",
+                                        [],
+                                        []
+                                    ],
+                                    {
+                                        "t": "AlignDefault"
+                                    },
+                                    1,
+                                    1,
+                                    [
+                                        {
+                                            "t": "Plain",
+                                            "c": [
+                                                {
+                                                    "t": "Str",
+                                                    "c": "Less"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                ],
+                                [
+                                    [
+                                        "",
+                                        [],
+                                        []
+                                    ],
+                                    {
+                                        "t": "AlignDefault"
+                                    },
+                                    1,
+                                    1,
+                                    [
+                                        {
+                                            "t": "Plain",
+                                            "c": [
+                                                {
+                                                    "t": "Str",
+                                                    "c": "Pretty"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        [
+                            "",
+                            [],
+                            []
+                        ],
+                        0,
+                        [],
+                        [
+                            [
+                                [
+                                    "",
+                                    [],
+                                    []
+                                ],
+                                [
+                                    [
+                                        [
+                                            "",
+                                            [],
+                                            []
+                                        ],
+                                        {
+                                            "t": "AlignDefault"
+                                        },
+                                        1,
+                                        1,
+                                        [
+                                            {
+                                                "t": "Plain",
+                                                "c": [
+                                                    {
+                                                        "t": "Emph",
+                                                        "c": [
+                                                            {
+                                                                "t": "Str",
+                                                                "c": "Still"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    ],
+                                    [
+                                        [
+                                            "",
+                                            [],
+                                            []
+                                        ],
+                                        {
+                                            "t": "AlignDefault"
+                                        },
+                                        1,
+                                        1,
+                                        [
+                                            {
+                                                "t": "Plain",
+                                                "c": [
+                                                    {
+                                                        "t": "Code",
+                                                        "c": [
+                                                            [
+                                                                "",
+                                                                [],
+                                                                []
+                                                            ],
+                                                            "renders"
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    ],
+                                    [
+                                        [
+                                            "",
+                                            [],
+                                            []
+                                        ],
+                                        {
+                                            "t": "AlignDefault"
+                                        },
+                                        1,
+                                        1,
+                                        [
+                                            {
+                                                "t": "Plain",
+                                                "c": [
+                                                    {
+                                                        "t": "Strong",
+                                                        "c": [
+                                                            {
+                                                                "t": "Str",
+                                                                "c": "nicely"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    ]
+                                ]
+                            ],
+                            [
+                                [
+                                    "",
+                                    [],
+                                    []
+                                ],
+                                [
+                                    [
+                                        [
+                                            "",
+                                            [],
+                                            []
+                                        ],
+                                        {
+                                            "t": "AlignDefault"
+                                        },
+                                        1,
+                                        1,
+                                        [
+                                            {
+                                                "t": "Plain",
+                                                "c": [
+                                                    {
+                                                        "t": "Str",
+                                                        "c": "1"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    ],
+                                    [
+                                        [
+                                            "",
+                                            [],
+                                            []
+                                        ],
+                                        {
+                                            "t": "AlignDefault"
+                                        },
+                                        1,
+                                        1,
+                                        [
+                                            {
+                                                "t": "Plain",
+                                                "c": [
+                                                    {
+                                                        "t": "Str",
+                                                        "c": "2"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    ],
+                                    [
+                                        [
+                                            "",
+                                            [],
+                                            []
+                                        ],
+                                        {
+                                            "t": "AlignDefault"
+                                        },
+                                        1,
+                                        1,
+                                        [
+                                            {
+                                                "t": "Plain",
+                                                "c": [
+                                                    {
+                                                        "t": "Str",
+                                                        "c": "3"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+                [
+                    [
+                        "",
+                        [],
+                        []
+                    ],
+                    []
+                ]
+            ]
+        },
+        {
+            "t": "BlockQuote",
+            "c": [
+                {
+                    "t": "Para",
+                    "c": [
+                        {
+                            "t": "Str",
+                            "c": "Blockquotes"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "are"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "very"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "handy"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "in"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "email"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "to"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "emulate"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "reply"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "text."
+                        },
+                        {
+                            "t": "SoftBreak"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "This"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "line"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "is"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "part"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "of"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "the"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "same"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "quote."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "Quote"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "break."
+                }
+            ]
+        },
+        {
+            "t": "BlockQuote",
+            "c": [
+                {
+                    "t": "Para",
+                    "c": [
+                        {
+                            "t": "Str",
+                            "c": "This"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "is"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "a"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "very"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "long"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "line"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "that"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "will"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "still"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "be"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "quoted"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "properly"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "when"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "it"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "wraps."
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "Oh"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "boy"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "let's"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "keep"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "writing"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "to"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "make"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "sure"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "this"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "is"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "long"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "enough"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "to"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "actually"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "wrap"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "for"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "everyone."
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "Oh,"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "you"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "can"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Emph",
+                            "c": [
+                                {
+                                    "t": "Str",
+                                    "c": "put"
+                                }
+                            ]
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Strong",
+                            "c": [
+                                {
+                                    "t": "Str",
+                                    "c": "Markdown"
+                                }
+                            ]
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "into"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "a"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "blockquote."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "t": "RawBlock",
+            "c": [
+                "html",
+                "<dl>\n  <dt>Definition list</dt>\n  <dd>Is something people use sometimes.</dd>\n"
+            ]
+        },
+        {
+            "t": "RawBlock",
+            "c": [
+                "html",
+                "  <dt>Markdown in HTML</dt>\n  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>\n</dl>\n"
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "Three"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "or"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "more..."
+                }
+            ]
+        },
+        {
+            "t": "HorizontalRule"
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "Hyphens"
+                }
+            ]
+        },
+        {
+            "t": "HorizontalRule"
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "Asterisks"
+                }
+            ]
+        },
+        {
+            "t": "HorizontalRule"
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "Underscores"
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "Here's"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "a"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "line"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "for"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "us"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "to"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "start"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "with."
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "This"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "line"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "is"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "separated"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "from"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "the"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "one"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "above"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "by"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "two"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "newlines,"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "so"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "it"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "will"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "be"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "a"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Emph",
+                    "c": [
+                        {
+                            "t": "Str",
+                            "c": "separate"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "paragraph"
+                        }
+                    ]
+                },
+                {
+                    "t": "Str",
+                    "c": "."
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "Str",
+                    "c": "This"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "line"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "is"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "also"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "a"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "separate"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "paragraph,"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "but..."
+                },
+                {
+                    "t": "SoftBreak"
+                },
+                {
+                    "t": "Str",
+                    "c": "This"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "line"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "is"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "only"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "separated"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "by"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "a"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "single"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "newline,"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "so"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "it's"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "a"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "separate"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "line"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "in"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Str",
+                    "c": "the"
+                },
+                {
+                    "t": "Space"
+                },
+                {
+                    "t": "Emph",
+                    "c": [
+                        {
+                            "t": "Str",
+                            "c": "same"
+                        },
+                        {
+                            "t": "Space"
+                        },
+                        {
+                            "t": "Str",
+                            "c": "paragraph"
+                        }
+                    ]
+                },
+                {
+                    "t": "Str",
+                    "c": "."
+                }
+            ]
+        },
+        {
+            "t": "Para",
+            "c": [
+                {
+                    "t": "RawInline",
+                    "c": [
+                        "html",
+                        "<a href=\"http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE\n\" target=\"_blank\">"
+                    ]
+                },
+                {
+                    "t": "RawInline",
+                    "c": [
+                        "html",
+                        "<img src=\"http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg\" \nalt=\"IMAGE ALT TEXT HERE\" width=\"240\" height=\"180\" border=\"10\" />"
+                    ]
+                },
+                {
+                    "t": "RawInline",
+                    "c": [
+                        "html",
+                        "</a>"
+                    ]
+                }
+            ]
+        }
+    ]
+}
