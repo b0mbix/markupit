@@ -1,5 +1,6 @@
-import markup_converter.markup_ast as ast
 from pytest import raises
+
+import markup_converter.markup_ast as ast
 
 
 def test_empty_document():
