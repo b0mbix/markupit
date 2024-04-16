@@ -10,8 +10,13 @@ authors = [
 keywords = ["Markup", "md", "Converter"]
 readme = "README.md"
 
+
+[tool.poetry.scripts]
+markup-converter = "markup_converter.cli:app"
+
 [tool.poetry.dependencies]
 python = "^3.10"
+typer = {extras = ["all"], version = "^0.12.3"}
 
 
 [tool.poetry.group.dev.dependencies]
@@ -22,6 +27,11 @@ tox = "^4.14.2"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^8.1.1"
+
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^7.2.6"
+sphinx-rtd-theme = "^2.0.0"
 
 [tool.ruff]
 line-length = 120
