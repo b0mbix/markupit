@@ -8,25 +8,25 @@
 
 import os
 import sys
+
 sys.path.insert(0, os.path.abspath(".."))
 
-project = 'Markup converter'
-copyright = '2024, Jakub Bąba, Hubert Brzóskniewicz, Nikita Sushko'
-author = 'Jakub Bąba, Hubert Brzóskniewicz, Nikita Sushko'
-release = '0.0.1'
+project = "Markup converter"
+copyright = "2024, Jakub Bąba, Hubert Brzóskniewicz, Nikita Sushko"
+author = "Jakub Bąba, Hubert Brzóskniewicz, Nikita Sushko"
+release = "0.0.1"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = ["sphinx.ext.todo", "sphinx.ext.viewcode", "sphinx.ext.autodoc"]
 
-templates_path = ['_templates']
+templates_path = ["_templates"]
 exclude_patterns = []
-
 
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'sphinx_rtd_theme'
-html_static_path = ['_static']
+html_theme = "sphinx_rtd_theme"
+html_static_path = ["_static"]

@@ -9,4 +9,3 @@ Welcome to Markup converter's documentation!
    :caption: Modules:
 
    modules
-
