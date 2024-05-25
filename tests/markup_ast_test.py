@@ -1,6 +1,6 @@
 from pytest import raises
 
-import markup_converter.markup_ast as ast
+import markup_converter.structure as ast
 
 
 def test_empty_document():
