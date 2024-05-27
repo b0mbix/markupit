@@ -33,7 +33,7 @@ class Str(Inline):
 
     def __init__(self, content: str) -> None:
         if not isinstance(content, str):
-            raise ValueError("Content must be a string")
+            raise TypeError("Content must be a string")
         super().__init__(content=content)
 
 
@@ -46,7 +46,7 @@ class Emph(Inline):
 
     def __init__(self, content: list) -> None:
         if not (isinstance(content, list) and all(isinstance(i, Inline) for i in content)):
-            raise ValueError("Content must be of a type List[Inline]")
+            raise TypeError("Content must be of a type List[Inline]")
         super().__init__(content=content)
 
 
@@ -59,7 +59,7 @@ class Underline(Inline):
 
     def __init__(self, content: list) -> None:
         if not (isinstance(content, list) and all(isinstance(i, Inline) for i in content)):
-            raise ValueError("Content must be of a type List[Inline]")
+            raise TypeError("Content must be of a type List[Inline]")
         super().__init__(content=content)
 
 
@@ -72,7 +72,7 @@ class Strong(Inline):
 
     def __init__(self, content: list) -> None:
         if not (isinstance(content, list) and all(isinstance(i, Inline) for i in content)):
-            raise ValueError("Content must be of a type List[Inline]")
+            raise TypeError("Content must be of a type List[Inline]")
         super().__init__(content=content)
 
 
@@ -85,7 +85,7 @@ class Strikeout(Inline):
 
     def __init__(self, content: list) -> None:
         if not (isinstance(content, list) and all(isinstance(i, Inline) for i in content)):
-            raise ValueError("Content must be of a type List[Inline]")
+            raise TypeError("Content must be of a type List[Inline]")
         super().__init__(content=content)
 
 
@@ -98,7 +98,7 @@ class Superscript(Inline):
 
     def __init__(self, content: list) -> None:
         if not (isinstance(content, list) and all(isinstance(i, Inline) for i in content)):
-            raise ValueError("Content must be of a type List[Inline]")
+            raise TypeError("Content must be of a type List[Inline]")
         super().__init__(content=content)
 
 
@@ -111,7 +111,7 @@ class Subscript(Inline):
 
     def __init__(self, content: list) -> None:
         if not (isinstance(content, list) and all(isinstance(i, Inline) for i in content)):
-            raise ValueError("Content must be of a type List[Inline]")
+            raise TypeError("Content must be of a type List[Inline]")
         super().__init__(content=content)
 
 
@@ -124,7 +124,7 @@ class SmallCaps(Inline):
 
     def __init__(self, content: list) -> None:
         if not (isinstance(content, list) and all(isinstance(i, Inline) for i in content)):
-            raise ValueError("Content must be of a type List[Inline]")
+            raise TypeError("Content must be of a type List[Inline]")
         super().__init__(content=content)
 
 
@@ -137,7 +137,7 @@ class Note(Inline):
 
     def __init__(self, content: list) -> None:
         if not (isinstance(content, list) and all(isinstance(i, Block) for i in content)):
-            raise ValueError("Content must be of a type List[Block]")
+            raise TypeError("Content must be of a type List[Block]")
         super().__init__(content=content)
 
 
@@ -157,7 +157,7 @@ class Span(Inline):
                 all(isinstance(i, Inline) for i in content[1]),
             ]
         ):
-            raise ValueError("Content must be of a type [Attr, List[Inline]]")
+            raise TypeError("Content must be of a type [Attr, List[Inline]]")
         super().__init__(content=content)
 
 
@@ -177,7 +177,7 @@ class Quoted(Inline):
                 all(isinstance(i, Inline) for i in content[1]),
             ]
         ):
-            raise ValueError("Content must be of a type [QuoteType, List[Inline]]")
+            raise TypeError("Content must be of a type [QuoteType, List[Inline]]")
         super().__init__(content=content)
 
 
@@ -197,7 +197,7 @@ class Cite(Inline):
                 all(isinstance(i, Inline) for i in content[1]),
             ]
         ):
-            raise ValueError("Content must be of a type [List[Citation], List[Inline]]")
+            raise TypeError("Content must be of a type [List[Citation], List[Inline]]")
         super().__init__(content=content)
 
 
@@ -218,7 +218,7 @@ class Link(Inline):
                 isinstance(content[2], Target),
             ]
         ):
-            raise ValueError("Content must be of a type [Attr, List[Inline], Target]")
+            raise TypeError("Content must be of a type [Attr, List[Inline], Target]")
         super().__init__(content=content)
 
 
@@ -239,7 +239,7 @@ class Image(Inline):
                 isinstance(content[2], Target),
             ]
         ):
-            raise ValueError("Content must be of a type [Attr, List[Inline], Target]")
+            raise TypeError("Content must be of a type [Attr, List[Inline], Target]")
         super().__init__(content=content)
 
 
@@ -259,7 +259,7 @@ class Code(Inline):
                 isinstance(content[1], str),
             ]
         ):
-            raise ValueError("Content must be of a type [Attr, str]")
+            raise TypeError("Content must be of a type [Attr, str]")
         super().__init__(content=content)
 
 
@@ -279,7 +279,7 @@ class Math(Inline):
                 isinstance(content[1], str),
             ]
         ):
-            raise ValueError("Content must be of a type [MathType, str]")
+            raise TypeError("Content must be of a type [MathType, str]")
         super().__init__(content=content)
 
 
@@ -299,5 +299,5 @@ class RawInline(Inline):
                 isinstance(content[1], str),
             ]
         ):
-            raise ValueError("Content must be of a type [Format, str]")
+            raise TypeError("Content must be of a type [Format, str]")
         super().__init__(content=content)

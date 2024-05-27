@@ -24,7 +24,7 @@ class Attr(ContentElement):
                 all(isinstance(i[1], str) for i in content[2]),
             ]
         ):
-            raise ValueError("Content must be of a type [str, List[str], List[[str, str]]]")
+            raise TypeError("Content must be of a type [str, List[str], List[[str, str]]]")
         super().__init__(content=content)
 
 
@@ -37,7 +37,7 @@ class Format(ContentElement):
 
     def __init__(self, content: str) -> None:
         if not isinstance(content, str):
-            raise ValueError("Content must be a string")
+            raise TypeError("Content must be a string")
         super().__init__(content=content)
 
 
@@ -57,7 +57,7 @@ class Caption(ContentElement):
                 all(isinstance(i, Block) for i in content[1]),
             ]
         ):
-            raise ValueError("Content must be of a type [List[Inline] | null, List[Block]]")
+            raise TypeError("Content must be of a type [List[Inline] | null, List[Block]]")
         super().__init__(content=content)
 
 
@@ -77,7 +77,7 @@ class ColSpec(ContentElement):
                 isinstance(content[1], ColWidth),
             ]
         ):
-            raise ValueError("Content must be of a type [Alignment, ColWidth]")
+            raise TypeError("Content must be of a type [Alignment, ColWidth]")
         super().__init__(content=content)
 
 
@@ -98,7 +98,7 @@ class TableHead(ContentElement):
                 all(isinstance(i, Row) for i in content[1]),
             ]
         ):
-            raise ValueError("Content must be of a type [Attr, List[Row]]")
+            raise TypeError("Content must be of a type [Attr, List[Row]]")
         super().__init__(content=content)
 
 
@@ -122,7 +122,7 @@ class TableBody(ContentElement):
                 all(isinstance(i, Row) for i in content[3]),
             ]
         ):
-            raise ValueError("Content must be of a type [Attr, int, List[Row], List[Row]]")
+            raise TypeError("Content must be of a type [Attr, int, List[Row], List[Row]]")
         super().__init__(content=content)
 
 
@@ -143,7 +143,7 @@ class TableFoot(ContentElement):
                 all(isinstance(i, Row) for i in content[1]),
             ]
         ):
-            raise ValueError("Content must be of a type [Attr, List[Row]]")
+            raise TypeError("Content must be of a type [Attr, List[Row]]")
         super().__init__(content=content)
 
 
@@ -164,7 +164,7 @@ class ListAttributes(ContentElement):
                 isinstance(content[2], ListNumberDelim),
             ]
         ):
-            raise ValueError("Content must be of a type [int, ListNumberStyle, ListNumberDelim]")
+            raise TypeError("Content must be of a type [int, ListNumberStyle, ListNumberDelim]")
         super().__init__(content=content)
 
 
@@ -184,7 +184,7 @@ class Target(ContentElement):
                 isinstance(content[1], str),  # Title
             ]
         ):
-            raise ValueError("Content must be of a type [str, str]")
+            raise TypeError("Content must be of a type [str, str]")
         super().__init__(content=content)
 
 
@@ -210,7 +210,7 @@ class Citation(ContentElement):
                 isinstance(content[5], int),  # CitationHash
             ]
         ):
-            raise ValueError("Content must be of a type [str, List[Inline], List[Inline], CitationMode, int, int]")
+            raise TypeError("Content must be of a type [str, List[Inline], List[Inline], CitationMode, int, int]")
         super().__init__(content=content)
 
 
@@ -231,7 +231,7 @@ class Row(ContentElement):
                 all(isinstance(i, Cell) for i in content[1]),
             ]
         ):
-            raise ValueError("Content must be of a type [Attr, List[Cell]]")
+            raise TypeError("Content must be of a type [Attr, List[Cell]]")
         super().__init__(content=content)
 
 
@@ -255,5 +255,5 @@ class Cell(ContentElement):
                 all(isinstance(i, Block) for i in content[4]),
             ]
         ):
-            raise ValueError("Content must be of a type [Attr, Alignment, int, int, List[Block]]")
+            raise TypeError("Content must be of a type [Attr, Alignment, int, int, List[Block]]")
         super().__init__(content=content)

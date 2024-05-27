@@ -47,7 +47,7 @@ def test_content_for_non_content_types_error():
 def test_str_content_error():
     with raises(TypeError):
         ast.Inline.Str()
-    with raises(ValueError):
+    with raises(TypeError):
         ast.Inline.Str(1)
-    with raises(ValueError):
+    with raises(TypeError):
         ast.Inline.Str(ast.Inline.Str("Hello"))
