@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "markup-converter"
-version = "0.0.1"
+version = "0.1.0"
 description = "Markup convertion tool"
 authors = [
 	"Jakub Bąba <jakub.baba.stud@pw.edu.pl>",
