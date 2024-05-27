@@ -43,6 +43,56 @@ class Element(ABC):
         """
 
 
+class Inline(Element):
+    """A class representing an element of Inline type.
+
+    :param content: The content of the element.
+    :type content: Any, optional
+    """
+
+    def __init__(self, content: Any = None) -> None:
+        super().__init__(content=content)
+
+    def to_json(self) -> dict:
+        """Convert the element to a JSON representation of AST.
+
+        :return: The element as a JSON object.
+        :rtype: dict
+        """
+        if self.content is None:
+            return {"t": self.tag}
+        if isinstance(self.content, str):
+            return {"t": self.tag, "c": self.content}
+        if not isinstance(self.content, list):
+            return {"t": self.tag, "c": self.content.content_to_json()}
+        return {"t": self.tag, "c": [el if isinstance(el, str) else el.to_json() for el in self.content]}
+
+
+class Block(Element):
+    """A class representing an element of Block type.
+
+    :param content: The content of the element.
+    :type content: Any, optional
+    """
+
+    def __init__(self, content: Any = None) -> None:
+        super().__init__(content=content)
+
+    def to_json(self) -> dict:
+        """Convert the element to a JSON representation of AST.
+
+        :return: The element as a JSON object.
+        :rtype: dict
+        """
+        if self.content is None:
+            return {"t": self.tag}
+        if isinstance(self.content, str):
+            return {"t": self.tag, "c": self.content}
+        if not isinstance(self.content, list):
+            return {"t": self.tag, "c": self.content.content_to_json()}
+        return {"t": self.tag, "c": [el if isinstance(el, str) else el.to_json() for el in self.content]}
+
+
 class MetaValue(Element):
     pass
 
