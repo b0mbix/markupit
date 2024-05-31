@@ -65,7 +65,15 @@ class Inline(Element):
             return {"t": self.tag, "c": self.content}
         if not isinstance(self.content, list):
             return {"t": self.tag, "c": self.content.content_to_json()}
-        return {"t": self.tag, "c": [el if isinstance(el, str) else el.to_json() for el in self.content]}
+        return {"t": self.tag, "c": [self._element_to_json(el) for el in self.content]}
+
+    def _element_to_json(self, el):
+        """Helper method to convert element to JSON."""
+        if isinstance(el, str):
+            return el
+        if isinstance(el, list):
+            return [self._element_to_json(sub_el) for sub_el in el]
+        return el.to_json()
 
 
 class Block(Element):
@@ -90,7 +98,15 @@ class Block(Element):
             return {"t": self.tag, "c": self.content}
         if not isinstance(self.content, list):
             return {"t": self.tag, "c": self.content.content_to_json()}
-        return {"t": self.tag, "c": [el if isinstance(el, str) else el.to_json() for el in self.content]}
+        return {"t": self.tag, "c": [self._element_to_json(el) for el in self.content]}
+
+    def _element_to_json(self, el):
+        """Helper method to convert element to JSON."""
+        if isinstance(el, str):
+            return el
+        if isinstance(el, list):
+            return [self._element_to_json(sub_el) for sub_el in el]
+        return el.to_json()
 
 
 class MetaValue(Element):
@@ -112,7 +128,15 @@ class ContentElement(Element):
             return self.content
         if not isinstance(self.content, list):
             return self.content.content_to_json()
-        return [el if isinstance(el, str) else el.to_json() for el in self.content]
+        return {"t": self.tag, "c": [self._element_to_json(el) for el in self.content]}
+
+    def _element_to_json(self, el):
+        """Helper method to convert element to JSON."""
+        if isinstance(el, str):
+            return el
+        if isinstance(el, list):
+            return [self._element_to_json(sub_el) for sub_el in el]
+        return el.to_json()
 
 
 class EnumElement(Element):

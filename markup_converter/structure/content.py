@@ -19,7 +19,7 @@ class Attr(ContentElement):
                 all(isinstance(i, str) for i in content[1]),
                 isinstance(content[2], list),
                 all(isinstance(i, list) for i in content[2]),
-                all(len(content[2][i]) == 2 for i in content[2]),
+                all(len(i) == 2 for i in content[2]),
                 all(isinstance(i[0], str) for i in content[2]),
                 all(isinstance(i[1], str) for i in content[2]),
             ]

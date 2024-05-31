@@ -63,13 +63,11 @@ class CodeBlock(Block):
     """
 
     def __init__(self, content: list) -> None:
-        if not all(
-            [
-                isinstance(content, list),
-                len(content) == 2,
-                isinstance(content[0], Attr),
-                isinstance(content[1], str),
-            ]
+        if not (
+            isinstance(content, list)
+            and len(content) == 2
+            and isinstance(content[0], Attr)
+            and isinstance(content[1], str)
         ):
             raise TypeError("Content must be of a type [Attr, str]")
         super().__init__(content=content)
@@ -83,13 +81,11 @@ class RawBlock(Block):
     """
 
     def __init__(self, content: list) -> None:
-        if not all(
-            [
-                isinstance(content, list),
-                len(content) == 2,
-                isinstance(content[0], Format),
-                isinstance(content[1], str),
-            ]
+        if not (
+            isinstance(content, list)
+            and len(content) == 2
+            and isinstance(content[0], Format)
+            and isinstance(content[1], str)
         ):
             raise TypeError("Content must be of a type [Format, str]")
         super().__init__(content=content)
@@ -103,14 +99,12 @@ class Div(Block):
     """
 
     def __init__(self, content: list) -> None:
-        if not all(
-            [
-                isinstance(content, list),
-                len(content) == 2,
-                isinstance(content[0], Attr),
-                isinstance(content[1], list),
-                all(isinstance(i, Block) for i in content[1]),
-            ]
+        if not (
+            isinstance(content, list)
+            and len(content) == 2
+            and isinstance(content[0], Attr)
+            and isinstance(content[1], list)
+            and all(isinstance(i, Block) for i in content[1])
         ):
             raise TypeError("Content must be of a type [Attr, List[Block]]")
         super().__init__(content=content)
@@ -124,15 +118,13 @@ class Header(Block):
     """
 
     def __init__(self, content: list) -> None:
-        if not all(
-            [
-                isinstance(content, list),
-                len(content) == 3,
-                isinstance(content[0], int),
-                isinstance(content[1], Attr),
-                isinstance(content[2], list),
-                all(isinstance(i, Inline) for i in content[1]),
-            ]
+        if not (
+            isinstance(content, list)
+            and len(content) == 3
+            and isinstance(content[0], int)
+            and isinstance(content[1], Attr)
+            and isinstance(content[2], list)
+            and all(isinstance(i, Inline) for i in content[2])
         ):
             raise TypeError("Content must be of a type [int, Attr, List[Inline]]")
         super().__init__(content=content)
@@ -146,15 +138,13 @@ class Figure(Block):
     """
 
     def __init__(self, content: list) -> None:
-        if not all(
-            [
-                isinstance(content, list),
-                len(content) == 3,
-                isinstance(content[0], Attr),
-                isinstance(content[1], Caption),
-                isinstance(content[2], list),
-                all(isinstance(i, Block) for i in content[2]),
-            ]
+        if not (
+            isinstance(content, list)
+            and len(content) == 3
+            and isinstance(content[0], Attr)
+            and isinstance(content[1], Caption)
+            and isinstance(content[2], list)
+            and all(isinstance(i, Block) for i in content[2])
         ):
             raise TypeError("Content must be of a type [Attr, Caption, List[Block]]")
         super().__init__(content=content)
@@ -168,22 +158,20 @@ class Table(Block):
     """
 
     def __init__(self, content: list) -> None:
-        if not all(
-            [
-                isinstance(content, list),
-                len(content) == 6,
-                isinstance(content[0], Attr),
-                isinstance(content[1], Caption),
-                isinstance(content[2], list),
-                all(isinstance(i, ColSpec) for i in content[2]),
-                isinstance(content[3], TableHead),
-                isinstance(content[4], list),
-                all(isinstance(i, TableBody) for i in content[4]),
-                isinstance(content[5], TableFoot),
-            ]
+        if not (
+            isinstance(content, list)
+            and len(content) == 6
+            and isinstance(content[0], Attr)
+            and isinstance(content[1], Caption)
+            and isinstance(content[2], list)
+            and all(isinstance(i, ColSpec) for i in content[2])
+            and isinstance(content[3], TableHead)
+            and isinstance(content[4], list)
+            and all(isinstance(i, TableBody) for i in content[4])
+            and isinstance(content[5], TableFoot)
         ):
             raise TypeError(
-                "Content must be of a type [Attr, Caption, List[ColSpec]," "TableHead, List[TableBody], TableFoot]"
+                "Content must be of a type [Attr, Caption, List[ColSpec], TableHead, List[TableBody], TableFoot]"
             )
         super().__init__(content=content)
 
@@ -196,12 +184,10 @@ class BulletList(Block):
     """
 
     def __init__(self, content: list) -> None:
-        if not all(
-            [
-                isinstance(content, list),
-                all(isinstance(i, list) for i in content),
-                all(all(isinstance(j, Block) for j in i) for i in content),
-            ]
+        if not (
+            isinstance(content, list)
+            and all(isinstance(i, list) for i in content)
+            and all(all(isinstance(j, Block) for j in i) for i in content)
         ):
             raise TypeError("Content must be of a type List[List[Block]]")
         super().__init__(content=content)
@@ -215,34 +201,30 @@ class LineBlock(Block):
     """
 
     def __init__(self, content: list) -> None:
-        if not all(
-            [
-                isinstance(content, list),
-                all(isinstance(i, list) for i in content),
-                all(all(isinstance(j, Inline) for j in i) for i in content),
-            ]
+        if not (
+            isinstance(content, list)
+            and all(isinstance(i, list) for i in content)
+            and all(all(isinstance(j, Inline) for j in i) for i in content)
         ):
             raise TypeError("Content must be of a type List[List[Inline]]")
         super().__init__(content=content)
 
 
 class OrderedList(Block):
-    """A class representing a OrderedList element of Block type.
+    """A class representing an OrderedList element of Block type.
 
     :param content: The content of the element.
     :type content: [ListAttributes, List[List[Block]]]
     """
 
     def __init__(self, content: list) -> None:
-        if not all(
-            [
-                isinstance(content, list),
-                len(content) == 2,
-                isinstance(content[0], ListAttributes),
-                isinstance(content[1], list),
-                all(isinstance(i, list) for i in content[1]),
-                all(all(isinstance(j, Block) for j in i) for i in content[1]),
-            ]
+        if not (
+            isinstance(content, list)
+            and len(content) == 2
+            and isinstance(content[0], ListAttributes)
+            and isinstance(content[1], list)
+            and all(isinstance(i, list) for i in content[1])
+            and all(all(isinstance(j, Block) for j in i) for i in content[1])
         ):
             raise TypeError("Content must be of a type [ListAttributes, List[List[Block]]]")
         super().__init__(content=content)
@@ -256,17 +238,15 @@ class DefinitionList(Block):
     """
 
     def __init__(self, content: list) -> None:
-        if not all(
-            [
-                isinstance(content, list),
-                all(isinstance(i, list) for i in content),
-                all(len(i) == 2 for i in content),
-                all(isinstance(i[0], list) for i in content),
-                all(all(isinstance(j, Inline) for j in i[0]) for i in content),
-                all(isinstance(i[1], list) for i in content),
-                all(all(isinstance(j, list) for j in i[1]) for i in content),
-                all(all(all(isinstance(k, Block) for k in j) for j in i[1]) for i in content),
-            ]
+        if not (
+            isinstance(content, list)
+            and all(isinstance(i, list) for i in content)
+            and all(len(i) == 2 for i in content)
+            and all(isinstance(i[0], list) for i in content)
+            and all(all(isinstance(j, Inline) for j in i[0]) for i in content)
+            and all(isinstance(i[1], list) for i in content)
+            and all(all(isinstance(j, list) for j in i[1]) for i in content)
+            and all(all(all(isinstance(k, Block) for k in j) for j in i[1]) for i in content)
         ):
             raise TypeError("Content must be of a type List[List[List[Inline]], List[List[List[Block]]]]")
         super().__init__(content=content)
