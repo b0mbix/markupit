@@ -6,9 +6,9 @@ name: Build-sphinx-docs
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ 12-publishing-documentation ]
+    branches: [ main ]
   pull_request:
-    branches: [ 12-publishing-documentation ]
+    branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -29,9 +29,6 @@ jobs:
         uses: actions/setup-python@v2
         with:
            python-version: "3.10"
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
 
       - name: Install poetry
         run: pipx install poetry
@@ -46,9 +43,3 @@ jobs:
       - name: Run ghp-import
         run: | 
           poetry run ghp-import -n -p -f docs/build/html
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.

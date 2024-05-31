@@ -43,7 +43,7 @@ class Para(Block):
 
 
 class BlockQuote(Block):
-    """A class representing a BlockQuote element of Block type eeee.
+    """A class representing a BlockQuote element of Block type.
 
     :param content: The content of the element.
     :type content: List[Block]
