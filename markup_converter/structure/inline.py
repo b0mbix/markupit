@@ -1,4 +1,4 @@
-from .content import Attr, Citation, Target
+from .content import Attr, Citation, Format, Target
 from .enum import MathType, QuoteType
 from .general_types import Block, Inline
 
@@ -149,13 +149,12 @@ class Span(Inline):
     """
 
     def __init__(self, content: list) -> None:
-        if not all(
-            [
-                isinstance(content, list),
-                len(content) == 2,
-                isinstance(content[0], Attr),
-                all(isinstance(i, Inline) for i in content[1]),
-            ]
+        if not (
+            isinstance(content, list)
+            and len(content) == 2
+            and isinstance(content[0], Attr)
+            and isinstance(content[1], list)
+            and all(isinstance(i, Inline) for i in content[1])
         ):
             raise TypeError("Content must be of a type [Attr, List[Inline]]")
         super().__init__(content=content)
@@ -169,13 +168,12 @@ class Quoted(Inline):
     """
 
     def __init__(self, content: list) -> None:
-        if not all(
-            [
-                isinstance(content, list),
-                len(content) == 2,
-                isinstance(content[0], QuoteType),
-                all(isinstance(i, Inline) for i in content[1]),
-            ]
+        if not (
+            isinstance(content, list)
+            and len(content) == 2
+            and isinstance(content[0], QuoteType)
+            and isinstance(content[1], list)
+            and all(isinstance(i, Inline) for i in content[1])
         ):
             raise TypeError("Content must be of a type [QuoteType, List[Inline]]")
         super().__init__(content=content)
@@ -189,13 +187,13 @@ class Cite(Inline):
     """
 
     def __init__(self, content: list) -> None:
-        if not all(
-            [
-                isinstance(content, list),
-                len(content) == 2,
-                all(isinstance(i, Citation) for i in content[0]),
-                all(isinstance(i, Inline) for i in content[1]),
-            ]
+        if not (
+            isinstance(content, list)
+            and len(content) == 2
+            and isinstance(content[0], list)
+            and all(isinstance(i, Citation) for i in content[0])
+            and isinstance(content[1], list)
+            and all(isinstance(i, Inline) for i in content[1])
         ):
             raise TypeError("Content must be of a type [List[Citation], List[Inline]]")
         super().__init__(content=content)
@@ -209,14 +207,13 @@ class Link(Inline):
     """
 
     def __init__(self, content: list) -> None:
-        if not all(
-            [
-                isinstance(content, list),
-                len(content) == 3,
-                isinstance(content[0], Attr),
-                all(isinstance(i, Inline) for i in content[1]),
-                isinstance(content[2], Target),
-            ]
+        if not (
+            isinstance(content, list)
+            and len(content) == 3
+            and isinstance(content[0], Attr)
+            and isinstance(content[1], list)
+            and all(isinstance(i, Inline) for i in content[1])
+            and isinstance(content[2], Target)
         ):
             raise TypeError("Content must be of a type [Attr, List[Inline], Target]")
         super().__init__(content=content)
@@ -230,14 +227,13 @@ class Image(Inline):
     """
 
     def __init__(self, content: list) -> None:
-        if not all(
-            [
-                isinstance(content, list),
-                len(content) == 3,
-                isinstance(content[0], Attr),
-                all(isinstance(i, Inline) for i in content[1]),
-                isinstance(content[2], Target),
-            ]
+        if not (
+            isinstance(content, list)
+            and len(content) == 3
+            and isinstance(content[0], Attr)
+            and isinstance(content[1], list)
+            and all(isinstance(i, Inline) for i in content[1])
+            and isinstance(content[2], Target)
         ):
             raise TypeError("Content must be of a type [Attr, List[Inline], Target]")
         super().__init__(content=content)
@@ -251,13 +247,11 @@ class Code(Inline):
     """
 
     def __init__(self, content: list) -> None:
-        if not all(
-            [
-                isinstance(content, list),
-                len(content) == 2,
-                isinstance(content[0], Attr),
-                isinstance(content[1], str),
-            ]
+        if not (
+            isinstance(content, list)
+            and len(content) == 2
+            and isinstance(content[0], Attr)
+            and isinstance(content[1], str)
         ):
             raise TypeError("Content must be of a type [Attr, str]")
         super().__init__(content=content)
@@ -271,13 +265,11 @@ class Math(Inline):
     """
 
     def __init__(self, content: list) -> None:
-        if not all(
-            [
-                isinstance(content, list),
-                len(content) == 2,
-                isinstance(content[0], MathType),
-                isinstance(content[1], str),
-            ]
+        if not (
+            isinstance(content, list)
+            and len(content) == 2
+            and isinstance(content[0], MathType)
+            and isinstance(content[1], str)
         ):
             raise TypeError("Content must be of a type [MathType, str]")
         super().__init__(content=content)
@@ -291,13 +283,11 @@ class RawInline(Inline):
     """
 
     def __init__(self, content: list) -> None:
-        if not all(
-            [
-                isinstance(content, list),
-                len(content) == 2,
-                isinstance(content[0], str),
-                isinstance(content[1], str),
-            ]
+        if not (
+            isinstance(content, list)
+            and len(content) == 2
+            and isinstance(content[0], Format)
+            and isinstance(content[1], str)
         ):
             raise TypeError("Content must be of a type [Format, str]")
         super().__init__(content=content)
