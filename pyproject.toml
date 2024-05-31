@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "markup-converter"
-version = "0.1.0"
+version = "0.1.1"
 description = "Markup convertion tool"
 authors = [
 	"Jakub Bąba <jakub.baba.stud@pw.edu.pl>",
@@ -32,6 +32,7 @@ pytest = "^8.1.1"
 [tool.poetry.group.docs.dependencies]
 sphinx = "^7.2.6"
 sphinx-rtd-theme = "^2.0.0"
+ghp-import = "^2.1.0"
 
 [tool.ruff]
 line-length = 120
