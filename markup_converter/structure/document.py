@@ -13,6 +13,8 @@ class Document:
     def __init__(self, blocks: List["Element"] = None) -> None:
         if blocks is None:
             blocks = []
+        if not (isinstance(blocks, list) and all(isinstance(i, Element) for i in blocks)):
+            raise TypeError("Blocks must be of a type List[Element] or None")
         self.blocks = blocks
 
     def __str__(self) -> str:
@@ -24,6 +26,8 @@ class Document:
         :param block: The block to add.
         :type block: Element
         """
+        if not isinstance(block, Element):
+            raise TypeError("Block must be of a type Element")
         self.blocks.append(block)
 
     def add_blocks(self, blocks: List["Element"]) -> None:
@@ -32,6 +36,8 @@ class Document:
         :param blocks: The blocks to add.
         :type blocks: List[Element]
         """
+        if not (isinstance(blocks, list) and all(isinstance(i, Element) for i in blocks)):
+            raise TypeError("Blocks must be of a type List[Element]")
         self.blocks.extend(blocks)
 
     def to_json(self) -> dict:
