@@ -71,6 +71,15 @@ Project mentor
 
 .. toctree::
    :maxdepth: 2
+   :caption: Pages:
+
+   sphinx_usage
+   poetry_usage
+   writers
+
+
+.. toctree::
+   :maxdepth: 2
    :caption: Modules:
 
    modules
