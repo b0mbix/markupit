@@ -1,9 +1,9 @@
 import re
 from typing import Any
 
-from markup_converter.readers.base_parser import BaseParser
-from markup_converter.readers.state import BlockState
-from markup_converter.readers.utils import (
+from markupit.readers.base_parser import BaseParser
+from markupit.readers.state import BlockState
+from markupit.readers.utils import (
     convert_all_tabs_to_spaces,
     convert_leading_tabs_to_spaces,
     unescape_char,
@@ -146,7 +146,7 @@ class BlockParser(BaseParser):
     ) -> tuple[str, int]:
         match = end_pattern.search(state.parse_text, cursor_start)
         if match:
-            code = state.parse_text[cursor_start: match.start()]
+            code = state.parse_text[cursor_start : match.start()]
             end_pos = match.end()
         else:
             code = state.parse_text[cursor_start:]

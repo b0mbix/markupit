@@ -5,6 +5,7 @@ from ..structure.document import Document
 
 class MarkdownReader(Reader):
     """A class representing a Markdown reader."""
+
     def __init__(self) -> None:
         self.block_reader = MarkdownBlockReader()
         super().__init__()

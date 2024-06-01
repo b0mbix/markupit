@@ -4,6 +4,7 @@ from ..structure.document import Document
 
 class Reader(ABC):
     """An abstract class representing a reader."""
+
     def __init__(self) -> None:
         pass
 

@@ -2,12 +2,12 @@ from typing import Any
 
 from parsimonious import Grammar, NodeVisitor
 
-from markup_converter.readers.markdown_block_parser import BlockParser
-from markup_converter.readers.state import BlockState
-from markup_converter.structure import block as block
-from markup_converter.structure import content as content
-from markup_converter.structure import document as document
-from markup_converter.structure import inline as inline
+from markupit.readers.markdown_block_parser import BlockParser
+from markupit.readers.state import BlockState
+from markupit.structure import block as block
+from markupit.structure import content as content
+from markupit.structure import document as document
+from markupit.structure import inline as inline
 
 
 def flatten(nested_list):
@@ -94,6 +94,10 @@ class MarkdownBlockReader:
         elif block_["type"] == "Heading":
             attr = content.Attr(["", [], block_["attrs"]])
             return block.Header([block_["level"], attr, flat_res])
+        elif block_["type"] == "Plain":
+            return block.Plain(flat_res)
+        else:
+            raise NotImplementedError(f"Block type {block_['type']} is not implemented")
 
     def _parse_blocks(self, blocks: list[dict[str, Any]]):
         parsed_block = []
@@ -116,9 +120,22 @@ class MarkdownBlockReader:
     def _construct_container(self, block_: dict[str, Any], children: list[block.Block]) -> block.Block:
         container_blocks = {
             "BlockQuote": block.BlockQuote,
+            "List": block.BulletList,
         }
         if block_["type"] in container_blocks:
             return container_blocks[block_["type"]](children)
+        if block_["type"] == "list_item":
+            blocks = []
+            for child in children:
+                if (
+                    isinstance(child, block.Plain)
+                    or isinstance(child, block.Para)
+                    or isinstance(child, block.BulletList)
+                ):
+                    blocks.append(child)
+                else:
+                    blocks.append(container_blocks[block_["type"]](children))
+            return blocks
 
     def _parse_block_with_no_inline_processing(self, block_: dict[str, Any]) -> block.Block:
         content_attr_blocks = {

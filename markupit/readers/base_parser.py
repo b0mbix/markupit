@@ -1,6 +1,6 @@
 import re
 
-from markup_converter.readers.state import BlockState
+from markupit.readers.state import BlockState
 
 
 class BaseParser:
