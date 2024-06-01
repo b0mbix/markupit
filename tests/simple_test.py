@@ -1,4 +1,4 @@
-from markup_converter.simple_class import SimpleClass
+from markupit.simple_class import SimpleClass
 
 
 def test_simple_class():

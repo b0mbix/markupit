@@ -13,7 +13,7 @@
 3. As we don't have any scripts yet in pyproject.toml, you can run the following command to run the python file and verify everything is working:
 
     ```bash
-    poetry run python markup_converter/simple_class.py
+    poetry run python markupit/simple_class.py
     ```
 
     And to run tests:

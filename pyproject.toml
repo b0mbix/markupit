@@ -1,18 +1,18 @@
 [tool.poetry]
-name = "markup-converter"
+name = "markupit"
 version = "0.1.3"
-description = "Markup convertion tool"
+description = "A CLI application created to easily convert markup languages."
 authors = [
 	"Jakub Bąba <jakub.baba.stud@pw.edu.pl>",
 	"Hubert Brzóskniewicz <hubert.brzoskniewicz.stud@pw.edu.pl>",
 	"Nikita Sushko <nikita.sushko.stud@pw.edu.pl>"
 ]
-keywords = ["Markup", "md", "Converter"]
+keywords = ["markupit", "markup", "markdown", "md", "tex", "latex", "typst", "converter"]
 readme = "README.md"
 
 
 [tool.poetry.scripts]
-markup-converter = "markup_converter.cli:app"
+markupit = "markupit.cli:app"
 
 [tool.poetry.dependencies]
 python = "^3.10"

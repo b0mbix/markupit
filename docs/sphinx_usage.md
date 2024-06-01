@@ -22,6 +22,6 @@ Html files are stored in `docs/build/html`. To check your build, simply open `in
 To generate documentation from docstrings:
 ```bash
 cd zprp-24l-markup-converter/
-sphinx-apidoc -o docs/source ./markup_converter
+sphinx-apidoc -o docs/source ./markupit
 ```
 Sphinx will generate `.rst` file for every module in our project.
