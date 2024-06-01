@@ -2,7 +2,7 @@
 
 MarkupIt is a Python-based command-line interface (CLI) application designed to easily convert markup languages. It provides a simple way to convert Markdown (GitHub Flavored Markdown) files into Typst and LaTeX formats.
 
-[Read the full documentation here.](b0mbix.github.io/markupit/)
+[Read the full documentation here.](https://b0mbix.github.io/markupit/)
 
 ## Installation
 To install MarkupIt, follow these steps:
@@ -40,6 +40,9 @@ markupit --from md --to typst -i example.md -o example.typ
 markupit --from md --to latex -i example.md -o example.tex
 ```
 
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
 ## Authors and contact
 This project was created on Warsaw University of Technology by students:
 - Jakub Bąba <jakub.baba.stud@pw.edu.pl>
@@ -48,9 +51,3 @@ This project was created on Warsaw University of Technology by students:
 
 ### Project mentor
 - [dr inż. Łukasz Neumann](https://repo.pw.edu.pl/info/author/WUT7244d020213e4e41ac349f81b7b6f3b0/%25C5%2581ukasz%2BNeumann+title?affil=IN&r=publication&lang=pl)
-
-
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
