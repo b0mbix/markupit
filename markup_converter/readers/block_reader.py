@@ -149,29 +149,33 @@ class BlockReader:
         self.parser.parse(state)
 
         blocks = state.blocks
-        parsed_blocks = self._parse_blocks(blocks)
-        print(parsed_blocks)
-
-        for block in parsed_blocks:
-            print(block.content)
-        return document.Document(parsed_blocks)
+        return blocks
+        # parsed_blocks = self._parse_blocks(blocks)
+        # return document.Document(parsed_blocks)
 
 reader = BlockReader()
+# md = """
+# # **Heading**
+
+# This is a paragraph with *emph* and **strong**.
+
+# Some code
+
+#     print("Hello, World!")
+#     do(smth)
+
+# More code covered in block quote
+# > ```python
+# > print("Hello, World!")
+# > do(smth)
+# > ```
+# > > One more level
+# """
+
 md = """
-# **Heading**
-
-This is a paragraph with *emph* and **strong**.
-
-Some code
-
-    print("Hello, World!")
-    do(smth)
-
-More code covered in block quote
-> ```python
-> print("Hello, World!")
-> do(smth)
-> ```
-> > One more level
+1. outer
+    + he
+    + low
+2. outeer
 """
-print(reader.parse(md).to_json())
+print(reader.parse(md))

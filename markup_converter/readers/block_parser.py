@@ -1,4 +1,5 @@
 import re
+from typing import Any
 
 from markup_converter.readers.base_parser import BaseParser
 from markup_converter.readers.state import BlockState
@@ -30,6 +31,11 @@ class BlockParser(BaseParser):
             r'^(?: {4}| *\t)[^\n]+(?:\n+|$)'
             r'((?:(?: {4}| *\t)[^\n]+(?:\n+|$))|\s)*'
         ),
+        'list': (
+            r'^(?P<list_spaces> {0,3})'
+            r'(?P<list_marker>[\*\+-]|\d{1,9}[.)])'
+            r'(?P<list_text>[ \t]*|[ \t].+)$'
+        )
     }
 
     RULES_NAMES = [
@@ -40,6 +46,7 @@ class BlockParser(BaseParser):
         'horizontal_rule',
         'blank_line',
         'block_quote',
+        'list',
         ]
 
     def __init__(self) -> None:
@@ -308,6 +315,233 @@ class BlockParser(BaseParser):
             return end_pos
         state.append(block)
         return state.cursor_pos
+    
+    def visit_list(self, m: re.Match[str], state: BlockState) -> int:
+        """
+        Visit method for List.
+
+        - item 1
+        - item 2
+
+        1. item 1
+        2. item 2
+
+        """
+        list_spaces = m.group('list_spaces')
+        list_marker = m.group('list_marker')
+        list_text = m.group('list_text')
+
+        # empty list
+        if not list_text.strip():
+            pos = state.append_para()
+            if pos:
+                return pos
+        
+        is_ordered = list_marker[0].isdigit()
+        curr_nested_lvl = state.nesting_lvl
+
+        rules = list(self.rules)
+        if curr_nested_lvl >= 4:
+            rules.remove('list')
+        
+        bullet = '-'
+        if is_ordered:
+            bullet = rf'\d{1,9}\{list_marker[-1]}'
+        elif list_marker[-1] != '-':
+            bullet = rf'\{list_marker[-1]}'
+        
+        block = {
+            'type': 'List',
+            'children': [],
+            'tight': True,
+            'attrs': [
+                ['style', 'ordered' if is_ordered else 'unordered'],
+                ['nesting_lvl', curr_nested_lvl],
+            ]
+        }
+
+        state.cursor_pos = m.end() + 1
+        
+        continue_parsing = True
+        while continue_parsing:
+            continue_parsing = self._parse_list_item(
+                bullet, (list_spaces, list_marker, list_text), block, state, rules
+            )
+        
+        end_pos = block.pop('_end_pos', None)
+        self._convert_to_tight(block)
+        if end_pos:
+            idx = block.pop('_block_pos')
+            state.blocks.insert(idx, block)
+            return end_pos
+
+        state.append(block)
+        return state.cursor_pos
+    
+    def _convert_to_tight(self, block: dict[str, Any]) -> None:
+        """
+        Convert block to tight list.
+        """
+        if block['tight']:
+            for li in block['children']:
+                for bl in li['children']:
+                    if bl['type'] == 'Para':
+                        bl['type'] = 'Plain'
+                    elif bl['type'] == 'List':
+                        self._convert_to_tight(bl)
+
+    
+    def _parse_list_item(
+        self, bullet: str, list_parts: tuple[str, str, str], block: dict[str, Any],
+        state: BlockState, rules: list[str],
+    ) -> bool:
+        list_spaces, list_marker, list_text = list_parts
+
+        leading_width = len(list_spaces) + len(list_marker)
+        list_text, continue_width = self._compile_continue_width(list_text, leading_width)
+        item_pattern = self._compile_list_item_pattern(bullet, leading_width)
+
+        rule_names = [
+            'list_item', 'horizontal_rule', 'fenced_code', 'atx_heading',
+            'block_quote', 'list',
+        ]
+        pairs = [
+            (n, self.grammar_rules[n]) for n in rule_names if n in rules
+        ]
+        if leading_width < 3:
+            _repl_w = str(leading_width)
+            pairs = [(n, p.replace('3', _repl_w, 1)) for n, p in pairs]
+
+        pairs.insert(1, ('list_item', item_pattern))
+        regex = '|'.join(r'(?P<%s>(?<=\n)%s)' % pair for pair in pairs)
+        sc = re.compile(regex, re.M)
+
+        src = ''
+        next_group = None
+        prev_blank_line = False
+        pos = state.cursor_pos
+
+        continue_space = ' ' * continue_width
+        while pos < state.max_cursor_pos:
+            pos = state.find_endline()
+            line = state.get_text_before(pos)
+            if re.compile(self.grammar_rules['blank_line'], re.M).match(line):
+                src += '\n'
+                prev_blank_line = True
+                state.cursor_pos = pos
+                continue
+
+            line = convert_leading_tabs_to_spaces(line)
+            if line.startswith(continue_space):
+                if prev_blank_line and not list_text and not src.strip():
+                    break
+
+                src += line
+                prev_blank_line = False
+                state.cursor_pos = pos
+                continue
+
+            m = sc.match(state.parse_text, state.cursor_pos)
+            if m:
+                block_type = m.lastgroup
+                if block_type == 'list_item':
+                    if prev_blank_line:
+                        block['tight'] = False
+                    next_group = (
+                        m.group('li_spaces'),
+                        m.group('li_marker'),
+                        m.group('li_text')
+                    )
+                    state.cursor_pos = m.end() + 1
+                    break
+
+                if block_type == 'list':
+                    break
+
+                block_idx = len(state.blocks)
+                end_pos = self.get_parse_method(m, state)
+                if end_pos:
+                    block['_block_pos'] = block_idx
+                    block['_end_pos'] = end_pos
+                    break
+
+            if prev_blank_line and not line.startswith(continue_space):
+                break
+
+            src += line
+            state.cursor_pos = pos
+
+        list_text += self._clean_list_item_text(src, continue_width)
+        child = state.init_child_state(re.compile(r'\n\s+$').sub("\n", list_text))
+
+        self.parse(child, rules)
+
+        if block['tight'] and self._is_loose_list(child.blocks):
+            block['tight'] = False
+
+        block['children'].append({
+            'type': 'list_item',
+            'children': child.blocks,
+        })
+        return next_group is not None
+
+
+    def _compile_list_item_pattern(self, bullet: str, leading_width: int) -> str:
+        if leading_width > 3:
+            leading_width = 3
+        return (
+            r'^(?P<li_spaces> {0,' + str(leading_width) + '})'
+            r'(?P<li_marker>' + bullet + ')'
+            r'(?P<li_text>[ \t]*|[ \t][^\n]+)$'
+        )
+
+
+    def _compile_continue_width(self, text: str, leading_width: int) -> tuple[str, int]:
+        text = convert_leading_tabs_to_spaces(text, 3)
+        text = convert_all_tabs_to_spaces(text)
+
+        m2 = re.compile(r'(\s*)\S').match(text)
+        if m2:
+            if text.startswith('     '):
+                space_width = 1
+            else:
+                space_width = len(m2.group(1))
+
+            text = text[space_width:] + '\n'
+        else:
+            space_width = 1
+            text = ''
+
+        continue_width = leading_width + space_width
+        return text, continue_width
+
+
+    def _clean_list_item_text(self, src: str, continue_width: int) -> str:
+        rv = []
+        trim_space = ' ' * continue_width
+        lines = src.split('\n')
+        for line in lines:
+            if line.startswith(trim_space):
+                line = line.replace(trim_space, '', 1)
+                line = convert_all_tabs_to_spaces(line)
+                rv.append(line)
+            else:
+                rv.append(line)
+
+        return '\n'.join(rv)
+
+
+    def _is_loose_list(self, blocks: list[dict[str, Any]]) -> bool:
+        paragraph_count = 0
+        for block in blocks:
+            if block['type'] == 'blank_line':
+                return True
+            if block['type'] == 'paragraph':
+                paragraph_count += 1
+                if paragraph_count > 1:
+                    return True
+        return False
+
     
     def _update_state(self, state: BlockState, new_pos: int) -> None:
         """
