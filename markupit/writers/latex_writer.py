@@ -70,7 +70,7 @@ class LatexWriter(Writer):
         return f"\\begin{{verbatim}}\n{block_content}\n\\end{{verbatim}}\n"
 
     def convert_para(self, obj: st.Block.Para) -> str:
-        return self.convert_element(obj.content)
+        return self.convert_element(obj.content) + "\n\n"
 
     def convert_block_quote(self, obj: st.Block.BlockQuote) -> str:
         return f"\\begin{{quote}}\n{self.convert_element(obj.content)}\n\\end{{quote}}\n"
@@ -85,16 +85,16 @@ class LatexWriter(Writer):
 
     def convert_header(self, obj: st.Block.Header) -> str:
         if obj.content[0] == 1:
-            return f"\\section{{{self.convert_element(obj.content[2])}}}"
+            return f"\\section{{{self.convert_element(obj.content[2])}}}\n"
         if obj.content[0] == 2:
-            return f"\\subsection{{{self.convert_element(obj.content[2])}}}"
+            return f"\\subsection{{{self.convert_element(obj.content[2])}}}\n"
         if obj.content[0] == 3:
-            return f"\\subsubsection{{{self.convert_element(obj.content[2])}}}"
+            return f"\\subsubsection{{{self.convert_element(obj.content[2])}}}\n"
         if obj.content[0] == 4:
-            return f"\\paragraph{{{self.convert_element(obj.content[2])}}}"
+            return f"\\paragraph{{{self.convert_element(obj.content[2])}}}\n"
         if obj.content[0] == 5:
-            return f"\\subparagraph{{{self.convert_element(obj.content[2])}}}"
-        return self.convert_element(obj.content[2])
+            return f"\\subparagraph{{{self.convert_element(obj.content[2])}}}\n"
+        return self.convert_element(obj.content[2]) + "\n"
 
     def convert_table(self, obj: st.Block.Table) -> str:
         pass
