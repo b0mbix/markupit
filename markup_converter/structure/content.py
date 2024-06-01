@@ -45,7 +45,7 @@ class Caption(ContentElement):
     """Class representing a Caption element.
 
     :param content: The content of the element.
-    :type content: list
+    :type content: [List[Inline] | null, List[Block]]
     """
 
     def __init__(self, content: list) -> None:
@@ -65,7 +65,7 @@ class ColSpec(ContentElement):
     """Class representing a ColSpec element.
 
     :param content: The content of the element.
-    :type content: list
+    :type content: [Alignment, ColWidth]
     """
 
     def __init__(self, content: list) -> None:
@@ -85,7 +85,7 @@ class TableHead(ContentElement):
     """Class representing a TableHead element.
 
     :param content: The content of the element.
-    :type content: list
+    :type content: [Attr, List[Row]]
     """
 
     def __init__(self, content: list) -> None:
@@ -106,7 +106,7 @@ class TableBody(ContentElement):
     """Class representing a TableBody element.
 
     :param content: The content of the element.
-    :type content: list
+    :type content: [Attr, int, List[Row], List[Row]]
     """
 
     def __init__(self, content: list) -> None:
@@ -130,7 +130,7 @@ class TableFoot(ContentElement):
     """Class representing a TableFoot element.
 
     :param content: The content of the element.
-    :type content: list
+    :type content: [Attr, List[Row]]
     """
 
     def __init__(self, content: list) -> None:
@@ -151,7 +151,7 @@ class ListAttributes(ContentElement):
     """Class representing a ListAttributes element.
 
     :param content: The content of the element.
-    :type content: list
+    :type content: [int, ListNumberStyle, ListNumberDelim]
     """
 
     def __init__(self, content: list) -> None:
@@ -172,7 +172,7 @@ class Target(ContentElement):
     """Class representing a Target element.
 
     :param content: The content of the element.
-    :type content: list
+    :type content: [str, str]
     """
 
     def __init__(self, content: list) -> None:
@@ -192,7 +192,7 @@ class Citation(ContentElement):
     """Class representing a Citation element.
 
     :param content: The content of the element.
-    :type content: list
+    :type content: [str, List[Inline], List[Inline], CitationMode, int, int]
     """
 
     def __init__(self, content: list) -> None:
@@ -218,7 +218,7 @@ class Row(ContentElement):
     """Class representing a Row element.
 
     :param content: The content of the element.
-    :type content: list
+    :type content: [Attr, List[Cell]]
     """
 
     def __init__(self, content: list) -> None:
@@ -239,7 +239,7 @@ class Cell(ContentElement):
     """Class representing a Cell element.
 
     :param content: The content of the element.
-    :type content: list
+    :type content: [Attr, Alignment, int, int, List[Block]]
     """
 
     def __init__(self, content: list) -> None:
