@@ -80,7 +80,7 @@ class TypstWriter(Writer):
     def convert_block_quote(self, obj: st.Block.BlockQuote) -> str:
         # not the best solution but Typst has no support for block quotes
         # you cannot format text in Typst inside a quote
-        return f'#quote("{self.convert_element(obj.content)}")'
+        return f'#quote("{self.convert_element(obj.content)[:-2]}")'
 
     def convert_code_block(self, obj: st.Block.CodeBlock) -> str:
         return f"\n```{obj.content[0][1][0]}\n{obj.content[1]}\n```\n"
