@@ -1,6 +1,6 @@
 from enum import Enum
-from . import readers
-from . import writers
+
+from . import readers, writers
 
 
 class SupportedFrom(str, Enum):
