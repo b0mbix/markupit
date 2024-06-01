@@ -27,14 +27,14 @@ inline_grammar = Grammar(
 
     space = spacechar+
     spacechar = " " / "\t"
-    word = ~"[^\s]+"
+    word = ~"[^\\s]+"
 
     content_no_emph = (space / word_no_star)
-    word_no_star = ~"[^\s*]+"
+    word_no_star = ~"[^\\s*]+"
     inline_no_emph = strong / content_no_emph
 
     content_no_strong = (space / word_no_star_star)
-    word_no_star_star = ~"[^\s**]+"
+    word_no_star_star = ~"[^\\s**]+"
     inline_no_strong = emph / content_no_strong
 
     newline = "\n"
@@ -143,34 +143,5 @@ class MarkdownBlockReader:
         self.parser.parse(state)
 
         blocks = state.blocks
-        return blocks
-        # parsed_blocks = self._parse_blocks(blocks)
-        # return document.Document(parsed_blocks)
-
-
-reader = MarkdownBlockReader()
-# md = """
-# # **Heading**
-
-# This is a paragraph with *emph* and **strong**.
-
-# Some code
-
-#     print("Hello, World!")
-#     do(smth)
-
-# More code covered in block quote
-# > ```python
-# > print("Hello, World!")
-# > do(smth)
-# > ```
-# > > One more level
-# """
-
-md = """
-1. outer
-    + he
-    + low
-2. outeer
-"""
-print(reader.parse(md))
+        parsed_blocks = self._parse_blocks(blocks)
+        return document.Document(parsed_blocks)
