@@ -46,14 +46,14 @@ class TypstWriter(Writer):
 
     def convert_link(self, obj: st.Inline.Link) -> str:
         # Typst has no support for hover information, this is skipped
-        return f"#link(\"{obj.content[1]}\")[{self.convert_element(obj.content[1])}]"
+        return f'#link("{obj.content[1]}")[{self.convert_element(obj.content[1])}]'
 
     def convert_image(self, obj: st.Inline.Image) -> str:
         # Typst has no support for hover information, this is skipped
         alt = [self.convert_element(i) for i in obj.content[1]].join(" ")
         if alt != "":
-            alt = f", alt: \"{alt}\""
-        return f"#figure(image(\"{obj.content[2][0]}\"{alt})"
+            alt = f', alt: "{alt}"'
+        return f'#figure(image("{obj.content[2][0]}"{alt})'
 
     def convert_code(self, obj: st.Inline.Code) -> str:
         return f"`{obj.code}`)"
@@ -75,7 +75,7 @@ class TypstWriter(Writer):
     def convert_block_quote(self, obj: st.Block.BlockQuote) -> str:
         # not the best solution but Typst has no support for block quotes
         # you cannot format text in Typst inside a quote
-        return f"#quote(\"{self.convert_element(obj.content)}\")"
+        return f'#quote("{self.convert_element(obj.content)}")'
 
     def convert_code_block(self, obj: st.Block.CodeBlock) -> str:
         return f"\n```{obj.content[0][1][0]}\n{obj.content[1]}\n```\n"
@@ -94,7 +94,7 @@ class TypstWriter(Writer):
         align = [align_dict[i] for i in align]
         rows = obj.content[3][2] + obj.content[4][3]
         cells = [(self.convert_element(cell[4]) for cell in row[1]) for row in rows]
-        cells_in_table = ("["+i+"],\n" for i in cells)
+        cells_in_table = ("[" + i + "],\n" for i in cells)
         return f"""#align(center)[#table(
                     columns: {columns},
                     align: (col, row) => ({', '.join(align)}).at(col),
