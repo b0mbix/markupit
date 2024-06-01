@@ -21,14 +21,6 @@ markupit.cli module
    :undoc-members:
    :show-inheritance:
 
-markupit.simple\_class module
------------------------------
-
-.. automodule:: markupit.simple_class
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 markupit.supported\_types module
 --------------------------------
 

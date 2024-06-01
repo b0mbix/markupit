@@ -5,23 +5,21 @@ MarkupIt is a Python-based command-line interface (CLI) application designed to 
 [Read the full documentation here.](https://b0mbix.github.io/markupit/)
 
 ## Installation
-To install MarkupIt, follow these steps:
+### Prerequisites
+`python` and `poetry` have to be installed.
 
-1. **Clone the repository**.
-2. **Create a virtual environment**:
-    ```sh
-    poetry shell
-    ```
+### Installation
+To install MarkupIt, follow these steps in cloned repository:
+```sh
+# create a virtual environment
+poetry shell
 
-3. **Install the package**:
-    ```sh
-    poetry install
-    ```
+#install the package
+poetry install
 
-4. **Run the package**:
-    ```sh
-    markupit
-    ```
+#run the package
+markupit
+```
 
 ## Usage
 Once installed, you can use the `markupit` command to convert your Markdown files. The basic usage is as follows:

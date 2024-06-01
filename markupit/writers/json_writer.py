@@ -1,5 +1,6 @@
-from markupit.structure.document import Document
 import json
+
+from markupit.structure.document import Document
 
 
 class JsonWriter:
