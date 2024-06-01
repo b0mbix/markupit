@@ -18,6 +18,6 @@ class SupportedTo(str, Enum):
 
 writer_classes = {
     SupportedTo.json: writers.JsonWriter,
-    SupportedTo.latex: writers.latex_writer,
+    SupportedTo.latex: writers.LatexWriter,
     SupportedTo.typst: writers.TypstWriter,
 }
