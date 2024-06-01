@@ -1,5 +1,4 @@
 import re
-from typing import Any
 
 from markup_converter.readers.state import BlockState
 
@@ -21,16 +20,16 @@ class BaseParser:
 
     def compile_regex(self, rules: list[str] = None) -> re.Pattern[str]:
         if rules is None:
-            key = '$'
+            key = "$"
             rules = self.rules
         else:
-            key = '|'.join(rules)
+            key = "|".join(rules)
 
         compiled_regex = self._compiled_regexs.get(key)
         if compiled_regex:
             return compiled_regex
 
-        regex = '|'.join(f'(?P<{k}>{self.grammar_rules[k]})' for k in rules)
+        regex = "|".join(f"(?P<{k}>{self.grammar_rules[k]})" for k in rules)
         compiled_regex = re.compile(regex, self.sc_flag)
         self._compiled_regexs[key] = compiled_regex
         return compiled_regex

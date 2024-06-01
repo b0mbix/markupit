@@ -22,11 +22,7 @@ class Element(ABC):
 
     def _element_to_json(self, el):
         """Helper method to convert element to JSON."""
-        if any([
-            isinstance(el, str),
-            isinstance(el, int),
-            isinstance(el, float)
-        ]):
+        if any([isinstance(el, str), isinstance(el, int), isinstance(el, float)]):
             return el
         if isinstance(el, list):
             return [self._element_to_json(sub_el) for sub_el in el]

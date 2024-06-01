@@ -1,15 +1,12 @@
-import itertools
 from typing import Any
 
 from parsimonious import Grammar, NodeVisitor
 
-from markup_converter.readers.block_parser import BlockParser
+from markup_converter.readers.markdown_block_parser import BlockParser
 from markup_converter.readers.state import BlockState
 from markup_converter.structure import block as block
 from markup_converter.structure import content as content
 from markup_converter.structure import document as document
-from markup_converter.structure import enum as enum
-from markup_converter.structure import general_types as general_types
 from markup_converter.structure import inline as inline
 
 
@@ -18,6 +15,7 @@ def flatten(nested_list):
         return [item for sublist in nested_list for item in flatten(sublist)]
     else:
         return [nested_list]
+
 
 inline_grammar = Grammar(
     r"""
@@ -48,19 +46,19 @@ class InlineVisitor(NodeVisitor):
     def visit_emph(self, node, visited_children):
         inlines = flatten(visited_children[2])
         return inline.Emph(inlines)
-    
+
     def visit_content(self, node, visited_children):
         return visited_children
-    
+
     def visit_space(self, _1, _2):
         return inline.Space()
-    
+
     def visit_strong(self, node, visited_children):
         inlines = flatten(visited_children[2])
         return inline.Strong(inlines)
-    
+
     def generic_visit(self, node, visited_children):
-        method_name = 'visit_' + node.expr_name
+        method_name = "visit_" + node.expr_name
         method = getattr(self, method_name, None)
         if callable(method):
             return method(node, visited_children)
@@ -69,7 +67,7 @@ class InlineVisitor(NodeVisitor):
         return visited_children or node
 
 
-class BlockReader:
+class MarkdownBlockReader:
     """
     Reads the text in the BlockState and parses it into blocks.
     """
@@ -77,46 +75,44 @@ class BlockReader:
     def __init__(self) -> None:
         self.parser = BlockParser()
         self.inline_parser = InlineVisitor()
-    
+
     def _normalize_text(self, text: str) -> str:
         # in order to simplify newline rule
-        text = text.replace('\r\n', '\n')
-        text = text.replace('\r', '\n')
+        text = text.replace("\r\n", "\n")
+        text = text.replace("\r", "\n")
 
-        return text if text.endswith('\n') else text + '\n'
-    
+        return text if text.endswith("\n") else text + "\n"
+
     def _parse_block(self, block_: dict[str, Any]) -> None:
         text = block_["content"].strip("\n")
         tree = inline_grammar.parse(text)
         res = self.inline_parser.visit(tree)
         flat_res = flatten(res)
 
-        if block_['type'] == "Para":
+        if block_["type"] == "Para":
             return block.Para(flat_res)
-        elif block_['type'] == "Heading":
-            attr = content.Attr(["", [], block_['attrs']])
-            return block.Header(
-                [block_["level"], attr, flat_res]
-            )
-    
+        elif block_["type"] == "Heading":
+            attr = content.Attr(["", [], block_["attrs"]])
+            return block.Header([block_["level"], attr, flat_res])
+
     def _parse_blocks(self, blocks: list[dict[str, Any]]):
         parsed_block = []
-        for block in blocks:
-            if block['type'] == "blank_line":
+        for block_ in blocks:
+            if block_["type"] == "blank_line":
                 continue
 
-            no_inline_block = self._parse_block_with_no_inline_processing(block)
+            no_inline_block = self._parse_block_with_no_inline_processing(block_)
             if no_inline_block:
                 parsed_block.append(no_inline_block)
                 continue
 
-            if 'children' in block:
-                children = self._parse_blocks(block['children'])
-                parsed_block.append(self._construct_container(block, children))
+            if "children" in block_:
+                children = self._parse_blocks(block_["children"])
+                parsed_block.append(self._construct_container(block_, children))
             else:
-                parsed_block.append(self._parse_block(block))
+                parsed_block.append(self._parse_block(block_))
         return parsed_block
-    
+
     def _construct_container(self, block_: dict[str, Any], children: list[block.Block]) -> block.Block:
         container_blocks = {
             "BlockQuote": block.BlockQuote,
@@ -135,10 +131,8 @@ class BlockReader:
             return no_arg_blocks[block_["type"]]()
         elif block_["type"] in content_attr_blocks:
             content_ = block_["content"]
-            attr = content.Attr(["", [], block_['attrs']])
+            attr = content.Attr(["", [], block_["attrs"]])
             return content_attr_blocks[block_["type"]]([attr, content_])
-        
-        
 
     def parse(self, text: str) -> document.Document:
         state = BlockState()
@@ -153,7 +147,8 @@ class BlockReader:
         # parsed_blocks = self._parse_blocks(blocks)
         # return document.Document(parsed_blocks)
 
-reader = BlockReader()
+
+reader = MarkdownBlockReader()
 # md = """
 # # **Heading**
 
