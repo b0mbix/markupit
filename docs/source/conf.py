@@ -9,9 +9,9 @@
 import os
 import sys
 
-sys.path.insert(0, os.path.abspath("../markup_converter"))
+sys.path.insert(0, os.path.abspath("../markupit"))
 
-project = "Markup converter"
+project = "MarkupIt"
 copyright = "2024, Jakub Bąba, Hubert Brzóskniewicz, Nikita Sushko"
 author = "Jakub Bąba, Hubert Brzóskniewicz, Nikita Sushko"
 release = "0.0.1"

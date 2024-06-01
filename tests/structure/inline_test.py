@@ -1,6 +1,6 @@
 from pytest import raises
 
-import markup_converter.structure as ast
+import markupit.structure as ast
 
 
 def test_non_content_types():
