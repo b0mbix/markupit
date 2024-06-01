@@ -21,56 +21,63 @@ def test_convert_soft_break():
 
 
 def test_convert_link():
-    doc = ast.Document(blocks=[
-        ast.Inline.Link(
-            [
-                ast.Content.Attr(["", [], []]),
-                [ast.Inline.Str("Hello")],
-                ast.Content.Target(["http://example.com", ""]),
-            ]
-        )
-    ])
+    doc = ast.Document(
+        blocks=[
+            ast.Inline.Link(
+                [
+                    ast.Content.Attr(["", [], []]),
+                    [ast.Inline.Str("Hello")],
+                    ast.Content.Target(["http://example.com", ""]),
+                ]
+            )
+        ]
+    )
     writer = LatexWriter(doc)
-    assert writer.write() == "\href{http://example.com}{Hello}"
+    assert writer.write() == "\\href{http://example.com}{Hello}"
 
 
 def test_convert_code():
-    doc = ast.Document(blocks=[
-        ast.Inline.Code(
-            [
-                ast.Content.Attr(["", [], []]),
-                "print('Hello, World!')",
-            ]
-        )
-    ])
+    doc = ast.Document(
+        blocks=[
+            ast.Inline.Code(
+                [
+                    ast.Content.Attr(["", [], []]),
+                    "print('Hello, World!')",
+                ]
+            )
+        ]
+    )
     writer = LatexWriter(doc)
     assert writer.write() == "\\verb|print('Hello, World!')|"
 
 
 def test_block_quote():
-    doc = ast.Document(blocks=[
-        ast.Block.BlockQuote(
-            [   
-                ast.Block.Para(
+    doc = ast.Document(
+        blocks=[
+            ast.Block.BlockQuote(
                 [
-                    ast.Inline.Str("Hello,"),
-                    ast.Inline.Space(),
-                    ast.Inline.Str("world!"),
-                    ast.Inline.SoftBreak(),
-                    ast.Inline.Str("Hi")
+                    ast.Block.Para(
+                        [
+                            ast.Inline.Str("Hello,"),
+                            ast.Inline.Space(),
+                            ast.Inline.Str("world!"),
+                            ast.Inline.SoftBreak(),
+                            ast.Inline.Str("Hi"),
+                        ]
+                    ),
                 ]
-            ),
-            ]
-        )
-    ])
+            )
+        ]
+    )
     writer = LatexWriter(doc)
     assert (
         writer.write()
         == """\\begin{quote}
 Hello, world!\\Hi
-\end{quote}
+\\end{quote}
 """
     )
+
 
 def test_list():
     doc = ast.Document(
@@ -102,12 +109,12 @@ def test_list():
     assert (
         writer.write()
         == """\\begin{enumerate}
-\item This is a list item.
-\item This is another list item.
+\\item This is a list item.
+\\item This is another list item.
 \\begin{itemize}
-\item This is a nested list item.
-\item This is another nested list item.
-\end{itemize}
-\end{enumerate}
+\\item This is a nested list item.
+\\item This is another nested list item.
+\\end{itemize}
+\\end{enumerate}
 """
     )

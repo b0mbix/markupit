@@ -1,6 +1,6 @@
 from .writer import Writer
-from ..structure.document import Document
 from .. import structure as st
+from ..structure.document import Document
 
 
 class TypstWriter(Writer):
@@ -9,6 +9,7 @@ class TypstWriter(Writer):
     :param input: The document to write.
     :type input: Document
     """
+
     def __init__(self, input: Document) -> None:
         super().__init__(input)
 

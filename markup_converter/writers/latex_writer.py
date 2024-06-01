@@ -1,6 +1,6 @@
 from .writer import Writer
-from ..structure.document import Document
 from .. import structure as st
+from ..structure.document import Document
 
 
 class LatexWriter(Writer):
@@ -9,6 +9,7 @@ class LatexWriter(Writer):
     :param input: The document to write.
     :type input: Document
     """
+
     def __init__(self, input: Document) -> None:
         super().__init__(input)
 
@@ -49,11 +50,11 @@ class LatexWriter(Writer):
         return f"\\footnote{{{self.convert_element(obj.content)}}}"
 
     def convert_link(self, obj: st.Inline.Link) -> str:
-        return f'\\href{{{obj.content[2].content[0]}}}{{{self.convert_element(obj.content[1])}}}'
+        return f"\\href{{{obj.content[2].content[0]}}}{{{self.convert_element(obj.content[1])}}}"
 
     def convert_image(self, obj: st.Inline.Image) -> str:
         # Simple include graphics in Latex has no alt text, this is skipped
-        return f'\\includegraphics[width=0.25\linewidth]{{{obj.content[2].content[0]}}}'
+        return f"\\includegraphics[width=0.25\\linewidth]{{{obj.content[2].content[0]}}}"
 
     def convert_code(self, obj: st.Inline.Code) -> str:
         return f"\\verb|{obj.content[1]}|"
@@ -62,7 +63,7 @@ class LatexWriter(Writer):
         return f"\\verb|{obj.content[1]}|"
 
     def convert_horizontal_rule(self, obj: st.Block.HorizontalRule) -> str:
-        return "noindent\makebox[\linewidth]{\\rule{\paperwidth}{0.4pt}}"
+        return "noindent\\makebox[\\linewidth]{\\rule{\\paperwidth}{0.4pt}}"
 
     def convert_plain(self, obj: st.Block.Plain) -> str:
         block_content = "\n".join(obj.content)
@@ -72,7 +73,7 @@ class LatexWriter(Writer):
         return self.convert_element(obj.content)
 
     def convert_block_quote(self, obj: st.Block.BlockQuote) -> str:
-        return f"\\begin{{quote}}\n{self.convert_element(obj.content)}\n\end{{quote}}\n"
+        return f"\\begin{{quote}}\n{self.convert_element(obj.content)}\n\\end{{quote}}\n"
 
     def convert_code_block(self, obj: st.Block.CodeBlock) -> str:
         block_content = "\n".join(obj.content)
@@ -83,8 +84,18 @@ class LatexWriter(Writer):
         pass
 
     def convert_header(self, obj: st.Block.Header) -> str:
-        pass
-    
+        if obj.content[0] == 1:
+            return f"\\section{{{self.convert_element(obj.content[2])}}}"
+        if obj.content[0] == 2:
+            return f"\\subsection{{{self.convert_element(obj.content[2])}}}"
+        if obj.content[0] == 3:
+            return f"\\subsubsection{{{self.convert_element(obj.content[2])}}}"
+        if obj.content[0] == 4:
+            return f"\\paragraph{{{self.convert_element(obj.content[2])}}}"
+        if obj.content[0] == 5:
+            return f"\\subparagraph{{{self.convert_element(obj.content[2])}}}"
+        return self.convert_element(obj.content[2])
+
     def convert_table(self, obj: st.Block.Table) -> str:
         pass
 
@@ -96,9 +107,9 @@ class LatexWriter(Writer):
             elif isinstance(i, st.Block.OrderedList):
                 rows_txt += f"{self.convert_ordered_list(i, nesting + 1)}"
             elif isinstance(i, st.Block.Plain) or isinstance(i, st.Block.Para):
-                rows_txt += f"\item {self.convert_element(i.content)}\n"
+                rows_txt += f"\\item {self.convert_element(i.content)}\n"
             else:
-                rows_txt += f"\item {self.convert_element(i)}\n"
+                rows_txt += f"\\item {self.convert_element(i)}\n"
         rows_txt += "\\end{itemize}\n"
         return rows_txt
 
@@ -111,8 +122,8 @@ class LatexWriter(Writer):
             elif isinstance(i, st.Block.OrderedList):
                 rows_txt += f"{self.convert_ordered_list(i, nesting + 1)}"
             elif isinstance(i, st.Block.Plain) or isinstance(i, st.Block.Para):
-                rows_txt += f"\item {self.convert_element(i.content)}\n"
+                rows_txt += f"\\item {self.convert_element(i.content)}\n"
             else:
-                rows_txt += f"\item {self.convert_element(i)}\n"
+                rows_txt += f"\\item {self.convert_element(i)}\n"
         rows_txt += "\\end{enumerate}\n"
         return rows_txt
