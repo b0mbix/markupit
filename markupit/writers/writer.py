@@ -1,7 +1,8 @@
+from abc import ABC, abstractmethod
+
+from .. import structure as st
 from ..structure.document import Document
 from ..structure.general_types import Element
-from .. import structure as st
-from abc import abstractmethod, ABC
 
 
 class Writer(ABC):

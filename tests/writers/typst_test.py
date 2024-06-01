@@ -1,5 +1,5 @@
-import markup_converter.structure as ast
-from markup_converter.writers import TypstWriter
+import markupit.structure as ast
+from markupit.writers import TypstWriter
 
 
 def test_empty_document():

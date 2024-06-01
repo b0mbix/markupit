@@ -8,7 +8,7 @@ app = typer.Typer(no_args_is_help=True)
 
 def version_callback(value: bool) -> None:
     if value:
-        version = pkg_resources.get_distribution("markup-converter").version
+        version = pkg_resources.get_distribution("markupit").version
         typer.echo(f"Markup convertion CLI tool version: {version}")
         raise typer.Exit()
 
