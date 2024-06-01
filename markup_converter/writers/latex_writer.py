@@ -82,25 +82,11 @@ class LatexWriter(Writer):
         # not supported in Latex
         pass
 
-    # TODO
     def convert_header(self, obj: st.Block.Header) -> str:
-        return f"\n{'=' * obj.content[0] + ' ' + self.convert_element(obj.content[2])}\n"
-
-    # TODO
+        pass
+    
     def convert_table(self, obj: st.Block.Table) -> str:
-        align_dict = {"AlignLeft": "left", "AlignRight": "right", "AlignCenter": "center", "AlignDefault": "auto"}
-        columns = len(obj.content[2])
-        align = [i[0] for i in obj.content[2]]
-        align = [align_dict[i] for i in align]
-        rows = obj.content[3][2] + obj.content[4][3]
-        cells = [(self.convert_element(cell[4]) for cell in row[1]) for row in rows]
-        cells_in_table = ("[" + i + "],\n" for i in cells)
-        return f"""#align(center)[#table(
-                    columns: {columns},
-                    align: (col, row) => ({', '.join(align)}).at(col),
-                    inset: 6pt,
-                    {(cell for cell in cells_in_table).join("")}
-                """
+        pass
 
     def convert_bullet_list(self, obj: st.Block.BulletList, nesting: int = 0) -> str:
         rows_txt = "\\begin{itemize}\n"
