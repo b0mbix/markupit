@@ -5,6 +5,12 @@ from abc import abstractmethod, ABC
 
 
 class Writer(ABC):
+    """An abstract class representing a writer.
+
+    :param input: The document to convert.
+    :type input: structure.Document
+    """
+
     def __init__(self, input: Document) -> None:
         self.doc = input
         self.convert_actions = {
@@ -37,16 +43,31 @@ class Writer(ABC):
         }
 
     def write(self) -> str:
+        """Convert the document to a text format according to writer.
+
+        :return: The converted document.
+        """
         result = ""
         for block in self.doc.blocks:
             result += self.convert_element(block)
         return result
 
     def write_to_file(self, path: str) -> None:
+        """Convert and write the document to a file at the given path.
+
+        :param path: The path to write the document to.
+        :type path: str
+        """
         with open(path, "w") as f:
             f.write(self.write())
 
     def convert_element(self, obj: Element) -> str:
+        """Find and perform conversion for the given element.
+
+        :param obj: The element to convert.
+        :type obj: Element
+        :return: The converted element.
+        """
         if isinstance(obj, list):
             return "".join([self.convert_element(el) for el in obj])
         if type(obj) not in self.convert_actions:

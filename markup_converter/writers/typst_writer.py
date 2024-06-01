@@ -4,6 +4,11 @@ from .. import structure as st
 
 
 class TypstWriter(Writer):
+    """A class representing a Typst writer for a document.
+
+    :param input: The document to write.
+    :type input: Document
+    """
     def __init__(self, input: Document) -> None:
         super().__init__(input)
 
