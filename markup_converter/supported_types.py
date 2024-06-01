@@ -1,6 +1,10 @@
 from enum import Enum
 
 
-class SupportedTypes(str, Enum):
+class SupportedFrom(str, Enum):
     json = "json"
-    markdown = "md"
+
+
+class SupportedTo(str, Enum):
+    json = "json"
+    typst = "typst"
