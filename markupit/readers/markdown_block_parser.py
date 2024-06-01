@@ -146,7 +146,7 @@ class BlockParser(BaseParser):
     ) -> tuple[str, int]:
         match = end_pattern.search(state.parse_text, cursor_start)
         if match:
-            code = state.parse_text[cursor_start: match.start()]
+            code = state.parse_text[cursor_start : match.start()]
             end_pos = match.end()
         else:
             code = state.parse_text[cursor_start:]

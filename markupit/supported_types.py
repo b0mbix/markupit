@@ -1,10 +1,18 @@
 from enum import Enum
+from . import readers
+from . import writers
 
 
 class SupportedFrom(str, Enum):
-    json = "json"
+    markdown = "md"
+
+
+reader_classes = {SupportedFrom.markdown: readers.MarkdownReader}
 
 
 class SupportedTo(str, Enum):
     json = "json"
     typst = "typst"
+
+
+writer_classes = {SupportedTo.json: writers.JsonWriter, SupportedTo.typst: writers.TypstWriter}
