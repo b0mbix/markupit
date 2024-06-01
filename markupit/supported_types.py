@@ -13,6 +13,11 @@ reader_classes = {SupportedFrom.markdown: readers.MarkdownReader}
 class SupportedTo(str, Enum):
     json = "json"
     typst = "typst"
+    latex = "latex"
 
 
-writer_classes = {SupportedTo.json: writers.JsonWriter, SupportedTo.typst: writers.TypstWriter}
+writer_classes = {
+    SupportedTo.json: writers.JsonWriter,
+    SupportedTo.latex: writers.latex_writer,
+    SupportedTo.typst: writers.TypstWriter,
+}

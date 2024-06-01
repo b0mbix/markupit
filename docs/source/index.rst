@@ -37,7 +37,7 @@ Once installed, you can use the ``markupit`` command to convert your Markdown fi
 
    # output written on screen
    markupit --from <input_format> --to <output_format> -i <input_file>
-   
+
    # output written to file
    markupit --from <input_format> --to <output_format> -i <input_file> -o <output_file>
 
