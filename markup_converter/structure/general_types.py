@@ -20,19 +20,17 @@ class Element(ABC):
     def __str__(self) -> str:
         return f"{self.tag}: {self.content}"
 
-    def content_to_json(self) -> Any:
-        """Convert the content of an element to a JSON representation of AST.
-
-        :return: The content as a JSON object.
-        :rtype: Any
-        """
-        if self.content is None:
-            return None
-        if isinstance(self.content, any(str, int, float)):
-            return self.content
-        if not isinstance(self.content, list):
-            return self.content.content_to_json()
-        return [el.to_json() for el in self.content]
+    def _element_to_json(self, el):
+        """Helper method to convert element to JSON."""
+        if any([
+            isinstance(el, str),
+            isinstance(el, int),
+            isinstance(el, float)
+        ]):
+            return el
+        if isinstance(el, list):
+            return [self._element_to_json(sub_el) for sub_el in el]
+        return el.to_json()
 
     @abstractmethod
     def to_json(self) -> Any:
@@ -67,14 +65,6 @@ class Inline(Element):
             return {"t": self.tag, "c": self.content.content_to_json()}
         return {"t": self.tag, "c": [self._element_to_json(el) for el in self.content]}
 
-    def _element_to_json(self, el):
-        """Helper method to convert element to JSON."""
-        if isinstance(el, str):
-            return el
-        if isinstance(el, list):
-            return [self._element_to_json(sub_el) for sub_el in el]
-        return el.to_json()
-
 
 class Block(Element):
     """A class representing an element of Block type.
@@ -100,14 +90,6 @@ class Block(Element):
             return {"t": self.tag, "c": self.content.content_to_json()}
         return {"t": self.tag, "c": [self._element_to_json(el) for el in self.content]}
 
-    def _element_to_json(self, el):
-        """Helper method to convert element to JSON."""
-        if isinstance(el, str):
-            return el
-        if isinstance(el, list):
-            return [self._element_to_json(sub_el) for sub_el in el]
-        return el.to_json()
-
 
 class MetaValue(Element):
     pass
@@ -129,14 +111,6 @@ class ContentElement(Element):
         if not isinstance(self.content, list):
             return self.content.content_to_json()
         return {"t": self.tag, "c": [self._element_to_json(el) for el in self.content]}
-
-    def _element_to_json(self, el):
-        """Helper method to convert element to JSON."""
-        if isinstance(el, str):
-            return el
-        if isinstance(el, list):
-            return [self._element_to_json(sub_el) for sub_el in el]
-        return el.to_json()
 
 
 class EnumElement(Element):
