@@ -42,6 +42,10 @@ class Writer(ABC):
             result += self.convert_element(block)
         return result
 
+    def write_to_file(self, path: str) -> None:
+        with open(path, "w") as f:
+            f.write(self.write())
+
     def convert_element(self, obj: Element) -> str:
         if isinstance(obj, list):
             return "".join([self.convert_element(el) for el in obj])

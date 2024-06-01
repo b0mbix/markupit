@@ -6,7 +6,6 @@ from .. import structure as st
 class TypstWriter(Writer):
     def __init__(self, input: Document) -> None:
         super().__init__(input)
-        self.nest_level = 0
 
     def convert_space(self, obj: st.Inline.Space) -> str:
         return " "
