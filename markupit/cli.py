@@ -1,7 +1,7 @@
 import pkg_resources
 import typer
 
-from .supported_types import SupportedFrom, SupportedTo
+from .supported_types import SupportedFrom, SupportedTo, reader_classes, writer_classes
 
 app = typer.Typer(no_args_is_help=True)
 
@@ -35,3 +35,12 @@ def convert(
     Convert Markup Files
     """
     typer.echo("Converting...")
+    reader = reader_classes.get(from_)()
+    doc = reader.read_file(path=input)
+    writer = writer_classes.get(to)(doc)
+    if not output:
+        typer.echo("Result:")
+        typer.echo(writer.write())
+    else:
+        writer.write_file(output)
+        typer.echo(f"File saved to {output}")

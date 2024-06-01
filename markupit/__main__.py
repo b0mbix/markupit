@@ -1,3 +1,3 @@
 from .cli import app
 
-app(prog_name="markup-converter")
+app(prog_name="markupit")
