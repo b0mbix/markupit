@@ -1,5 +1,5 @@
-import markup_converter.structure as ast
-from markup_converter.writers.latex_writer import LatexWriter
+import markupit.structure as ast
+from markupit.writers.latex_writer import LatexWriter
 
 
 def test_empty_document():

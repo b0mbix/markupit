@@ -53,7 +53,7 @@ class Writer(ABC):
             result += self.convert_element(block)
         return result
 
-    def write_to_file(self, path: str) -> None:
+    def write_file(self, path: str) -> None:
         """Convert and write the document to a file at the given path.
 
         :param path: The path to write the document to.
