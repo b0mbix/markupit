@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>markupit.readers package &mdash; MarkupIt 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MarkupIt
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pages:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sphinx_usage.html">Creating documentation using Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poetry_usage.html">Poetry quick intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writers.html">How writers work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readers.html">How readers work?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">markupit</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MarkupIt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">markupit.readers package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/markupit.readers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="markupit-readers-package">
+<h1>markupit.readers package<a class="headerlink" href="#markupit-readers-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-markupit.readers.base_parser">
+<span id="markupit-readers-base-parser-module"></span><h2>markupit.readers.base_parser module<a class="headerlink" href="#module-markupit.readers.base_parser" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.readers.base_parser.BaseParser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.readers.base_parser.</span></span><span class="sig-name descname"><span class="pre">BaseParser</span></span><a class="reference internal" href="_modules/markupit/readers/base_parser.html#BaseParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.base_parser.BaseParser" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for all parsers. It defines the basic interface for all parsers.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="markupit.readers.base_parser.BaseParser.GRAMMAR_RULES">
+<span class="sig-name descname"><span class="pre">GRAMMAR_RULES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#markupit.readers.base_parser.BaseParser.GRAMMAR_RULES" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="markupit.readers.base_parser.BaseParser.RULES_NAMES">
+<span class="sig-name descname"><span class="pre">RULES_NAMES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[]</span></em><a class="headerlink" href="#markupit.readers.base_parser.BaseParser.RULES_NAMES" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.base_parser.BaseParser.compile_regex">
+<span class="sig-name descname"><span class="pre">compile_regex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rules</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Pattern</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/markupit/readers/base_parser.html#BaseParser.compile_regex"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.base_parser.BaseParser.compile_regex" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.base_parser.BaseParser.get_parse_method">
+<span class="sig-name descname"><span class="pre">get_parse_method</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Match</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#markupit.readers.state.BlockState" title="markupit.readers.state.BlockState"><span class="pre">BlockState</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/markupit/readers/base_parser.html#BaseParser.get_parse_method"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.base_parser.BaseParser.get_parse_method" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.base_parser.BaseParser.insert_rule">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">insert_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rules</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">before</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/markupit/readers/base_parser.html#BaseParser.insert_rule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.base_parser.BaseParser.insert_rule" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-markupit.readers.markdown_block_parser">
+<span id="markupit-readers-markdown-block-parser-module"></span><h2>markupit.readers.markdown_block_parser module<a class="headerlink" href="#module-markupit.readers.markdown_block_parser" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_parser.BlockParser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.readers.markdown_block_parser.</span></span><span class="sig-name descname"><span class="pre">BlockParser</span></span><a class="reference internal" href="_modules/markupit/readers/markdown_block_parser.html#BlockParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_block_parser.BlockParser" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.readers.base_parser.BaseParser" title="markupit.readers.base_parser.BaseParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseParser</span></code></a></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_parser.BlockParser.GRAMMAR_RULES">
+<span class="sig-name descname"><span class="pre">GRAMMAR_RULES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'atx_heading':</span> <span class="pre">'^</span> <span class="pre">{0,3}(?P&lt;level&gt;#{1,6})(?!#+)(?P&lt;atx_text&gt;[</span> <span class="pre">\\t]*|[</span> <span class="pre">\\t]+.*?)$',</span> <span class="pre">'blank_line':</span> <span class="pre">'(^[</span> <span class="pre">\\t\\v\\f]*\\n)+',</span> <span class="pre">'block_quote':</span> <span class="pre">'^</span> <span class="pre">{0,3}&gt;(?P&lt;quote_text&gt;.*?)$',</span> <span class="pre">'code_fenced':</span> <span class="pre">'^(?P&lt;fnc_spaces&gt;</span> <span class="pre">{0,3})(?P&lt;fnc_marker&gt;`{3,}|~{3,})[</span> <span class="pre">\\t]*(?P&lt;fnc_lang&gt;.*?)$',</span> <span class="pre">'code_indent':</span> <span class="pre">'^(?:</span> <span class="pre">{4}|</span> <span class="pre">*\\t)[^\\n]+(?:\\n+|$)((?:(?:</span> <span class="pre">{4}|</span> <span class="pre">*\\t)[^\\n]+(?:\\n+|$))|\\s)*',</span> <span class="pre">'horizontal_rule':</span> <span class="pre">'^</span> <span class="pre">{0,3}((?:-[</span> <span class="pre">\\t]*){3,}|(?:_[</span> <span class="pre">\\t]*){3,}|(?:\\*[</span> <span class="pre">\\t]*){3,})$',</span> <span class="pre">'list':</span> <span class="pre">'^(?P&lt;list_spaces&gt;</span> <span class="pre">{0,3})(?P&lt;list_marker&gt;[\\*\\+-]|\\d{1,9}[.)])(?P&lt;list_text&gt;[</span> <span class="pre">\\t]*|[</span> <span class="pre">\\t].+)$',</span> <span class="pre">'setext_heading':</span> <span class="pre">'^</span> <span class="pre">{0,3}(?P&lt;sep&gt;=|-){1,}[</span> <span class="pre">\\t]*$'}</span></em><a class="headerlink" href="#markupit.readers.markdown_block_parser.BlockParser.GRAMMAR_RULES" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_parser.BlockParser.RULES_NAMES">
+<span class="sig-name descname"><span class="pre">RULES_NAMES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['code_fenced',</span> <span class="pre">'code_indent',</span> <span class="pre">'atx_heading',</span> <span class="pre">'setext_heading',</span> <span class="pre">'horizontal_rule',</span> <span class="pre">'blank_line',</span> <span class="pre">'block_quote',</span> <span class="pre">'list']</span></em><a class="headerlink" href="#markupit.readers.markdown_block_parser.BlockParser.RULES_NAMES" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_parser.BlockParser.parse">
+<span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#markupit.readers.state.BlockState" title="markupit.readers.state.BlockState"><span class="pre">BlockState</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">rules</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/markupit/readers/markdown_block_parser.html#BlockParser.parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_block_parser.BlockParser.parse" title="Link to this definition"></a></dt>
+<dd><p>Parse source Markdown text into blocks.
+Blocks are stored in the state with the following structure:
+{</p>
+<blockquote>
+<div><p>‘type’: str,
+‘content’: str,
+‘attrs’: dict</p>
+</div></blockquote>
+<p>}</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_parser.BlockParser.visit_atx_heading">
+<span class="sig-name descname"><span class="pre">visit_atx_heading</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Match</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#markupit.readers.state.BlockState" title="markupit.readers.state.BlockState"><span class="pre">BlockState</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/markupit/readers/markdown_block_parser.html#BlockParser.visit_atx_heading"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_block_parser.BlockParser.visit_atx_heading" title="Link to this definition"></a></dt>
+<dd><p>Visit method for ATX headings.</p>
+<p># Header example</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_parser.BlockParser.visit_blank_line">
+<span class="sig-name descname"><span class="pre">visit_blank_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Match</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#markupit.readers.state.BlockState" title="markupit.readers.state.BlockState"><span class="pre">BlockState</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/markupit/readers/markdown_block_parser.html#BlockParser.visit_blank_line"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_block_parser.BlockParser.visit_blank_line" title="Link to this definition"></a></dt>
+<dd><p>Visit method for BlankLine.</p>
+<p>BlankLine is not present in AST, but still needed to
+prevent reading empty lines as paragraphs.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_parser.BlockParser.visit_block_quote">
+<span class="sig-name descname"><span class="pre">visit_block_quote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Match</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#markupit.readers.state.BlockState" title="markupit.readers.state.BlockState"><span class="pre">BlockState</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/markupit/readers/markdown_block_parser.html#BlockParser.visit_block_quote"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_block_parser.BlockParser.visit_block_quote" title="Link to this definition"></a></dt>
+<dd><p>Visit method for Block Quote.</p>
+<p>&gt; This is a block quote.
+&gt; <code class="docutils literal notranslate"><span class="pre">`</span>
+<span class="pre">&gt;</span> <span class="pre">It</span> <span class="pre">can</span> <span class="pre">contain</span> <span class="pre">other</span> <span class="pre">blocks.</span>
+<span class="pre">&gt;</span> <span class="pre">`</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_parser.BlockParser.visit_code_fenced">
+<span class="sig-name descname"><span class="pre">visit_code_fenced</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Match</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#markupit.readers.state.BlockState" title="markupit.readers.state.BlockState"><span class="pre">BlockState</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/markupit/readers/markdown_block_parser.html#BlockParser.visit_code_fenced"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_block_parser.BlockParser.visit_code_fenced" title="Link to this definition"></a></dt>
+<dd><p>Visit method for Code Fenced.</p>
+<p><code class="docutils literal notranslate"><span class="pre">`</span> <span class="pre">python</span>
+<span class="pre">print(&quot;Hello,</span> <span class="pre">World!&quot;)</span>
+<span class="pre">`</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_parser.BlockParser.visit_code_indent">
+<span class="sig-name descname"><span class="pre">visit_code_indent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Match</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#markupit.readers.state.BlockState" title="markupit.readers.state.BlockState"><span class="pre">BlockState</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/markupit/readers/markdown_block_parser.html#BlockParser.visit_code_indent"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_block_parser.BlockParser.visit_code_indent" title="Link to this definition"></a></dt>
+<dd><p>Visit method for Code Indent (4 spaces before code).</p>
+<blockquote>
+<div><p>print(“Hello”)
+print(“World!”)</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_parser.BlockParser.visit_horizontal_rule">
+<span class="sig-name descname"><span class="pre">visit_horizontal_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Match</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#markupit.readers.state.BlockState" title="markupit.readers.state.BlockState"><span class="pre">BlockState</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/markupit/readers/markdown_block_parser.html#BlockParser.visit_horizontal_rule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_block_parser.BlockParser.visit_horizontal_rule" title="Link to this definition"></a></dt>
+<dd><p>Visit method for Horizontal Rule.</p>
+<p>—</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_parser.BlockParser.visit_list">
+<span class="sig-name descname"><span class="pre">visit_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Match</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#markupit.readers.state.BlockState" title="markupit.readers.state.BlockState"><span class="pre">BlockState</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/markupit/readers/markdown_block_parser.html#BlockParser.visit_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_block_parser.BlockParser.visit_list" title="Link to this definition"></a></dt>
+<dd><p>Visit method for List.</p>
+<ul class="simple">
+<li><p>item 1</p></li>
+<li><p>item 2</p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>item 1</p></li>
+<li><p>item 2</p></li>
+</ol>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_parser.BlockParser.visit_setext_heading">
+<span class="sig-name descname"><span class="pre">visit_setext_heading</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Match</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#markupit.readers.state.BlockState" title="markupit.readers.state.BlockState"><span class="pre">BlockState</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/markupit/readers/markdown_block_parser.html#BlockParser.visit_setext_heading"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_block_parser.BlockParser.visit_setext_heading" title="Link to this definition"></a></dt>
+<dd><p>Visit method for Setext headings.</p>
+<section id="header-example">
+<h3>Header example<a class="headerlink" href="#header-example" title="Link to this heading"></a></h3>
+</section>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-markupit.readers.markdown_block_reader">
+<span id="markupit-readers-markdown-block-reader-module"></span><h2>markupit.readers.markdown_block_reader module<a class="headerlink" href="#module-markupit.readers.markdown_block_reader" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_reader.InlineVisitor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.readers.markdown_block_reader.</span></span><span class="sig-name descname"><span class="pre">InlineVisitor</span></span><a class="reference internal" href="_modules/markupit/readers/markdown_block_reader.html#InlineVisitor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_block_reader.InlineVisitor" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NodeVisitor</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_reader.InlineVisitor.generic_visit">
+<span class="sig-name descname"><span class="pre">generic_visit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visited_children</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/readers/markdown_block_reader.html#InlineVisitor.generic_visit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_block_reader.InlineVisitor.generic_visit" title="Link to this definition"></a></dt>
+<dd><p>Default visitor method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> – The node we’re visiting</p></li>
+<li><p><strong>visited_children</strong> – The results of visiting the children of that
+node, in a list</p></li>
+</ul>
+</dd>
+</dl>
+<p>I’m not sure there’s an implementation of this that makes sense across
+all (or even most) use cases, so we leave it to subclasses to implement
+for now.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_reader.InlineVisitor.visit_content">
+<span class="sig-name descname"><span class="pre">visit_content</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visited_children</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/readers/markdown_block_reader.html#InlineVisitor.visit_content"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_block_reader.InlineVisitor.visit_content" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_reader.InlineVisitor.visit_emph">
+<span class="sig-name descname"><span class="pre">visit_emph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visited_children</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/readers/markdown_block_reader.html#InlineVisitor.visit_emph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_block_reader.InlineVisitor.visit_emph" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_reader.InlineVisitor.visit_space">
+<span class="sig-name descname"><span class="pre">visit_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/readers/markdown_block_reader.html#InlineVisitor.visit_space"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_block_reader.InlineVisitor.visit_space" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_reader.InlineVisitor.visit_strong">
+<span class="sig-name descname"><span class="pre">visit_strong</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">visited_children</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/readers/markdown_block_reader.html#InlineVisitor.visit_strong"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_block_reader.InlineVisitor.visit_strong" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_reader.MarkdownBlockReader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.readers.markdown_block_reader.</span></span><span class="sig-name descname"><span class="pre">MarkdownBlockReader</span></span><a class="reference internal" href="_modules/markupit/readers/markdown_block_reader.html#MarkdownBlockReader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_block_reader.MarkdownBlockReader" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Reads the text in the BlockState and parses it into blocks.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_reader.MarkdownBlockReader.parse">
+<span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document" title="markupit.structure.document.Document"><span class="pre">Document</span></a></span></span><a class="reference internal" href="_modules/markupit/readers/markdown_block_reader.html#MarkdownBlockReader.parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_block_reader.MarkdownBlockReader.parse" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="markupit.readers.markdown_block_reader.flatten">
+<span class="sig-prename descclassname"><span class="pre">markupit.readers.markdown_block_reader.</span></span><span class="sig-name descname"><span class="pre">flatten</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nested_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/readers/markdown_block_reader.html#flatten"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_block_reader.flatten" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-markupit.readers.markdown_reader">
+<span id="markupit-readers-markdown-reader-module"></span><h2>markupit.readers.markdown_reader module<a class="headerlink" href="#module-markupit.readers.markdown_reader" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.readers.markdown_reader.MarkdownReader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.readers.markdown_reader.</span></span><span class="sig-name descname"><span class="pre">MarkdownReader</span></span><a class="reference internal" href="_modules/markupit/readers/markdown_reader.html#MarkdownReader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_reader.MarkdownReader" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.readers.reader.Reader" title="markupit.readers.reader.Reader"><code class="xref py py-class docutils literal notranslate"><span class="pre">Reader</span></code></a></p>
+<p>A class representing a Markdown reader.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.markdown_reader.MarkdownReader.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document" title="markupit.structure.document.Document"><span class="pre">Document</span></a></span></span><a class="reference internal" href="_modules/markupit/readers/markdown_reader.html#MarkdownReader.read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.markdown_reader.MarkdownReader.read" title="Link to this definition"></a></dt>
+<dd><p>Read the content and return a Document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>str</em>) – The content to read.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The Document object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document" title="markupit.structure.document.Document">Document</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-markupit.readers.reader">
+<span id="markupit-readers-reader-module"></span><h2>markupit.readers.reader module<a class="headerlink" href="#module-markupit.readers.reader" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.readers.reader.Reader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.readers.reader.</span></span><span class="sig-name descname"><span class="pre">Reader</span></span><a class="reference internal" href="_modules/markupit/readers/reader.html#Reader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.reader.Reader" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>An abstract class representing a reader.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.reader.Reader.read">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document" title="markupit.structure.document.Document"><span class="pre">Document</span></a></span></span><a class="reference internal" href="_modules/markupit/readers/reader.html#Reader.read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.reader.Reader.read" title="Link to this definition"></a></dt>
+<dd><p>Read the content and return a Document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>str</em>) – The content to read.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The Document object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document" title="markupit.structure.document.Document">Document</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.reader.Reader.read_file">
+<span class="sig-name descname"><span class="pre">read_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document" title="markupit.structure.document.Document"><span class="pre">Document</span></a></span></span><a class="reference internal" href="_modules/markupit/readers/reader.html#Reader.read_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.reader.Reader.read_file" title="Link to this definition"></a></dt>
+<dd><p>Read the content of a file and return a Document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – The path to the file.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The Document object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document" title="markupit.structure.document.Document">Document</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-markupit.readers.state">
+<span id="markupit-readers-state-module"></span><h2>markupit.readers.state module<a class="headerlink" href="#module-markupit.readers.state" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.readers.state.BlockState">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.readers.state.</span></span><span class="sig-name descname"><span class="pre">BlockState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/readers/state.html#BlockState"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.state.BlockState" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>State used to save blocks and current cursor position in file.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="markupit.readers.state.BlockState.ENDLINE">
+<span class="sig-name descname"><span class="pre">ENDLINE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">re.compile('\\n|$')</span></em><a class="headerlink" href="#markupit.readers.state.BlockState.ENDLINE" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.state.BlockState.add_para">
+<span class="sig-name descname"><span class="pre">add_para</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/markupit/readers/state.html#BlockState.add_para"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.state.BlockState.add_para" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.state.BlockState.append">
+<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/markupit/readers/state.html#BlockState.append"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.state.BlockState.append" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.state.BlockState.append_para">
+<span class="sig-name descname"><span class="pre">append_para</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/markupit/readers/state.html#BlockState.append_para"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.state.BlockState.append_para" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.state.BlockState.find_endline">
+<span class="sig-name descname"><span class="pre">find_endline</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/markupit/readers/state.html#BlockState.find_endline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.state.BlockState.find_endline" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.state.BlockState.get_text_before">
+<span class="sig-name descname"><span class="pre">get_text_before</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">end_pos</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/readers/state.html#BlockState.get_text_before"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.state.BlockState.get_text_before" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.state.BlockState.init_child_state">
+<span class="sig-name descname"><span class="pre">init_child_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#markupit.readers.state.BlockState" title="markupit.readers.state.BlockState"><span class="pre">BlockState</span></a></span></span><a class="reference internal" href="_modules/markupit/readers/state.html#BlockState.init_child_state"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.state.BlockState.init_child_state" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.state.BlockState.init_parse_text">
+<span class="sig-name descname"><span class="pre">init_parse_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/markupit/readers/state.html#BlockState.init_parse_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.state.BlockState.init_parse_text" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.state.BlockState.insert_second_to_last">
+<span class="sig-name descname"><span class="pre">insert_second_to_last</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/markupit/readers/state.html#BlockState.insert_second_to_last"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.state.BlockState.insert_second_to_last" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="markupit.readers.state.BlockState.last_block">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">last_block</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Any</span></em><a class="headerlink" href="#markupit.readers.state.BlockState.last_block" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="markupit.readers.state.BlockState.nesting_lvl">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nesting_lvl</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#markupit.readers.state.BlockState.nesting_lvl" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-markupit.readers.utils">
+<span id="markupit-readers-utils-module"></span><h2>markupit.readers.utils module<a class="headerlink" href="#module-markupit.readers.utils" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="markupit.readers.utils.convert_all_tabs_to_spaces">
+<span class="sig-prename descclassname"><span class="pre">markupit.readers.utils.</span></span><span class="sig-name descname"><span class="pre">convert_all_tabs_to_spaces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tab_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/readers/utils.html#convert_all_tabs_to_spaces"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.utils.convert_all_tabs_to_spaces" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="markupit.readers.utils.convert_leading_tabs_to_spaces">
+<span class="sig-prename descclassname"><span class="pre">markupit.readers.utils.</span></span><span class="sig-name descname"><span class="pre">convert_leading_tabs_to_spaces</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tab_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/readers/utils.html#convert_leading_tabs_to_spaces"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.utils.convert_leading_tabs_to_spaces" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="markupit.readers.utils.unescape_char">
+<span class="sig-prename descclassname"><span class="pre">markupit.readers.utils.</span></span><span class="sig-name descname"><span class="pre">unescape_char</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/readers/utils.html#unescape_char"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.utils.unescape_char" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-markupit.readers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-markupit.readers" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.readers.MarkdownReader">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.readers.</span></span><span class="sig-name descname"><span class="pre">MarkdownReader</span></span><a class="reference internal" href="_modules/markupit/readers/markdown_reader.html#MarkdownReader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.MarkdownReader" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.readers.reader.Reader" title="markupit.readers.reader.Reader"><code class="xref py py-class docutils literal notranslate"><span class="pre">Reader</span></code></a></p>
+<p>A class representing a Markdown reader.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.readers.MarkdownReader.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document" title="markupit.structure.document.Document"><span class="pre">Document</span></a></span></span><a class="reference internal" href="_modules/markupit/readers/markdown_reader.html#MarkdownReader.read"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.readers.MarkdownReader.read" title="Link to this definition"></a></dt>
+<dd><p>Read the content and return a Document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>str</em>) – The content to read.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The Document object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document" title="markupit.structure.document.Document">Document</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jakub Bąba, Hubert Brzóskniewicz, Nikita Sushko.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poetry quick intro &mdash; MarkupIt 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How writers work?" href="writers.html" />
+    <link rel="prev" title="Creating documentation using Sphinx" href="sphinx_usage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MarkupIt
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pages:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sphinx_usage.html">Creating documentation using Sphinx</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Poetry quick intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writers.html">How writers work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readers.html">How readers work?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">markupit</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MarkupIt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Poetry quick intro</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/poetry_usage.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="poetry-quick-intro">
+<h1>Poetry quick intro<a class="headerlink" href="#poetry-quick-intro" title="Link to this heading"></a></h1>
+<ol class="arabic">
+<li><p>Installation: <a class="reference external" href="https://python-poetry.org/docs/">Poetry Documentation</a></p>
+<blockquote>
+<div><p>I’ve installed via pipx. If you don’t have pipx, there is also a link on how to install it on the page I provided earlier. Please don’t install pipx via apt, it’s outdated. Installation via pip works as a charm.</p>
+</div></blockquote>
+</li>
+<li><p>Create <code class="docutils literal notranslate"><span class="pre">poetry</span></code> venv and install the project:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>shell
+poetry<span class="w"> </span>install
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>To open the app use:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>markupit
+</pre></div>
+</div>
+<p>And to run tests:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pytest
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>To format/check code with <code class="docutils literal notranslate"><span class="pre">ruff</span></code> run the following command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ruff<span class="w"> </span>check
+ruff<span class="w"> </span>format
+</pre></div>
+</div>
+<p>More ruff commands here: <a class="reference external" href="https://docs.astral.sh/ruff/tutorial/">Ruff Documentation</a></p>
+<ol class="arabic simple" start="5">
+<li><p>If you want to add a new dependency, you can run the following command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>add<span class="w"> </span>&lt;package_name&gt;
+</pre></div>
+</div>
+<p>Keep in mind that some packages might be installed as dev dependencies, so you might want to add <code class="docutils literal notranslate"><span class="pre">--group</span> <span class="pre">dev</span></code> flag ( <code class="docutils literal notranslate"><span class="pre">--group</span> <span class="pre">test</span></code> for test dependencies).</p>
+<ol class="arabic simple" start="6">
+<li><p>There are pre-commit hooks. They check for code formatting and linting. If you want to run them manually, you can run the following command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files
+</pre></div>
+</div>
+<p>Also, if you want these hooks to run automatically before commit, you can install them with the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pre-commit<span class="w"> </span>install
+</pre></div>
+</div>
+<p>Note: installing this hook will not let you commit if there are any issues with formatting or linting that can’t be fixed automatically. Therefore, installing it is highly recommended.</p>
+<ol class="arabic" start="7">
+<li><p>Testing:</p>
+<p>Run the following command if you want to test code with your active Python version:</p>
+</li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>run<span class="w"> </span>pytest
+</pre></div>
+</div>
+<p>Using <code class="docutils literal notranslate"><span class="pre">tox</span></code> you can test code with multiple Python versions:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>run<span class="w"> </span>tox
+</pre></div>
+</div>
+<p>Currently supported versions: 3.10, 3.11, 3.12.
+Note: you will need to have these Python versions installed on your system.</p>
+<p>After <code class="docutils literal notranslate"><span class="pre">tox</span></code> testing, you can also view code coverage by tests.</p>
+<p>That’s it for now! ᕦ(ò_óˇ)ᕤ</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sphinx_usage.html" class="btn btn-neutral float-left" title="Creating documentation using Sphinx" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="writers.html" class="btn btn-neutral float-right" title="How writers work?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jakub Bąba, Hubert Brzóskniewicz, Nikita Sushko.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

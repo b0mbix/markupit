@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>markupit.structure package &mdash; MarkupIt 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="markupit.writers package" href="markupit.writers.html" />
+    <link rel="prev" title="markupit package" href="markupit.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MarkupIt
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pages:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sphinx_usage.html">Creating documentation using Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poetry_usage.html">Poetry quick intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writers.html">How writers work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readers.html">How readers work?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">markupit</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="markupit.html">markupit package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="markupit.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">markupit.structure package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html">markupit.writers package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.html#module-markupit.cli">markupit.cli module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.html#module-markupit.supported_types">markupit.supported_types module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.html#module-markupit">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MarkupIt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">markupit</a></li>
+          <li class="breadcrumb-item"><a href="markupit.html">markupit package</a></li>
+      <li class="breadcrumb-item active">markupit.structure package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/markupit.structure.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="markupit-structure-package">
+<h1>markupit.structure package<a class="headerlink" href="#markupit-structure-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-markupit.structure.block">
+<span id="markupit-structure-block-module"></span><h2>markupit.structure.block module<a class="headerlink" href="#module-markupit.structure.block" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.block.BlockQuote">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.block.</span></span><span class="sig-name descname"><span class="pre">BlockQuote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/block.html#BlockQuote"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.block.BlockQuote" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><code class="xref py py-class docutils literal notranslate"><span class="pre">Block</span></code></a></p>
+<p>A class representing a BlockQuote element of Block type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><em>Block</em></a><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.block.BulletList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.block.</span></span><span class="sig-name descname"><span class="pre">BulletList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/block.html#BulletList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.block.BulletList" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><code class="xref py py-class docutils literal notranslate"><span class="pre">Block</span></code></a></p>
+<p>A class representing a BulletList element of Block type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><em>Block</em></a><em>]</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.block.CodeBlock">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.block.</span></span><span class="sig-name descname"><span class="pre">CodeBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/block.html#CodeBlock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.block.CodeBlock" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><code class="xref py py-class docutils literal notranslate"><span class="pre">Block</span></code></a></p>
+<p>A class representing a CodeBlock element of Block type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><a class="reference internal" href="#markupit.structure.content.Attr" title="markupit.structure.content.Attr"><em>Attr</em></a><em>, </em><em>str</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.block.DefinitionList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.block.</span></span><span class="sig-name descname"><span class="pre">DefinitionList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/block.html#DefinitionList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.block.DefinitionList" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><code class="xref py py-class docutils literal notranslate"><span class="pre">Block</span></code></a></p>
+<p>A class representing a DefinitionList element of Block type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><em>Inline</em></a><em>]</em><em>]</em><em>, </em><em>List</em><em>[</em><em>List</em><em>[</em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><em>Block</em></a><em>]</em><em>]</em><em>]</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.block.Div">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.block.</span></span><span class="sig-name descname"><span class="pre">Div</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/block.html#Div"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.block.Div" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><code class="xref py py-class docutils literal notranslate"><span class="pre">Block</span></code></a></p>
+<p>A class representing a Div element of Block type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><a class="reference internal" href="#markupit.structure.content.Attr" title="markupit.structure.content.Attr"><em>Attr</em></a><em>, </em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><em>Block</em></a><em>]</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.block.Figure">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.block.</span></span><span class="sig-name descname"><span class="pre">Figure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/block.html#Figure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.block.Figure" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><code class="xref py py-class docutils literal notranslate"><span class="pre">Block</span></code></a></p>
+<p>A class representing a Figure element of Block type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><a class="reference internal" href="#markupit.structure.content.Attr" title="markupit.structure.content.Attr"><em>Attr</em></a><em>, </em><a class="reference internal" href="#markupit.structure.content.Caption" title="markupit.structure.content.Caption"><em>Caption</em></a><em>, </em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><em>Block</em></a><em>]</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.block.Header">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.block.</span></span><span class="sig-name descname"><span class="pre">Header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/block.html#Header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.block.Header" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><code class="xref py py-class docutils literal notranslate"><span class="pre">Block</span></code></a></p>
+<p>A class representing a Header element of Block type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><em>int</em><em>, </em><a class="reference internal" href="#markupit.structure.content.Attr" title="markupit.structure.content.Attr"><em>Attr</em></a><em>, </em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><em>Inline</em></a><em>]</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.block.HorizontalRule">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.block.</span></span><span class="sig-name descname"><span class="pre">HorizontalRule</span></span><a class="reference internal" href="_modules/markupit/structure/block.html#HorizontalRule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.block.HorizontalRule" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><code class="xref py py-class docutils literal notranslate"><span class="pre">Block</span></code></a></p>
+<p>A class representing a HorizontalRule element of Block type.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.block.LineBlock">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.block.</span></span><span class="sig-name descname"><span class="pre">LineBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/block.html#LineBlock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.block.LineBlock" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><code class="xref py py-class docutils literal notranslate"><span class="pre">Block</span></code></a></p>
+<p>A class representing a LineBlock element of Block type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>List</em><em>[</em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><em>Inline</em></a><em>]</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.block.Null">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.block.</span></span><span class="sig-name descname"><span class="pre">Null</span></span><a class="reference internal" href="_modules/markupit/structure/block.html#Null"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.block.Null" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><code class="xref py py-class docutils literal notranslate"><span class="pre">Block</span></code></a></p>
+<p>A class representing a Null element of Block type.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.block.OrderedList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.block.</span></span><span class="sig-name descname"><span class="pre">OrderedList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/block.html#OrderedList"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.block.OrderedList" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><code class="xref py py-class docutils literal notranslate"><span class="pre">Block</span></code></a></p>
+<p>A class representing an OrderedList element of Block type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><a class="reference internal" href="#markupit.structure.content.ListAttributes" title="markupit.structure.content.ListAttributes"><em>ListAttributes</em></a><em>, </em><em>List</em><em>[</em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><em>Block</em></a><em>]</em><em>]</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.block.Para">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.block.</span></span><span class="sig-name descname"><span class="pre">Para</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/block.html#Para"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.block.Para" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><code class="xref py py-class docutils literal notranslate"><span class="pre">Block</span></code></a></p>
+<p>A class representing a Para element of Block type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><em>Inline</em></a><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.block.Plain">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.block.</span></span><span class="sig-name descname"><span class="pre">Plain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/block.html#Plain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.block.Plain" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><code class="xref py py-class docutils literal notranslate"><span class="pre">Block</span></code></a></p>
+<p>A class representing a Plain element of Block type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><em>Inline</em></a><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.block.RawBlock">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.block.</span></span><span class="sig-name descname"><span class="pre">RawBlock</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/block.html#RawBlock"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.block.RawBlock" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><code class="xref py py-class docutils literal notranslate"><span class="pre">Block</span></code></a></p>
+<p>A class representing a RawBlock element of Block type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><a class="reference internal" href="#markupit.structure.content.Format" title="markupit.structure.content.Format"><em>Format</em></a><em>, </em><em>str</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.block.Table">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.block.</span></span><span class="sig-name descname"><span class="pre">Table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/block.html#Table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.block.Table" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><code class="xref py py-class docutils literal notranslate"><span class="pre">Block</span></code></a></p>
+<p>A class representing a Table element of Block type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><a class="reference internal" href="#markupit.structure.content.Attr" title="markupit.structure.content.Attr"><em>Attr</em></a><em>, </em><a class="reference internal" href="#markupit.structure.content.Caption" title="markupit.structure.content.Caption"><em>Caption</em></a><em>, </em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.content.ColSpec" title="markupit.structure.content.ColSpec"><em>ColSpec</em></a><em>]</em><em>, </em><a class="reference internal" href="#markupit.structure.content.TableHead" title="markupit.structure.content.TableHead"><em>TableHead</em></a><em>, </em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.content.TableBody" title="markupit.structure.content.TableBody"><em>TableBody</em></a><em>]</em><em>, </em><a class="reference internal" href="#markupit.structure.content.TableFoot" title="markupit.structure.content.TableFoot"><em>TableFoot</em></a><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-markupit.structure.content">
+<span id="markupit-structure-content-module"></span><h2>markupit.structure.content module<a class="headerlink" href="#module-markupit.structure.content" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.content.Attr">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.content.</span></span><span class="sig-name descname"><span class="pre">Attr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/content.html#Attr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.content.Attr" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.ContentElement" title="markupit.structure.general_types.ContentElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContentElement</span></code></a></p>
+<p>Class representing an Attr element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>list</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.content.Caption">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.content.</span></span><span class="sig-name descname"><span class="pre">Caption</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/content.html#Caption"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.content.Caption" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.ContentElement" title="markupit.structure.general_types.ContentElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContentElement</span></code></a></p>
+<p>Class representing a Caption element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><em>Inline</em></a><em>] </em><em>| </em><em>null</em><em>, </em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><em>Block</em></a><em>]</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.content.Cell">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.content.</span></span><span class="sig-name descname"><span class="pre">Cell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/content.html#Cell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.content.Cell" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.ContentElement" title="markupit.structure.general_types.ContentElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContentElement</span></code></a></p>
+<p>Class representing a Cell element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><a class="reference internal" href="#markupit.structure.content.Attr" title="markupit.structure.content.Attr"><em>Attr</em></a><em>, </em><a class="reference internal" href="#markupit.structure.enum.Alignment" title="markupit.structure.enum.Alignment"><em>Alignment</em></a><em>, </em><em>int</em><em>, </em><em>int</em><em>, </em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><em>Block</em></a><em>]</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.content.Citation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.content.</span></span><span class="sig-name descname"><span class="pre">Citation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/content.html#Citation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.content.Citation" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.ContentElement" title="markupit.structure.general_types.ContentElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContentElement</span></code></a></p>
+<p>Class representing a Citation element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><em>Inline</em></a><em>]</em><em>, </em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><em>Inline</em></a><em>]</em><em>, </em><a class="reference internal" href="#markupit.structure.enum.CitationMode" title="markupit.structure.enum.CitationMode"><em>CitationMode</em></a><em>, </em><em>int</em><em>, </em><em>int</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.content.ColSpec">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.content.</span></span><span class="sig-name descname"><span class="pre">ColSpec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/content.html#ColSpec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.content.ColSpec" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.ContentElement" title="markupit.structure.general_types.ContentElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContentElement</span></code></a></p>
+<p>Class representing a ColSpec element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><a class="reference internal" href="#markupit.structure.enum.Alignment" title="markupit.structure.enum.Alignment"><em>Alignment</em></a><em>, </em><a class="reference internal" href="#markupit.structure.enum.ColWidth" title="markupit.structure.enum.ColWidth"><em>ColWidth</em></a><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.content.Format">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.content.</span></span><span class="sig-name descname"><span class="pre">Format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/content.html#Format"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.content.Format" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.ContentElement" title="markupit.structure.general_types.ContentElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContentElement</span></code></a></p>
+<p>Class representing a Format element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>str</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.content.ListAttributes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.content.</span></span><span class="sig-name descname"><span class="pre">ListAttributes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/content.html#ListAttributes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.content.ListAttributes" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.ContentElement" title="markupit.structure.general_types.ContentElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContentElement</span></code></a></p>
+<p>Class representing a ListAttributes element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><em>int</em><em>, </em><a class="reference internal" href="#markupit.structure.enum.ListNumberStyle" title="markupit.structure.enum.ListNumberStyle"><em>ListNumberStyle</em></a><em>, </em><a class="reference internal" href="#markupit.structure.enum.ListNumberDelim" title="markupit.structure.enum.ListNumberDelim"><em>ListNumberDelim</em></a><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.content.Row">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.content.</span></span><span class="sig-name descname"><span class="pre">Row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/content.html#Row"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.content.Row" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.ContentElement" title="markupit.structure.general_types.ContentElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContentElement</span></code></a></p>
+<p>Class representing a Row element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><a class="reference internal" href="#markupit.structure.content.Attr" title="markupit.structure.content.Attr"><em>Attr</em></a><em>, </em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.content.Cell" title="markupit.structure.content.Cell"><em>Cell</em></a><em>]</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.content.TableBody">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.content.</span></span><span class="sig-name descname"><span class="pre">TableBody</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/content.html#TableBody"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.content.TableBody" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.ContentElement" title="markupit.structure.general_types.ContentElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContentElement</span></code></a></p>
+<p>Class representing a TableBody element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><a class="reference internal" href="#markupit.structure.content.Attr" title="markupit.structure.content.Attr"><em>Attr</em></a><em>, </em><em>int</em><em>, </em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.content.Row" title="markupit.structure.content.Row"><em>Row</em></a><em>]</em><em>, </em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.content.Row" title="markupit.structure.content.Row"><em>Row</em></a><em>]</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.content.TableFoot">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.content.</span></span><span class="sig-name descname"><span class="pre">TableFoot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/content.html#TableFoot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.content.TableFoot" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.ContentElement" title="markupit.structure.general_types.ContentElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContentElement</span></code></a></p>
+<p>Class representing a TableFoot element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><a class="reference internal" href="#markupit.structure.content.Attr" title="markupit.structure.content.Attr"><em>Attr</em></a><em>, </em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.content.Row" title="markupit.structure.content.Row"><em>Row</em></a><em>]</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.content.TableHead">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.content.</span></span><span class="sig-name descname"><span class="pre">TableHead</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/content.html#TableHead"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.content.TableHead" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.ContentElement" title="markupit.structure.general_types.ContentElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContentElement</span></code></a></p>
+<p>Class representing a TableHead element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><a class="reference internal" href="#markupit.structure.content.Attr" title="markupit.structure.content.Attr"><em>Attr</em></a><em>, </em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.content.Row" title="markupit.structure.content.Row"><em>Row</em></a><em>]</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.content.Target">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.content.</span></span><span class="sig-name descname"><span class="pre">Target</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/content.html#Target"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.content.Target" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.ContentElement" title="markupit.structure.general_types.ContentElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContentElement</span></code></a></p>
+<p>Class representing a Target element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-markupit.structure.document">
+<span id="markupit-structure-document-module"></span><h2>markupit.structure.document module<a class="headerlink" href="#module-markupit.structure.document" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.document.Document">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.document.</span></span><span class="sig-name descname"><span class="pre">Document</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blocks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#markupit.structure.general_types.Element" title="markupit.structure.general_types.Element"><span class="pre">Element</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/document.html#Document"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.document.Document" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class representing a document. It contains a list of blocks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>blocks</strong> (<em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Element" title="markupit.structure.general_types.Element"><em>Element</em></a><em>]</em><em>, </em><em>optional</em>) – A list of blocks in the document.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.structure.document.Document.add_block">
+<span class="sig-name descname"><span class="pre">add_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#markupit.structure.general_types.Element" title="markupit.structure.general_types.Element"><span class="pre">Element</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/markupit/structure/document.html#Document.add_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.document.Document.add_block" title="Link to this definition"></a></dt>
+<dd><p>Add a block to the end of the document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>block</strong> (<a class="reference internal" href="#markupit.structure.general_types.Element" title="markupit.structure.general_types.Element"><em>Element</em></a>) – The block to add.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.structure.document.Document.add_blocks">
+<span class="sig-name descname"><span class="pre">add_blocks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blocks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#markupit.structure.general_types.Element" title="markupit.structure.general_types.Element"><span class="pre">Element</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/markupit/structure/document.html#Document.add_blocks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.document.Document.add_blocks" title="Link to this definition"></a></dt>
+<dd><p>Add a list of blocks to the end of the document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>blocks</strong> (<em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Element" title="markupit.structure.general_types.Element"><em>Element</em></a><em>]</em>) – The blocks to add.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.structure.document.Document.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/markupit/structure/document.html#Document.to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.document.Document.to_json" title="Link to this definition"></a></dt>
+<dd><p>Convert the document to a dictionary representing AST.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The document as a dictionary.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-markupit.structure.enum">
+<span id="markupit-structure-enum-module"></span><h2>markupit.structure.enum module<a class="headerlink" href="#module-markupit.structure.enum" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.enum.Alignment">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.enum.</span></span><span class="sig-name descname"><span class="pre">Alignment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/enum.html#Alignment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.enum.Alignment" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.EnumElement" title="markupit.structure.general_types.EnumElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnumElement</span></code></a></p>
+<p>Class representing an Alignment enum element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>str</em>) – Chosen value from the enumeration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.enum.CitationMode">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.enum.</span></span><span class="sig-name descname"><span class="pre">CitationMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/enum.html#CitationMode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.enum.CitationMode" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.EnumElement" title="markupit.structure.general_types.EnumElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnumElement</span></code></a></p>
+<p>Class representing a CitationMode enum element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>str</em>) – Chosen value from the enumeration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.enum.ColWidth">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.enum.</span></span><span class="sig-name descname"><span class="pre">ColWidth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/enum.html#ColWidth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.enum.ColWidth" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.EnumElement" title="markupit.structure.general_types.EnumElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnumElement</span></code></a></p>
+<p>Class representing a ColWidth enum element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>content</strong> (<em>str</em>) – Chosen value from the enumeration.</p></li>
+<li><p><strong>width</strong> (<em>float</em><em>, </em><em>optional</em>) – The width of the column, used when content is ‘ColWidth’.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.enum.ListNumberDelim">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.enum.</span></span><span class="sig-name descname"><span class="pre">ListNumberDelim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/enum.html#ListNumberDelim"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.enum.ListNumberDelim" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.EnumElement" title="markupit.structure.general_types.EnumElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnumElement</span></code></a></p>
+<p>Class representing a ListNumberDelim enum element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>str</em>) – Chosen value from the enumeration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.enum.ListNumberStyle">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.enum.</span></span><span class="sig-name descname"><span class="pre">ListNumberStyle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/enum.html#ListNumberStyle"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.enum.ListNumberStyle" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.EnumElement" title="markupit.structure.general_types.EnumElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnumElement</span></code></a></p>
+<p>Class representing a ListNumberStyle enum element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>str</em>) – Chosen value from the enumeration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.enum.MathType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.enum.</span></span><span class="sig-name descname"><span class="pre">MathType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/enum.html#MathType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.enum.MathType" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.EnumElement" title="markupit.structure.general_types.EnumElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnumElement</span></code></a></p>
+<p>Class representing a MathType enum element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>str</em>) – Chosen value from the enumeration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.enum.QuoteType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.enum.</span></span><span class="sig-name descname"><span class="pre">QuoteType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/enum.html#QuoteType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.enum.QuoteType" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.EnumElement" title="markupit.structure.general_types.EnumElement"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnumElement</span></code></a></p>
+<p>Class representing a QuoteType enum element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>str</em>) – Chosen value from the enumeration.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-markupit.structure.general_types">
+<span id="markupit-structure-general-types-module"></span><h2>markupit.structure.general_types module<a class="headerlink" href="#module-markupit.structure.general_types" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.general_types.Block">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.general_types.</span></span><span class="sig-name descname"><span class="pre">Block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/general_types.html#Block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.general_types.Block" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Element" title="markupit.structure.general_types.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a></p>
+<p>A class representing an element of Block type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>Any</em><em>, </em><em>optional</em>) – The content of the element.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.structure.general_types.Block.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/markupit/structure/general_types.html#Block.to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.general_types.Block.to_json" title="Link to this definition"></a></dt>
+<dd><p>Convert the element to a JSON representation of AST.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The element as a JSON object.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.general_types.ContentElement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.general_types.</span></span><span class="sig-name descname"><span class="pre">ContentElement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/general_types.html#ContentElement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.general_types.ContentElement" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Element" title="markupit.structure.general_types.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a></p>
+<p>Abstract class representing an element that is not represented by its tag in JSON.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>Any</em>) – The content of the element.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.structure.general_types.ContentElement.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="_modules/markupit/structure/general_types.html#ContentElement.to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.general_types.ContentElement.to_json" title="Link to this definition"></a></dt>
+<dd><p>Convert the element to a JSON representation of AST.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The element as a JSON object.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.general_types.Element">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.general_types.</span></span><span class="sig-name descname"><span class="pre">Element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/general_types.html#Element"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.general_types.Element" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>An abstract class representing an element in a document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tag</strong> (<em>str</em><em>, </em><em>optional</em>) – The name describing type of element.</p></li>
+<li><p><strong>content</strong> (<em>Any</em><em>, </em><em>optional</em>) – The content of the element.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.structure.general_types.Element.to_json">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="_modules/markupit/structure/general_types.html#Element.to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.general_types.Element.to_json" title="Link to this definition"></a></dt>
+<dd><p>Convert the element to a JSON representation of AST.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The element as a JSON object.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.general_types.EnumElement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.general_types.</span></span><span class="sig-name descname"><span class="pre">EnumElement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/general_types.html#EnumElement"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.general_types.EnumElement" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Element" title="markupit.structure.general_types.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a></p>
+<p>Class representing an element of Enum type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>str</em>) – Chosen value from the enumeration.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.structure.general_types.EnumElement.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/structure/general_types.html#EnumElement.to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.general_types.EnumElement.to_json" title="Link to this definition"></a></dt>
+<dd><p>Convert the element to a JSON representation of AST.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The element as a JSON object.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.general_types.Inline">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.general_types.</span></span><span class="sig-name descname"><span class="pre">Inline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/general_types.html#Inline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.general_types.Inline" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Element" title="markupit.structure.general_types.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a></p>
+<p>A class representing an element of Inline type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>Any</em><em>, </em><em>optional</em>) – The content of the element.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.structure.general_types.Inline.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/markupit/structure/general_types.html#Inline.to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.general_types.Inline.to_json" title="Link to this definition"></a></dt>
+<dd><p>Convert the element to a JSON representation of AST.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The element as a JSON object.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.general_types.MetaValue">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.general_types.</span></span><span class="sig-name descname"><span class="pre">MetaValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/general_types.html#MetaValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.general_types.MetaValue" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Element" title="markupit.structure.general_types.Element"><code class="xref py py-class docutils literal notranslate"><span class="pre">Element</span></code></a></p>
+</dd></dl>
+
+</section>
+<section id="module-markupit.structure.inline">
+<span id="markupit-structure-inline-module"></span><h2>markupit.structure.inline module<a class="headerlink" href="#module-markupit.structure.inline" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.inline.Cite">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.inline.</span></span><span class="sig-name descname"><span class="pre">Cite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/inline.html#Cite"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.inline.Cite" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inline</span></code></a></p>
+<p>A class representing a Cite element of Inline type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.content.Citation" title="markupit.structure.content.Citation"><em>Citation</em></a><em>]</em><em>, </em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><em>Inline</em></a><em>]</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.inline.Code">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.inline.</span></span><span class="sig-name descname"><span class="pre">Code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/inline.html#Code"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.inline.Code" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inline</span></code></a></p>
+<p>A class representing a Code element of Inline type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><a class="reference internal" href="#markupit.structure.content.Attr" title="markupit.structure.content.Attr"><em>Attr</em></a><em>, </em><em>str</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.inline.Emph">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.inline.</span></span><span class="sig-name descname"><span class="pre">Emph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/inline.html#Emph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.inline.Emph" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inline</span></code></a></p>
+<p>A class representing an Emph element of Inline type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><em>Inline</em></a><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.inline.Image">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.inline.</span></span><span class="sig-name descname"><span class="pre">Image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/inline.html#Image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.inline.Image" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inline</span></code></a></p>
+<p>A class representing an Image element of Inline type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><a class="reference internal" href="#markupit.structure.content.Attr" title="markupit.structure.content.Attr"><em>Attr</em></a><em>, </em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><em>Inline</em></a><em>]</em><em>, </em><a class="reference internal" href="#markupit.structure.content.Target" title="markupit.structure.content.Target"><em>Target</em></a><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.inline.LineBreak">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.inline.</span></span><span class="sig-name descname"><span class="pre">LineBreak</span></span><a class="reference internal" href="_modules/markupit/structure/inline.html#LineBreak"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.inline.LineBreak" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inline</span></code></a></p>
+<p>A class representing a LineBreak element of Inline type.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.inline.Link">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.inline.</span></span><span class="sig-name descname"><span class="pre">Link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/inline.html#Link"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.inline.Link" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inline</span></code></a></p>
+<p>A class representing a Link element of Inline type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><a class="reference internal" href="#markupit.structure.content.Attr" title="markupit.structure.content.Attr"><em>Attr</em></a><em>, </em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><em>Inline</em></a><em>]</em><em>, </em><a class="reference internal" href="#markupit.structure.content.Target" title="markupit.structure.content.Target"><em>Target</em></a><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.inline.Math">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.inline.</span></span><span class="sig-name descname"><span class="pre">Math</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/inline.html#Math"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.inline.Math" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inline</span></code></a></p>
+<p>A class representing a Math element of Inline type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><a class="reference internal" href="#markupit.structure.general_types.EnumElement" title="markupit.structure.general_types.EnumElement"><em>EnumElement</em></a><em>, </em><em>str</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.inline.Note">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.inline.</span></span><span class="sig-name descname"><span class="pre">Note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/inline.html#Note"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.inline.Note" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inline</span></code></a></p>
+<p>A class representing a Note element of Inline type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Block" title="markupit.structure.general_types.Block"><em>Block</em></a><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.inline.Quoted">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.inline.</span></span><span class="sig-name descname"><span class="pre">Quoted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/inline.html#Quoted"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.inline.Quoted" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inline</span></code></a></p>
+<p>A class representing a Quoted element of Inline type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><a class="reference internal" href="#markupit.structure.enum.QuoteType" title="markupit.structure.enum.QuoteType"><em>QuoteType</em></a><em>, </em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><em>Inline</em></a><em>]</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.inline.RawInline">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.inline.</span></span><span class="sig-name descname"><span class="pre">RawInline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/inline.html#RawInline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.inline.RawInline" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inline</span></code></a></p>
+<p>A class representing a RawInline element of Inline type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><a class="reference internal" href="#markupit.structure.content.Format" title="markupit.structure.content.Format"><em>Format</em></a><em>, </em><em>str</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.inline.SmallCaps">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.inline.</span></span><span class="sig-name descname"><span class="pre">SmallCaps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/inline.html#SmallCaps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.inline.SmallCaps" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inline</span></code></a></p>
+<p>A class representing a SmallCaps element of Inline type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><em>Inline</em></a><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.inline.SoftBreak">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.inline.</span></span><span class="sig-name descname"><span class="pre">SoftBreak</span></span><a class="reference internal" href="_modules/markupit/structure/inline.html#SoftBreak"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.inline.SoftBreak" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inline</span></code></a></p>
+<p>A class representing a SoftBreak element of Inline type.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.inline.Space">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.inline.</span></span><span class="sig-name descname"><span class="pre">Space</span></span><a class="reference internal" href="_modules/markupit/structure/inline.html#Space"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.inline.Space" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inline</span></code></a></p>
+<p>A class representing a Space element of Inline type.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.inline.Span">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.inline.</span></span><span class="sig-name descname"><span class="pre">Span</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/inline.html#Span"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.inline.Span" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inline</span></code></a></p>
+<p>A class representing a Span element of Inline type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>[</em><a class="reference internal" href="#markupit.structure.content.Attr" title="markupit.structure.content.Attr"><em>Attr</em></a><em>, </em><em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><em>Inline</em></a><em>]</em><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.inline.Str">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.inline.</span></span><span class="sig-name descname"><span class="pre">Str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/inline.html#Str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.inline.Str" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inline</span></code></a></p>
+<p>A class representing a Str element of Inline type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>str</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.inline.Strikeout">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.inline.</span></span><span class="sig-name descname"><span class="pre">Strikeout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/inline.html#Strikeout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.inline.Strikeout" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inline</span></code></a></p>
+<p>A class representing a Strikeout element of Inline type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><em>Inline</em></a><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.inline.Strong">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.inline.</span></span><span class="sig-name descname"><span class="pre">Strong</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/inline.html#Strong"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.inline.Strong" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inline</span></code></a></p>
+<p>A class representing a Strong element of Inline type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><em>Inline</em></a><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.inline.Subscript">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.inline.</span></span><span class="sig-name descname"><span class="pre">Subscript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/inline.html#Subscript"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.inline.Subscript" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inline</span></code></a></p>
+<p>A class representing a Subscript element of Inline type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><em>Inline</em></a><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.inline.Superscript">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.inline.</span></span><span class="sig-name descname"><span class="pre">Superscript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/inline.html#Superscript"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.inline.Superscript" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inline</span></code></a></p>
+<p>A class representing a Superscript element of Inline type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><em>Inline</em></a><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.inline.Underline">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.inline.</span></span><span class="sig-name descname"><span class="pre">Underline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">content</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/inline.html#Underline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.inline.Underline" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Inline</span></code></a></p>
+<p>A class representing an Underline element of Inline type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>content</strong> (<em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Inline" title="markupit.structure.general_types.Inline"><em>Inline</em></a><em>]</em>) – The content of the element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-markupit.structure">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-markupit.structure" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.structure.Document">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.structure.</span></span><span class="sig-name descname"><span class="pre">Document</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blocks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#markupit.structure.general_types.Element" title="markupit.structure.general_types.Element"><span class="pre">Element</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/structure/document.html#Document"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.Document" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class representing a document. It contains a list of blocks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>blocks</strong> (<em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Element" title="markupit.structure.general_types.Element"><em>Element</em></a><em>]</em><em>, </em><em>optional</em>) – A list of blocks in the document.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.structure.Document.add_block">
+<span class="sig-name descname"><span class="pre">add_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#markupit.structure.general_types.Element" title="markupit.structure.general_types.Element"><span class="pre">Element</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/markupit/structure/document.html#Document.add_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.Document.add_block" title="Link to this definition"></a></dt>
+<dd><p>Add a block to the end of the document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>block</strong> (<a class="reference internal" href="#markupit.structure.general_types.Element" title="markupit.structure.general_types.Element"><em>Element</em></a>) – The block to add.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.structure.Document.add_blocks">
+<span class="sig-name descname"><span class="pre">add_blocks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">blocks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#markupit.structure.general_types.Element" title="markupit.structure.general_types.Element"><span class="pre">Element</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/markupit/structure/document.html#Document.add_blocks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.Document.add_blocks" title="Link to this definition"></a></dt>
+<dd><p>Add a list of blocks to the end of the document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>blocks</strong> (<em>List</em><em>[</em><a class="reference internal" href="#markupit.structure.general_types.Element" title="markupit.structure.general_types.Element"><em>Element</em></a><em>]</em>) – The blocks to add.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.structure.Document.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/markupit/structure/document.html#Document.to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.structure.Document.to_json" title="Link to this definition"></a></dt>
+<dd><p>Convert the document to a dictionary representing AST.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The document as a dictionary.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="markupit.html" class="btn btn-neutral float-left" title="markupit package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="markupit.writers.html" class="btn btn-neutral float-right" title="markupit.writers package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jakub Bąba, Hubert Brzóskniewicz, Nikita Sushko.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

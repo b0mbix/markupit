@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>markupit.writers.writer &mdash; MarkupIt 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            MarkupIt
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pages:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../sphinx_usage.html">Creating documentation using Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../poetry_usage.html">Poetry quick intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../writers.html">How writers work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../readers.html">How readers work?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">markupit</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MarkupIt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">markupit.writers.writer</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for markupit.writers.writer</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
+
+<span class="kn">from</span> <span class="nn">..</span> <span class="kn">import</span> <span class="n">structure</span> <span class="k">as</span> <span class="n">st</span>
+<span class="kn">from</span> <span class="nn">..structure.document</span> <span class="kn">import</span> <span class="n">Document</span>
+<span class="kn">from</span> <span class="nn">..structure.general_types</span> <span class="kn">import</span> <span class="n">Element</span>
+
+
+<div class="viewcode-block" id="Writer">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer">[docs]</a>
+<span class="k">class</span> <span class="nc">Writer</span><span class="p">(</span><span class="n">ABC</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;An abstract class representing a writer.</span>
+
+<span class="sd">    :param input: The document to convert.</span>
+<span class="sd">    :type input: structure.Document</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">input</span><span class="p">:</span> <span class="n">Document</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">doc</span> <span class="o">=</span> <span class="nb">input</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">convert_actions</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Space</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_space</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">SoftBreak</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_soft_break</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">LineBreak</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_line_break</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Str</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_str</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Emph</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_emph</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Underline</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_underline</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Strong</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_strong</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Strikeout</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_strikeout</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Superscript</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_superscript</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Subscript</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_subscript</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">SmallCaps</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_small_caps</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Note</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_note</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Link</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_link</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Image</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_image</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Code</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_code</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">RawInline</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_raw_inline</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">HorizontalRule</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_horizontal_rule</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">Plain</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_plain</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">Para</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_para</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">BlockQuote</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_block_quote</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">CodeBlock</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_code_block</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">RawBlock</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_raw_block</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">Header</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_header</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_table</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">BulletList</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_bullet_list</span><span class="p">,</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">OrderedList</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_ordered_list</span><span class="p">,</span>
+        <span class="p">}</span>
+
+<div class="viewcode-block" id="Writer.write">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.write">[docs]</a>
+    <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert the document to a text format according to writer.</span>
+
+<span class="sd">        :return: The converted document.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">doc</span><span class="o">.</span><span class="n">blocks</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_element</span><span class="p">(</span><span class="n">block</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span></div>
+
+
+<div class="viewcode-block" id="Writer.write_file">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.write_file">[docs]</a>
+    <span class="k">def</span> <span class="nf">write_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convert and write the document to a file at the given path.</span>
+
+<span class="sd">        :param path: The path to write the document to.</span>
+<span class="sd">        :type path: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_element">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_element">[docs]</a>
+    <span class="k">def</span> <span class="nf">convert_element</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">Element</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Find and perform conversion for the given element.</span>
+
+<span class="sd">        :param obj: The element to convert.</span>
+<span class="sd">        :type obj: Element</span>
+<span class="sd">        :return: The converted element.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">convert_element</span><span class="p">(</span><span class="n">el</span><span class="p">)</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">obj</span><span class="p">])</span>
+        <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_actions</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No converter implemented for </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">convert_actions</span><span class="p">[</span><span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)](</span><span class="n">obj</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_space">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_space">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_space</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Space</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_soft_break">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_soft_break">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_soft_break</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">SoftBreak</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_line_break">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_line_break">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_line_break</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">LineBreak</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_str">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_str">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_str</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_emph">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_emph">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_emph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Emph</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_underline">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_underline">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_underline</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Underline</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_strong">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_strong">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_strong</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Strong</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_strikeout">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_strikeout">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_strikeout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Strikeout</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_superscript">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_superscript">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_superscript</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Superscript</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_subscript">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_subscript">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_subscript</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Subscript</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_small_caps">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_small_caps">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_small_caps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">SmallCaps</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_note">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_note">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_note</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Note</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_link">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_link">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_link</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Link</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_image">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_image">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_image</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Image</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_code">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_code">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_code</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">Code</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_raw_inline">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_raw_inline">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_raw_inline</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Inline</span><span class="o">.</span><span class="n">RawInline</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_horizontal_rule">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_horizontal_rule">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_horizontal_rule</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">HorizontalRule</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_plain">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_plain">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_plain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">Plain</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_para">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_para">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_para</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">Para</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_block_quote">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_block_quote">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_block_quote</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">BlockQuote</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_code_block">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_code_block">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_code_block</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">CodeBlock</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_raw_block">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_raw_block">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_raw_block</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">RawBlock</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_header">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_header">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_header</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">Header</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_table">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_table">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_table</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">Table</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_bullet_list">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_bullet_list">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_bullet_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">BulletList</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="Writer.convert_ordered_list">
+<a class="viewcode-back" href="../../../markupit.writers.html#markupit.writers.writer.Writer.convert_ordered_list">[docs]</a>
+    <span class="nd">@abstractmethod</span>
+    <span class="k">def</span> <span class="nf">convert_ordered_list</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">:</span> <span class="n">st</span><span class="o">.</span><span class="n">Block</span><span class="o">.</span><span class="n">OrderedList</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">pass</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jakub Bąba, Hubert Brzóskniewicz, Nikita Sushko.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

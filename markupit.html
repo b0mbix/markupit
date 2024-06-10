@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>markupit package &mdash; MarkupIt 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="markupit.structure package" href="markupit.structure.html" />
+    <link rel="prev" title="markupit" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MarkupIt
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pages:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sphinx_usage.html">Creating documentation using Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poetry_usage.html">Poetry quick intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writers.html">How writers work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readers.html">How readers work?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">markupit</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">markupit package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="markupit.structure.html">markupit.structure package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html">markupit.writers package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-markupit.cli">markupit.cli module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#markupit.cli.convert"><code class="docutils literal notranslate"><span class="pre">convert()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#markupit.cli.version"><code class="docutils literal notranslate"><span class="pre">version()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#markupit.cli.version_callback"><code class="docutils literal notranslate"><span class="pre">version_callback()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-markupit.supported_types">markupit.supported_types module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#markupit.supported_types.SupportedFrom"><code class="docutils literal notranslate"><span class="pre">SupportedFrom</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#markupit.supported_types.SupportedTo"><code class="docutils literal notranslate"><span class="pre">SupportedTo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-markupit">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MarkupIt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">markupit</a></li>
+      <li class="breadcrumb-item active">markupit package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/markupit.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="markupit-package">
+<h1>markupit package<a class="headerlink" href="#markupit-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="markupit.structure.html">markupit.structure package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="markupit.structure.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="markupit.structure.html#module-markupit.structure.block">markupit.structure.block module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.BlockQuote"><code class="docutils literal notranslate"><span class="pre">BlockQuote</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.BulletList"><code class="docutils literal notranslate"><span class="pre">BulletList</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.CodeBlock"><code class="docutils literal notranslate"><span class="pre">CodeBlock</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.DefinitionList"><code class="docutils literal notranslate"><span class="pre">DefinitionList</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Div"><code class="docutils literal notranslate"><span class="pre">Div</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Figure"><code class="docutils literal notranslate"><span class="pre">Figure</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Header"><code class="docutils literal notranslate"><span class="pre">Header</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.HorizontalRule"><code class="docutils literal notranslate"><span class="pre">HorizontalRule</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.LineBlock"><code class="docutils literal notranslate"><span class="pre">LineBlock</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Null"><code class="docutils literal notranslate"><span class="pre">Null</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.OrderedList"><code class="docutils literal notranslate"><span class="pre">OrderedList</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Para"><code class="docutils literal notranslate"><span class="pre">Para</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Plain"><code class="docutils literal notranslate"><span class="pre">Plain</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.RawBlock"><code class="docutils literal notranslate"><span class="pre">RawBlock</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Table"><code class="docutils literal notranslate"><span class="pre">Table</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="markupit.structure.html#module-markupit.structure.content">markupit.structure.content module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.content.Attr"><code class="docutils literal notranslate"><span class="pre">Attr</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.content.Caption"><code class="docutils literal notranslate"><span class="pre">Caption</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.content.Cell"><code class="docutils literal notranslate"><span class="pre">Cell</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.content.Citation"><code class="docutils literal notranslate"><span class="pre">Citation</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.content.ColSpec"><code class="docutils literal notranslate"><span class="pre">ColSpec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.content.Format"><code class="docutils literal notranslate"><span class="pre">Format</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.content.ListAttributes"><code class="docutils literal notranslate"><span class="pre">ListAttributes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.content.Row"><code class="docutils literal notranslate"><span class="pre">Row</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.content.TableBody"><code class="docutils literal notranslate"><span class="pre">TableBody</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.content.TableFoot"><code class="docutils literal notranslate"><span class="pre">TableFoot</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.content.TableHead"><code class="docutils literal notranslate"><span class="pre">TableHead</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.content.Target"><code class="docutils literal notranslate"><span class="pre">Target</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="markupit.structure.html#module-markupit.structure.document">markupit.structure.document module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document"><code class="docutils literal notranslate"><span class="pre">Document</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document.add_block"><code class="docutils literal notranslate"><span class="pre">Document.add_block()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document.add_blocks"><code class="docutils literal notranslate"><span class="pre">Document.add_blocks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document.to_json"><code class="docutils literal notranslate"><span class="pre">Document.to_json()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="markupit.structure.html#module-markupit.structure.enum">markupit.structure.enum module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.enum.Alignment"><code class="docutils literal notranslate"><span class="pre">Alignment</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.enum.CitationMode"><code class="docutils literal notranslate"><span class="pre">CitationMode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.enum.ColWidth"><code class="docutils literal notranslate"><span class="pre">ColWidth</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.enum.ListNumberDelim"><code class="docutils literal notranslate"><span class="pre">ListNumberDelim</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.enum.ListNumberStyle"><code class="docutils literal notranslate"><span class="pre">ListNumberStyle</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.enum.MathType"><code class="docutils literal notranslate"><span class="pre">MathType</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.enum.QuoteType"><code class="docutils literal notranslate"><span class="pre">QuoteType</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="markupit.structure.html#module-markupit.structure.general_types">markupit.structure.general_types module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.general_types.Block"><code class="docutils literal notranslate"><span class="pre">Block</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="markupit.structure.html#markupit.structure.general_types.Block.to_json"><code class="docutils literal notranslate"><span class="pre">Block.to_json()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.general_types.ContentElement"><code class="docutils literal notranslate"><span class="pre">ContentElement</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="markupit.structure.html#markupit.structure.general_types.ContentElement.to_json"><code class="docutils literal notranslate"><span class="pre">ContentElement.to_json()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.general_types.Element"><code class="docutils literal notranslate"><span class="pre">Element</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="markupit.structure.html#markupit.structure.general_types.Element.to_json"><code class="docutils literal notranslate"><span class="pre">Element.to_json()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.general_types.EnumElement"><code class="docutils literal notranslate"><span class="pre">EnumElement</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="markupit.structure.html#markupit.structure.general_types.EnumElement.to_json"><code class="docutils literal notranslate"><span class="pre">EnumElement.to_json()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.general_types.Inline"><code class="docutils literal notranslate"><span class="pre">Inline</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="markupit.structure.html#markupit.structure.general_types.Inline.to_json"><code class="docutils literal notranslate"><span class="pre">Inline.to_json()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.general_types.MetaValue"><code class="docutils literal notranslate"><span class="pre">MetaValue</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="markupit.structure.html#module-markupit.structure.inline">markupit.structure.inline module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Cite"><code class="docutils literal notranslate"><span class="pre">Cite</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Code"><code class="docutils literal notranslate"><span class="pre">Code</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Emph"><code class="docutils literal notranslate"><span class="pre">Emph</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Image"><code class="docutils literal notranslate"><span class="pre">Image</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.LineBreak"><code class="docutils literal notranslate"><span class="pre">LineBreak</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Link"><code class="docutils literal notranslate"><span class="pre">Link</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Math"><code class="docutils literal notranslate"><span class="pre">Math</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Note"><code class="docutils literal notranslate"><span class="pre">Note</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Quoted"><code class="docutils literal notranslate"><span class="pre">Quoted</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.RawInline"><code class="docutils literal notranslate"><span class="pre">RawInline</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.SmallCaps"><code class="docutils literal notranslate"><span class="pre">SmallCaps</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.SoftBreak"><code class="docutils literal notranslate"><span class="pre">SoftBreak</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Space"><code class="docutils literal notranslate"><span class="pre">Space</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Span"><code class="docutils literal notranslate"><span class="pre">Span</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Str"><code class="docutils literal notranslate"><span class="pre">Str</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Strikeout"><code class="docutils literal notranslate"><span class="pre">Strikeout</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Strong"><code class="docutils literal notranslate"><span class="pre">Strong</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Subscript"><code class="docutils literal notranslate"><span class="pre">Subscript</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Superscript"><code class="docutils literal notranslate"><span class="pre">Superscript</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Underline"><code class="docutils literal notranslate"><span class="pre">Underline</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="markupit.structure.html#module-markupit.structure">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="markupit.structure.html#markupit.structure.Document"><code class="docutils literal notranslate"><span class="pre">Document</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="markupit.structure.html#markupit.structure.Document.add_block"><code class="docutils literal notranslate"><span class="pre">Document.add_block()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.structure.html#markupit.structure.Document.add_blocks"><code class="docutils literal notranslate"><span class="pre">Document.add_blocks()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.structure.html#markupit.structure.Document.to_json"><code class="docutils literal notranslate"><span class="pre">Document.to_json()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="markupit.writers.html">markupit.writers package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="markupit.writers.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="markupit.writers.html#module-markupit.writers.json_writer">markupit.writers.json_writer module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="markupit.writers.html#markupit.writers.json_writer.JsonWriter"><code class="docutils literal notranslate"><span class="pre">JsonWriter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.json_writer.JsonWriter.write"><code class="docutils literal notranslate"><span class="pre">JsonWriter.write()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.json_writer.JsonWriter.write_to_file"><code class="docutils literal notranslate"><span class="pre">JsonWriter.write_to_file()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="markupit.writers.html#module-markupit.writers.typst_writer">markupit.writers.typst_writer module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter"><code class="docutils literal notranslate"><span class="pre">TypstWriter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_block_quote"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_block_quote()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_bullet_list"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_bullet_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_code"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_code()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_code_block"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_code_block()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_emph"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_emph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_header"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_header()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_horizontal_rule"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_horizontal_rule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_image"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_image()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_line_break"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_line_break()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_link"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_link()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_note"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_note()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_ordered_list"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_ordered_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_para"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_para()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_plain"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_plain()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_raw_block"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_raw_block()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_raw_inline"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_raw_inline()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_small_caps"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_small_caps()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_soft_break"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_soft_break()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_space"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_space()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_str"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_str()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_strikeout"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_strikeout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_strong"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_strong()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_subscript"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_subscript()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_superscript"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_superscript()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_table"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_table()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.typst_writer.TypstWriter.convert_underline"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_underline()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="markupit.writers.html#module-markupit.writers.writer">markupit.writers.writer module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer"><code class="docutils literal notranslate"><span class="pre">Writer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_block_quote"><code class="docutils literal notranslate"><span class="pre">Writer.convert_block_quote()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_bullet_list"><code class="docutils literal notranslate"><span class="pre">Writer.convert_bullet_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_code"><code class="docutils literal notranslate"><span class="pre">Writer.convert_code()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_code_block"><code class="docutils literal notranslate"><span class="pre">Writer.convert_code_block()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_element"><code class="docutils literal notranslate"><span class="pre">Writer.convert_element()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_emph"><code class="docutils literal notranslate"><span class="pre">Writer.convert_emph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_header"><code class="docutils literal notranslate"><span class="pre">Writer.convert_header()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_horizontal_rule"><code class="docutils literal notranslate"><span class="pre">Writer.convert_horizontal_rule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_image"><code class="docutils literal notranslate"><span class="pre">Writer.convert_image()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_line_break"><code class="docutils literal notranslate"><span class="pre">Writer.convert_line_break()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_link"><code class="docutils literal notranslate"><span class="pre">Writer.convert_link()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_note"><code class="docutils literal notranslate"><span class="pre">Writer.convert_note()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_ordered_list"><code class="docutils literal notranslate"><span class="pre">Writer.convert_ordered_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_para"><code class="docutils literal notranslate"><span class="pre">Writer.convert_para()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_plain"><code class="docutils literal notranslate"><span class="pre">Writer.convert_plain()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_raw_block"><code class="docutils literal notranslate"><span class="pre">Writer.convert_raw_block()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_raw_inline"><code class="docutils literal notranslate"><span class="pre">Writer.convert_raw_inline()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_small_caps"><code class="docutils literal notranslate"><span class="pre">Writer.convert_small_caps()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_soft_break"><code class="docutils literal notranslate"><span class="pre">Writer.convert_soft_break()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_space"><code class="docutils literal notranslate"><span class="pre">Writer.convert_space()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_str"><code class="docutils literal notranslate"><span class="pre">Writer.convert_str()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_strikeout"><code class="docutils literal notranslate"><span class="pre">Writer.convert_strikeout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_strong"><code class="docutils literal notranslate"><span class="pre">Writer.convert_strong()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_subscript"><code class="docutils literal notranslate"><span class="pre">Writer.convert_subscript()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_superscript"><code class="docutils literal notranslate"><span class="pre">Writer.convert_superscript()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_table"><code class="docutils literal notranslate"><span class="pre">Writer.convert_table()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.convert_underline"><code class="docutils literal notranslate"><span class="pre">Writer.convert_underline()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.write"><code class="docutils literal notranslate"><span class="pre">Writer.write()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.writer.Writer.write_file"><code class="docutils literal notranslate"><span class="pre">Writer.write_file()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="markupit.writers.html#module-markupit.writers">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="markupit.writers.html#markupit.writers.JsonWriter"><code class="docutils literal notranslate"><span class="pre">JsonWriter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.JsonWriter.write"><code class="docutils literal notranslate"><span class="pre">JsonWriter.write()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.JsonWriter.write_to_file"><code class="docutils literal notranslate"><span class="pre">JsonWriter.write_to_file()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter"><code class="docutils literal notranslate"><span class="pre">LatexWriter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_block_quote"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_block_quote()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_bullet_list"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_bullet_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_code"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_code()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_code_block"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_code_block()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_emph"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_emph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_header"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_header()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_horizontal_rule"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_horizontal_rule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_image"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_image()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_line_break"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_line_break()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_link"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_link()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_note"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_note()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_ordered_list"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_ordered_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_para"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_para()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_plain"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_plain()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_raw_block"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_raw_block()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_raw_inline"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_raw_inline()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_small_caps"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_small_caps()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_soft_break"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_soft_break()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_space"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_space()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_str"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_str()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_strikeout"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_strikeout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_strong"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_strong()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_subscript"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_subscript()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_superscript"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_superscript()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_table"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_table()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.LatexWriter.convert_underline"><code class="docutils literal notranslate"><span class="pre">LatexWriter.convert_underline()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter"><code class="docutils literal notranslate"><span class="pre">TypstWriter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_block_quote"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_block_quote()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_bullet_list"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_bullet_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_code"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_code()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_code_block"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_code_block()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_emph"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_emph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_header"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_header()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_horizontal_rule"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_horizontal_rule()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_image"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_image()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_line_break"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_line_break()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_link"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_link()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_note"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_note()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_ordered_list"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_ordered_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_para"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_para()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_plain"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_plain()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_raw_block"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_raw_block()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_raw_inline"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_raw_inline()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_small_caps"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_small_caps()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_soft_break"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_soft_break()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_space"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_space()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_str"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_str()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_strikeout"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_strikeout()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_strong"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_strong()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_subscript"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_subscript()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_superscript"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_superscript()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_table"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_table()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="markupit.writers.html#markupit.writers.TypstWriter.convert_underline"><code class="docutils literal notranslate"><span class="pre">TypstWriter.convert_underline()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-markupit.cli">
+<span id="markupit-cli-module"></span><h2>markupit.cli module<a class="headerlink" href="#module-markupit.cli" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="markupit.cli.convert">
+<span class="sig-prename descclassname"><span class="pre">markupit.cli.</span></span><span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">from_:</span> <span class="pre">~markupit.supported_types.SupportedFrom</span> <span class="pre">=</span> <span class="pre">&lt;typer.models.OptionInfo</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to:</span> <span class="pre">~markupit.supported_types.SupportedTo</span> <span class="pre">=</span> <span class="pre">&lt;typer.models.OptionInfo</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">&lt;typer.models.OptionInfo</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">&lt;typer.models.OptionInfo</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/markupit/cli.html#convert"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.cli.convert" title="Link to this definition"></a></dt>
+<dd><p>Convert Markup Files</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="markupit.cli.version">
+<span class="sig-prename descclassname"><span class="pre">markupit.cli.</span></span><span class="sig-name descname"><span class="pre">version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">version:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">&lt;typer.models.OptionInfo</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/markupit/cli.html#version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.cli.version" title="Link to this definition"></a></dt>
+<dd><p>Markup Convertion CLI Tool</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="markupit.cli.version_callback">
+<span class="sig-prename descclassname"><span class="pre">markupit.cli.</span></span><span class="sig-name descname"><span class="pre">version_callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/markupit/cli.html#version_callback"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.cli.version_callback" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-markupit.supported_types">
+<span id="markupit-supported-types-module"></span><h2>markupit.supported_types module<a class="headerlink" href="#module-markupit.supported_types" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.supported_types.SupportedFrom">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.supported_types.</span></span><span class="sig-name descname"><span class="pre">SupportedFrom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/supported_types.html#SupportedFrom"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.supported_types.SupportedFrom" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="markupit.supported_types.SupportedFrom.markdown">
+<span class="sig-name descname"><span class="pre">markdown</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'md'</span></em><a class="headerlink" href="#markupit.supported_types.SupportedFrom.markdown" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.supported_types.SupportedTo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.supported_types.</span></span><span class="sig-name descname"><span class="pre">SupportedTo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/supported_types.html#SupportedTo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.supported_types.SupportedTo" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="markupit.supported_types.SupportedTo.json">
+<span class="sig-name descname"><span class="pre">json</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'json'</span></em><a class="headerlink" href="#markupit.supported_types.SupportedTo.json" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="markupit.supported_types.SupportedTo.latex">
+<span class="sig-name descname"><span class="pre">latex</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'latex'</span></em><a class="headerlink" href="#markupit.supported_types.SupportedTo.latex" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="markupit.supported_types.SupportedTo.typst">
+<span class="sig-name descname"><span class="pre">typst</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'typst'</span></em><a class="headerlink" href="#markupit.supported_types.SupportedTo.typst" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-markupit">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-markupit" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="markupit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="markupit.structure.html" class="btn btn-neutral float-right" title="markupit.structure package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jakub Bąba, Hubert Brzóskniewicz, Nikita Sushko.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

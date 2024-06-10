@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>markupit.readers.markdown_block_reader &mdash; MarkupIt 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            MarkupIt
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pages:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../sphinx_usage.html">Creating documentation using Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../poetry_usage.html">Poetry quick intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../writers.html">How writers work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../readers.html">How readers work?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">markupit</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">MarkupIt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">markupit.readers.markdown_block_reader</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for markupit.readers.markdown_block_reader</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
+
+<span class="kn">from</span> <span class="nn">parsimonious</span> <span class="kn">import</span> <span class="n">Grammar</span><span class="p">,</span> <span class="n">NodeVisitor</span>
+
+<span class="kn">from</span> <span class="nn">markupit.readers.markdown_block_parser</span> <span class="kn">import</span> <span class="n">BlockParser</span>
+<span class="kn">from</span> <span class="nn">markupit.readers.state</span> <span class="kn">import</span> <span class="n">BlockState</span>
+<span class="kn">from</span> <span class="nn">markupit.structure</span> <span class="kn">import</span> <span class="n">block</span> <span class="k">as</span> <span class="n">block</span>
+<span class="kn">from</span> <span class="nn">markupit.structure</span> <span class="kn">import</span> <span class="n">content</span> <span class="k">as</span> <span class="n">content</span>
+<span class="kn">from</span> <span class="nn">markupit.structure</span> <span class="kn">import</span> <span class="n">document</span> <span class="k">as</span> <span class="n">document</span>
+<span class="kn">from</span> <span class="nn">markupit.structure</span> <span class="kn">import</span> <span class="n">inline</span> <span class="k">as</span> <span class="n">inline</span>
+
+
+<div class="viewcode-block" id="flatten">
+<a class="viewcode-back" href="../../../markupit.readers.html#markupit.readers.markdown_block_reader.flatten">[docs]</a>
+<span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span><span class="n">nested_list</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">nested_list</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">sublist</span> <span class="ow">in</span> <span class="n">nested_list</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">flatten</span><span class="p">(</span><span class="n">sublist</span><span class="p">)]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">nested_list</span><span class="p">]</span></div>
+
+
+
+<span class="n">inline_grammar</span> <span class="o">=</span> <span class="n">Grammar</span><span class="p">(</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    inline = (emph / strong / content)+</span>
+
+<span class="sd">    emph = &quot;*&quot; !space (inline_no_emph)+ &quot;*&quot;</span>
+<span class="sd">    strong = &quot;**&quot; !space (inline_no_strong)+ &quot;**&quot;</span>
+<span class="sd">    content = (space / word)</span>
+
+<span class="sd">    space = spacechar+</span>
+<span class="sd">    spacechar = &quot; &quot; / &quot;\t&quot;</span>
+<span class="sd">    word = ~&quot;[^\\s]+&quot;</span>
+
+<span class="sd">    content_no_emph = (space / word_no_star)</span>
+<span class="sd">    word_no_star = ~&quot;[^\\s*]+&quot;</span>
+<span class="sd">    inline_no_emph = strong / content_no_emph</span>
+
+<span class="sd">    content_no_strong = (space / word_no_star_star)</span>
+<span class="sd">    word_no_star_star = ~&quot;[^\\s**]+&quot;</span>
+<span class="sd">    inline_no_strong = emph / content_no_strong</span>
+
+<span class="sd">    newline = &quot;\n&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+<span class="p">)</span>
+
+
+<div class="viewcode-block" id="InlineVisitor">
+<a class="viewcode-back" href="../../../markupit.readers.html#markupit.readers.markdown_block_reader.InlineVisitor">[docs]</a>
+<span class="k">class</span> <span class="nc">InlineVisitor</span><span class="p">(</span><span class="n">NodeVisitor</span><span class="p">):</span>
+<div class="viewcode-block" id="InlineVisitor.visit_emph">
+<a class="viewcode-back" href="../../../markupit.readers.html#markupit.readers.markdown_block_reader.InlineVisitor.visit_emph">[docs]</a>
+    <span class="k">def</span> <span class="nf">visit_emph</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">visited_children</span><span class="p">):</span>
+        <span class="n">inlines</span> <span class="o">=</span> <span class="n">flatten</span><span class="p">(</span><span class="n">visited_children</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">inline</span><span class="o">.</span><span class="n">Emph</span><span class="p">(</span><span class="n">inlines</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="InlineVisitor.visit_content">
+<a class="viewcode-back" href="../../../markupit.readers.html#markupit.readers.markdown_block_reader.InlineVisitor.visit_content">[docs]</a>
+    <span class="k">def</span> <span class="nf">visit_content</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">visited_children</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">visited_children</span></div>
+
+
+<div class="viewcode-block" id="InlineVisitor.visit_space">
+<a class="viewcode-back" href="../../../markupit.readers.html#markupit.readers.markdown_block_reader.InlineVisitor.visit_space">[docs]</a>
+    <span class="k">def</span> <span class="nf">visit_space</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_1</span><span class="p">,</span> <span class="n">_2</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">inline</span><span class="o">.</span><span class="n">Space</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="InlineVisitor.visit_strong">
+<a class="viewcode-back" href="../../../markupit.readers.html#markupit.readers.markdown_block_reader.InlineVisitor.visit_strong">[docs]</a>
+    <span class="k">def</span> <span class="nf">visit_strong</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">visited_children</span><span class="p">):</span>
+        <span class="n">inlines</span> <span class="o">=</span> <span class="n">flatten</span><span class="p">(</span><span class="n">visited_children</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">inline</span><span class="o">.</span><span class="n">Strong</span><span class="p">(</span><span class="n">inlines</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="InlineVisitor.generic_visit">
+<a class="viewcode-back" href="../../../markupit.readers.html#markupit.readers.markdown_block_reader.InlineVisitor.generic_visit">[docs]</a>
+    <span class="k">def</span> <span class="nf">generic_visit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">visited_children</span><span class="p">):</span>
+        <span class="n">method_name</span> <span class="o">=</span> <span class="s2">&quot;visit_&quot;</span> <span class="o">+</span> <span class="n">node</span><span class="o">.</span><span class="n">expr_name</span>
+        <span class="n">method</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method_name</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">method</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">method</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">visited_children</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">method_name</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;visit_word&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">inline</span><span class="o">.</span><span class="n">Str</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">visited_children</span> <span class="ow">or</span> <span class="n">node</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="MarkdownBlockReader">
+<a class="viewcode-back" href="../../../markupit.readers.html#markupit.readers.markdown_block_reader.MarkdownBlockReader">[docs]</a>
+<span class="k">class</span> <span class="nc">MarkdownBlockReader</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Reads the text in the BlockState and parses it into blocks.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parser</span> <span class="o">=</span> <span class="n">BlockParser</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">inline_parser</span> <span class="o">=</span> <span class="n">InlineVisitor</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_normalize_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="c1"># in order to simplify newline rule</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">text</span> <span class="k">if</span> <span class="n">text</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="n">text</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+    <span class="k">def</span> <span class="nf">_parse_block</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block_</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">block_</span><span class="p">[</span><span class="s2">&quot;content&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">tree</span> <span class="o">=</span> <span class="n">inline_grammar</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">inline_parser</span><span class="o">.</span><span class="n">visit</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
+        <span class="n">flat_res</span> <span class="o">=</span> <span class="n">flatten</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">block_</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Para&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">block</span><span class="o">.</span><span class="n">Para</span><span class="p">(</span><span class="n">flat_res</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">block_</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Heading&quot;</span><span class="p">:</span>
+            <span class="n">attr</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">Attr</span><span class="p">([</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="p">[],</span> <span class="n">block_</span><span class="p">[</span><span class="s2">&quot;attrs&quot;</span><span class="p">]])</span>
+            <span class="k">return</span> <span class="n">block</span><span class="o">.</span><span class="n">Header</span><span class="p">([</span><span class="n">block_</span><span class="p">[</span><span class="s2">&quot;level&quot;</span><span class="p">],</span> <span class="n">attr</span><span class="p">,</span> <span class="n">flat_res</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="n">block_</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Plain&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">block</span><span class="o">.</span><span class="n">Plain</span><span class="p">(</span><span class="n">flat_res</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Block type </span><span class="si">{</span><span class="n">block_</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> is not implemented&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_parse_blocks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">blocks</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]):</span>
+        <span class="n">parsed_block</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">block_</span> <span class="ow">in</span> <span class="n">blocks</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">block_</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;blank_line&quot;</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="n">no_inline_block</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_block_with_no_inline_processing</span><span class="p">(</span><span class="n">block_</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">no_inline_block</span><span class="p">:</span>
+                <span class="n">parsed_block</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">no_inline_block</span><span class="p">)</span>
+                <span class="k">continue</span>
+
+            <span class="k">if</span> <span class="s2">&quot;children&quot;</span> <span class="ow">in</span> <span class="n">block_</span><span class="p">:</span>
+                <span class="n">children</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_blocks</span><span class="p">(</span><span class="n">block_</span><span class="p">[</span><span class="s2">&quot;children&quot;</span><span class="p">])</span>
+                <span class="n">parsed_block</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_construct_container</span><span class="p">(</span><span class="n">block_</span><span class="p">,</span> <span class="n">children</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">parsed_block</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_parse_block</span><span class="p">(</span><span class="n">block_</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">parsed_block</span>
+
+    <span class="k">def</span> <span class="nf">_construct_container</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block_</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">children</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">block</span><span class="o">.</span><span class="n">Block</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">block</span><span class="o">.</span><span class="n">Block</span><span class="p">:</span>
+        <span class="n">container_blocks</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;BlockQuote&quot;</span><span class="p">:</span> <span class="n">block</span><span class="o">.</span><span class="n">BlockQuote</span><span class="p">,</span>
+            <span class="s2">&quot;List&quot;</span><span class="p">:</span> <span class="n">block</span><span class="o">.</span><span class="n">BulletList</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="n">block_</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">container_blocks</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">container_blocks</span><span class="p">[</span><span class="n">block_</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]](</span><span class="n">children</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">block_</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;list_item&quot;</span><span class="p">:</span>
+            <span class="n">blocks</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
+                <span class="k">if</span> <span class="p">(</span>
+                    <span class="nb">isinstance</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">block</span><span class="o">.</span><span class="n">Plain</span><span class="p">)</span>
+                    <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">block</span><span class="o">.</span><span class="n">Para</span><span class="p">)</span>
+                    <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">block</span><span class="o">.</span><span class="n">BulletList</span><span class="p">)</span>
+                <span class="p">):</span>
+                    <span class="n">blocks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">blocks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">container_blocks</span><span class="p">[</span><span class="n">block_</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]](</span><span class="n">children</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">blocks</span>
+
+    <span class="k">def</span> <span class="nf">_parse_block_with_no_inline_processing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block_</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">block</span><span class="o">.</span><span class="n">Block</span><span class="p">:</span>
+        <span class="n">content_attr_blocks</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;CodeBlock&quot;</span><span class="p">:</span> <span class="n">block</span><span class="o">.</span><span class="n">CodeBlock</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="n">no_arg_blocks</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;HorizontalRule&quot;</span><span class="p">:</span> <span class="n">block</span><span class="o">.</span><span class="n">HorizontalRule</span><span class="p">,</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="n">block_</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">no_arg_blocks</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">no_arg_blocks</span><span class="p">[</span><span class="n">block_</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]]()</span>
+        <span class="k">elif</span> <span class="n">block_</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">content_attr_blocks</span><span class="p">:</span>
+            <span class="n">content_</span> <span class="o">=</span> <span class="n">block_</span><span class="p">[</span><span class="s2">&quot;content&quot;</span><span class="p">]</span>
+            <span class="n">attr</span> <span class="o">=</span> <span class="n">content</span><span class="o">.</span><span class="n">Attr</span><span class="p">([</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="p">[],</span> <span class="n">block_</span><span class="p">[</span><span class="s2">&quot;attrs&quot;</span><span class="p">]])</span>
+            <span class="k">return</span> <span class="n">content_attr_blocks</span><span class="p">[</span><span class="n">block_</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]]([</span><span class="n">attr</span><span class="p">,</span> <span class="n">content_</span><span class="p">])</span>
+
+<div class="viewcode-block" id="MarkdownBlockReader.parse">
+<a class="viewcode-back" href="../../../markupit.readers.html#markupit.readers.markdown_block_reader.MarkdownBlockReader.parse">[docs]</a>
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">document</span><span class="o">.</span><span class="n">Document</span><span class="p">:</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="n">BlockState</span><span class="p">()</span>
+
+        <span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_normalize_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="n">state</span><span class="o">.</span><span class="n">init_parse_text</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">parser</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+
+        <span class="n">blocks</span> <span class="o">=</span> <span class="n">state</span><span class="o">.</span><span class="n">blocks</span>
+        <span class="n">parsed_blocks</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_parse_blocks</span><span class="p">(</span><span class="n">blocks</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">document</span><span class="o">.</span><span class="n">Document</span><span class="p">(</span><span class="n">parsed_blocks</span><span class="p">)</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jakub Bąba, Hubert Brzóskniewicz, Nikita Sushko.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
