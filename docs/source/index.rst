@@ -76,6 +76,7 @@ Project mentor
    sphinx_usage
    poetry_usage
    writers
+   readers
 
 
 .. toctree::
