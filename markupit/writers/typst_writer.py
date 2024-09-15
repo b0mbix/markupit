@@ -83,7 +83,7 @@ class TypstWriter(Writer):
         return f'#quote("{self.convert_element(obj.content)[:-2]}")'
 
     def convert_code_block(self, obj: st.Block.CodeBlock) -> str:
-        return f"\n```{obj.content[0][1][0]}\n{obj.content[1]}\n```\n"
+        return f"\n```{obj.content[0].content[2][2][1]}\n{obj.content[1]}\n```\n"
 
     def convert_raw_block(self, obj: st.Block.RawBlock) -> str:
         # not supported in Typst

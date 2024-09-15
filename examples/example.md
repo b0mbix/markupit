@@ -20,3 +20,8 @@ Here is also a quote block:
 #### Header 4
 
 ##### Header 5
+
+```py
+def hello(name):
+    print(f"Hello {name}!")
+```

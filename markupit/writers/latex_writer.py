@@ -76,8 +76,7 @@ class LatexWriter(Writer):
         return f"\\begin{{quote}}\n{self.convert_element(obj.content)}\n\\end{{quote}}\n"
 
     def convert_code_block(self, obj: st.Block.CodeBlock) -> str:
-        block_content = "\n".join(obj.content)
-        return f"\\begin{{verbatim}}\n{block_content}\n\\end{{verbatim}}\n"
+        return f"\\begin{{verbatim}}\n{obj.content[1]}\n\\end{{verbatim}}\n"
 
     def convert_raw_block(self, obj: st.Block.RawBlock) -> str:
         # not supported in Latex
