@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>markupit.writers package &mdash; MarkupIt 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="markupit.structure package" href="markupit.structure.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MarkupIt
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Pages:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sphinx_usage.html">Creating documentation using Sphinx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poetry_usage.html">Poetry quick intro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writers.html">How writers work?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readers.html">How readers work?</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Modules:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">markupit</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="markupit.html">markupit package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="markupit.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="markupit.structure.html">markupit.structure package</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">markupit.writers package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.html#module-markupit.cli">markupit.cli module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.html#module-markupit.supported_types">markupit.supported_types module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="markupit.html#module-markupit">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MarkupIt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">markupit</a></li>
+          <li class="breadcrumb-item"><a href="markupit.html">markupit package</a></li>
+      <li class="breadcrumb-item active">markupit.writers package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/markupit.writers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="markupit-writers-package">
+<h1>markupit.writers package<a class="headerlink" href="#markupit-writers-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-markupit.writers.json_writer">
+<span id="markupit-writers-json-writer-module"></span><h2>markupit.writers.json_writer module<a class="headerlink" href="#module-markupit.writers.json_writer" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.writers.json_writer.JsonWriter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.writers.json_writer.</span></span><span class="sig-name descname"><span class="pre">JsonWriter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document" title="markupit.structure.document.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/writers/json_writer.html#JsonWriter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.json_writer.JsonWriter" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class representing a JSON writer for a document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> (<a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document" title="markupit.structure.document.Document"><em>Document</em></a>) – The document to write.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.json_writer.JsonWriter.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/markupit/writers/json_writer.html#JsonWriter.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.json_writer.JsonWriter.write" title="Link to this definition"></a></dt>
+<dd><p>Return a JSON representation of AST.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The document as a dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.json_writer.JsonWriter.write_to_file">
+<span class="sig-name descname"><span class="pre">write_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/markupit/writers/json_writer.html#JsonWriter.write_to_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.json_writer.JsonWriter.write_to_file" title="Link to this definition"></a></dt>
+<dd><p>Write the JSON representation of AST to a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – The name of the file to write to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-markupit.writers.typst_writer">
+<span id="markupit-writers-typst-writer-module"></span><h2>markupit.writers.typst_writer module<a class="headerlink" href="#module-markupit.writers.typst_writer" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.writers.typst_writer.</span></span><span class="sig-name descname"><span class="pre">TypstWriter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document" title="markupit.structure.document.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.writers.writer.Writer" title="markupit.writers.writer.Writer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Writer</span></code></a></p>
+<p>A class representing a Typst writer for a document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> (<a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document" title="markupit.structure.document.Document"><em>Document</em></a>) – The document to write.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_block_quote">
+<span class="sig-name descname"><span class="pre">convert_block_quote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.BlockQuote" title="markupit.structure.block.BlockQuote"><span class="pre">BlockQuote</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_block_quote"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_block_quote" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_bullet_list">
+<span class="sig-name descname"><span class="pre">convert_bullet_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.BulletList" title="markupit.structure.block.BulletList"><span class="pre">BulletList</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nesting</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_bullet_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_bullet_list" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_code">
+<span class="sig-name descname"><span class="pre">convert_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Code" title="markupit.structure.inline.Code"><span class="pre">Code</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_code"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_code" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_code_block">
+<span class="sig-name descname"><span class="pre">convert_code_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.CodeBlock" title="markupit.structure.block.CodeBlock"><span class="pre">CodeBlock</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_code_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_code_block" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_emph">
+<span class="sig-name descname"><span class="pre">convert_emph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Emph" title="markupit.structure.inline.Emph"><span class="pre">Emph</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_emph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_emph" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_header">
+<span class="sig-name descname"><span class="pre">convert_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Header" title="markupit.structure.block.Header"><span class="pre">Header</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_header" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_horizontal_rule">
+<span class="sig-name descname"><span class="pre">convert_horizontal_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.HorizontalRule" title="markupit.structure.block.HorizontalRule"><span class="pre">HorizontalRule</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_horizontal_rule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_horizontal_rule" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_image">
+<span class="sig-name descname"><span class="pre">convert_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Image" title="markupit.structure.inline.Image"><span class="pre">Image</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_image" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_line_break">
+<span class="sig-name descname"><span class="pre">convert_line_break</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.LineBreak" title="markupit.structure.inline.LineBreak"><span class="pre">LineBreak</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_line_break"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_line_break" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_link">
+<span class="sig-name descname"><span class="pre">convert_link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Link" title="markupit.structure.inline.Link"><span class="pre">Link</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_link"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_link" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_note">
+<span class="sig-name descname"><span class="pre">convert_note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Note" title="markupit.structure.inline.Note"><span class="pre">Note</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_note"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_note" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_ordered_list">
+<span class="sig-name descname"><span class="pre">convert_ordered_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.OrderedList" title="markupit.structure.block.OrderedList"><span class="pre">OrderedList</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nesting</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_ordered_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_ordered_list" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_para">
+<span class="sig-name descname"><span class="pre">convert_para</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Para" title="markupit.structure.block.Para"><span class="pre">Para</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_para"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_para" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_plain">
+<span class="sig-name descname"><span class="pre">convert_plain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Plain" title="markupit.structure.block.Plain"><span class="pre">Plain</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_plain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_plain" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_raw_block">
+<span class="sig-name descname"><span class="pre">convert_raw_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.RawBlock" title="markupit.structure.block.RawBlock"><span class="pre">RawBlock</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_raw_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_raw_block" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_raw_inline">
+<span class="sig-name descname"><span class="pre">convert_raw_inline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.RawInline" title="markupit.structure.inline.RawInline"><span class="pre">RawInline</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_raw_inline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_raw_inline" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_small_caps">
+<span class="sig-name descname"><span class="pre">convert_small_caps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.SmallCaps" title="markupit.structure.inline.SmallCaps"><span class="pre">SmallCaps</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_small_caps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_small_caps" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_soft_break">
+<span class="sig-name descname"><span class="pre">convert_soft_break</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.SoftBreak" title="markupit.structure.inline.SoftBreak"><span class="pre">SoftBreak</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_soft_break"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_soft_break" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_space">
+<span class="sig-name descname"><span class="pre">convert_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Space" title="markupit.structure.inline.Space"><span class="pre">Space</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_space"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_space" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_str">
+<span class="sig-name descname"><span class="pre">convert_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Str" title="markupit.structure.inline.Str"><span class="pre">Str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_str" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_strikeout">
+<span class="sig-name descname"><span class="pre">convert_strikeout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Strikeout" title="markupit.structure.inline.Strikeout"><span class="pre">Strikeout</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_strikeout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_strikeout" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_strong">
+<span class="sig-name descname"><span class="pre">convert_strong</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Strong" title="markupit.structure.inline.Strong"><span class="pre">Strong</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_strong"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_strong" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_subscript">
+<span class="sig-name descname"><span class="pre">convert_subscript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Subscript" title="markupit.structure.inline.Subscript"><span class="pre">Subscript</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_subscript"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_subscript" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_superscript">
+<span class="sig-name descname"><span class="pre">convert_superscript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Superscript" title="markupit.structure.inline.Superscript"><span class="pre">Superscript</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_superscript"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_superscript" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_table">
+<span class="sig-name descname"><span class="pre">convert_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Table" title="markupit.structure.block.Table"><span class="pre">Table</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_table" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.typst_writer.TypstWriter.convert_underline">
+<span class="sig-name descname"><span class="pre">convert_underline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Underline" title="markupit.structure.inline.Underline"><span class="pre">Underline</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_underline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.typst_writer.TypstWriter.convert_underline" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-markupit.writers.writer">
+<span id="markupit-writers-writer-module"></span><h2>markupit.writers.writer module<a class="headerlink" href="#module-markupit.writers.writer" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.writers.writer.</span></span><span class="sig-name descname"><span class="pre">Writer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document" title="markupit.structure.document.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>An abstract class representing a writer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> (<a class="reference internal" href="markupit.structure.html#markupit.structure.Document" title="markupit.structure.Document"><em>structure.Document</em></a>) – The document to convert.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_block_quote">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_block_quote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.BlockQuote" title="markupit.structure.block.BlockQuote"><span class="pre">BlockQuote</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_block_quote"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_block_quote" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_bullet_list">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_bullet_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.BulletList" title="markupit.structure.block.BulletList"><span class="pre">BulletList</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_bullet_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_bullet_list" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_code">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Code" title="markupit.structure.inline.Code"><span class="pre">Code</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_code"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_code" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_code_block">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_code_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.CodeBlock" title="markupit.structure.block.CodeBlock"><span class="pre">CodeBlock</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_code_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_code_block" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_element">
+<span class="sig-name descname"><span class="pre">convert_element</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.general_types.Element" title="markupit.structure.general_types.Element"><span class="pre">Element</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_element"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_element" title="Link to this definition"></a></dt>
+<dd><p>Find and perform conversion for the given element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<a class="reference internal" href="markupit.structure.html#markupit.structure.general_types.Element" title="markupit.structure.general_types.Element"><em>Element</em></a>) – The element to convert.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The converted element.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_emph">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_emph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Emph" title="markupit.structure.inline.Emph"><span class="pre">Emph</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_emph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_emph" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_header">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Header" title="markupit.structure.block.Header"><span class="pre">Header</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_header" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_horizontal_rule">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_horizontal_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.HorizontalRule" title="markupit.structure.block.HorizontalRule"><span class="pre">HorizontalRule</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_horizontal_rule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_horizontal_rule" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_image">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Image" title="markupit.structure.inline.Image"><span class="pre">Image</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_image" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_line_break">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_line_break</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.LineBreak" title="markupit.structure.inline.LineBreak"><span class="pre">LineBreak</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_line_break"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_line_break" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_link">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Link" title="markupit.structure.inline.Link"><span class="pre">Link</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_link"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_link" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_note">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Note" title="markupit.structure.inline.Note"><span class="pre">Note</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_note"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_note" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_ordered_list">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_ordered_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.OrderedList" title="markupit.structure.block.OrderedList"><span class="pre">OrderedList</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_ordered_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_ordered_list" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_para">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_para</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Para" title="markupit.structure.block.Para"><span class="pre">Para</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_para"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_para" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_plain">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_plain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Plain" title="markupit.structure.block.Plain"><span class="pre">Plain</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_plain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_plain" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_raw_block">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_raw_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.RawBlock" title="markupit.structure.block.RawBlock"><span class="pre">RawBlock</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_raw_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_raw_block" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_raw_inline">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_raw_inline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.RawInline" title="markupit.structure.inline.RawInline"><span class="pre">RawInline</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_raw_inline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_raw_inline" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_small_caps">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_small_caps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.SmallCaps" title="markupit.structure.inline.SmallCaps"><span class="pre">SmallCaps</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_small_caps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_small_caps" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_soft_break">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_soft_break</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.SoftBreak" title="markupit.structure.inline.SoftBreak"><span class="pre">SoftBreak</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_soft_break"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_soft_break" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_space">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Space" title="markupit.structure.inline.Space"><span class="pre">Space</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_space"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_space" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_str">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Str" title="markupit.structure.inline.Str"><span class="pre">Str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_str" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_strikeout">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_strikeout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Strikeout" title="markupit.structure.inline.Strikeout"><span class="pre">Strikeout</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_strikeout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_strikeout" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_strong">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_strong</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Strong" title="markupit.structure.inline.Strong"><span class="pre">Strong</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_strong"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_strong" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_subscript">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_subscript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Subscript" title="markupit.structure.inline.Subscript"><span class="pre">Subscript</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_subscript"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_subscript" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_superscript">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_superscript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Superscript" title="markupit.structure.inline.Superscript"><span class="pre">Superscript</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_superscript"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_superscript" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_table">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Table" title="markupit.structure.block.Table"><span class="pre">Table</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_table" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.convert_underline">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">convert_underline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Underline" title="markupit.structure.inline.Underline"><span class="pre">Underline</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.convert_underline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.convert_underline" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.write" title="Link to this definition"></a></dt>
+<dd><p>Convert the document to a text format according to writer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The converted document.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.writer.Writer.write_file">
+<span class="sig-name descname"><span class="pre">write_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/markupit/writers/writer.html#Writer.write_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.writer.Writer.write_file" title="Link to this definition"></a></dt>
+<dd><p>Convert and write the document to a file at the given path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – The path to write the document to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-markupit.writers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-markupit.writers" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.writers.JsonWriter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.writers.</span></span><span class="sig-name descname"><span class="pre">JsonWriter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document" title="markupit.structure.document.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/writers/json_writer.html#JsonWriter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.JsonWriter" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class representing a JSON writer for a document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> (<a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document" title="markupit.structure.document.Document"><em>Document</em></a>) – The document to write.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.JsonWriter.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/markupit/writers/json_writer.html#JsonWriter.write"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.JsonWriter.write" title="Link to this definition"></a></dt>
+<dd><p>Return a JSON representation of AST.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The document as a dictionary.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.JsonWriter.write_to_file">
+<span class="sig-name descname"><span class="pre">write_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/markupit/writers/json_writer.html#JsonWriter.write_to_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.JsonWriter.write_to_file" title="Link to this definition"></a></dt>
+<dd><p>Write the JSON representation of AST to a file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – The name of the file to write to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.writers.</span></span><span class="sig-name descname"><span class="pre">LatexWriter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document" title="markupit.structure.document.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.writers.writer.Writer" title="markupit.writers.writer.Writer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Writer</span></code></a></p>
+<p>A class representing a Latex writer for a document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> (<a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document" title="markupit.structure.document.Document"><em>Document</em></a>) – The document to write.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_block_quote">
+<span class="sig-name descname"><span class="pre">convert_block_quote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.BlockQuote" title="markupit.structure.block.BlockQuote"><span class="pre">BlockQuote</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_block_quote"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_block_quote" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_bullet_list">
+<span class="sig-name descname"><span class="pre">convert_bullet_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.BulletList" title="markupit.structure.block.BulletList"><span class="pre">BulletList</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nesting</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_bullet_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_bullet_list" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_code">
+<span class="sig-name descname"><span class="pre">convert_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Code" title="markupit.structure.inline.Code"><span class="pre">Code</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_code"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_code" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_code_block">
+<span class="sig-name descname"><span class="pre">convert_code_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.CodeBlock" title="markupit.structure.block.CodeBlock"><span class="pre">CodeBlock</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_code_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_code_block" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_emph">
+<span class="sig-name descname"><span class="pre">convert_emph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Emph" title="markupit.structure.inline.Emph"><span class="pre">Emph</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_emph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_emph" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_header">
+<span class="sig-name descname"><span class="pre">convert_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Header" title="markupit.structure.block.Header"><span class="pre">Header</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_header" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_horizontal_rule">
+<span class="sig-name descname"><span class="pre">convert_horizontal_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.HorizontalRule" title="markupit.structure.block.HorizontalRule"><span class="pre">HorizontalRule</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_horizontal_rule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_horizontal_rule" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_image">
+<span class="sig-name descname"><span class="pre">convert_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Image" title="markupit.structure.inline.Image"><span class="pre">Image</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_image" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_line_break">
+<span class="sig-name descname"><span class="pre">convert_line_break</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.LineBreak" title="markupit.structure.inline.LineBreak"><span class="pre">LineBreak</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_line_break"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_line_break" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_link">
+<span class="sig-name descname"><span class="pre">convert_link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Link" title="markupit.structure.inline.Link"><span class="pre">Link</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_link"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_link" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_note">
+<span class="sig-name descname"><span class="pre">convert_note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Note" title="markupit.structure.inline.Note"><span class="pre">Note</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_note"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_note" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_ordered_list">
+<span class="sig-name descname"><span class="pre">convert_ordered_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.OrderedList" title="markupit.structure.block.OrderedList"><span class="pre">OrderedList</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nesting</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_ordered_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_ordered_list" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_para">
+<span class="sig-name descname"><span class="pre">convert_para</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Para" title="markupit.structure.block.Para"><span class="pre">Para</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_para"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_para" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_plain">
+<span class="sig-name descname"><span class="pre">convert_plain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Plain" title="markupit.structure.block.Plain"><span class="pre">Plain</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_plain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_plain" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_raw_block">
+<span class="sig-name descname"><span class="pre">convert_raw_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.RawBlock" title="markupit.structure.block.RawBlock"><span class="pre">RawBlock</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_raw_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_raw_block" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_raw_inline">
+<span class="sig-name descname"><span class="pre">convert_raw_inline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.RawInline" title="markupit.structure.inline.RawInline"><span class="pre">RawInline</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_raw_inline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_raw_inline" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_small_caps">
+<span class="sig-name descname"><span class="pre">convert_small_caps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.SmallCaps" title="markupit.structure.inline.SmallCaps"><span class="pre">SmallCaps</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_small_caps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_small_caps" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_soft_break">
+<span class="sig-name descname"><span class="pre">convert_soft_break</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.SoftBreak" title="markupit.structure.inline.SoftBreak"><span class="pre">SoftBreak</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_soft_break"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_soft_break" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_space">
+<span class="sig-name descname"><span class="pre">convert_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Space" title="markupit.structure.inline.Space"><span class="pre">Space</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_space"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_space" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_str">
+<span class="sig-name descname"><span class="pre">convert_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Str" title="markupit.structure.inline.Str"><span class="pre">Str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_str" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_strikeout">
+<span class="sig-name descname"><span class="pre">convert_strikeout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Strikeout" title="markupit.structure.inline.Strikeout"><span class="pre">Strikeout</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_strikeout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_strikeout" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_strong">
+<span class="sig-name descname"><span class="pre">convert_strong</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Strong" title="markupit.structure.inline.Strong"><span class="pre">Strong</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_strong"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_strong" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_subscript">
+<span class="sig-name descname"><span class="pre">convert_subscript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Subscript" title="markupit.structure.inline.Subscript"><span class="pre">Subscript</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_subscript"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_subscript" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_superscript">
+<span class="sig-name descname"><span class="pre">convert_superscript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Superscript" title="markupit.structure.inline.Superscript"><span class="pre">Superscript</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_superscript"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_superscript" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_table">
+<span class="sig-name descname"><span class="pre">convert_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Table" title="markupit.structure.block.Table"><span class="pre">Table</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_table" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.LatexWriter.convert_underline">
+<span class="sig-name descname"><span class="pre">convert_underline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Underline" title="markupit.structure.inline.Underline"><span class="pre">Underline</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/latex_writer.html#LatexWriter.convert_underline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.LatexWriter.convert_underline" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">markupit.writers.</span></span><span class="sig-name descname"><span class="pre">TypstWriter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document" title="markupit.structure.document.Document"><span class="pre">Document</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#markupit.writers.writer.Writer" title="markupit.writers.writer.Writer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Writer</span></code></a></p>
+<p>A class representing a Typst writer for a document.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> (<a class="reference internal" href="markupit.structure.html#markupit.structure.document.Document" title="markupit.structure.document.Document"><em>Document</em></a>) – The document to write.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_block_quote">
+<span class="sig-name descname"><span class="pre">convert_block_quote</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.BlockQuote" title="markupit.structure.block.BlockQuote"><span class="pre">BlockQuote</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_block_quote"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_block_quote" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_bullet_list">
+<span class="sig-name descname"><span class="pre">convert_bullet_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.BulletList" title="markupit.structure.block.BulletList"><span class="pre">BulletList</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nesting</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_bullet_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_bullet_list" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_code">
+<span class="sig-name descname"><span class="pre">convert_code</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Code" title="markupit.structure.inline.Code"><span class="pre">Code</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_code"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_code" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_code_block">
+<span class="sig-name descname"><span class="pre">convert_code_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.CodeBlock" title="markupit.structure.block.CodeBlock"><span class="pre">CodeBlock</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_code_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_code_block" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_emph">
+<span class="sig-name descname"><span class="pre">convert_emph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Emph" title="markupit.structure.inline.Emph"><span class="pre">Emph</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_emph"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_emph" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_header">
+<span class="sig-name descname"><span class="pre">convert_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Header" title="markupit.structure.block.Header"><span class="pre">Header</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_header" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_horizontal_rule">
+<span class="sig-name descname"><span class="pre">convert_horizontal_rule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.HorizontalRule" title="markupit.structure.block.HorizontalRule"><span class="pre">HorizontalRule</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_horizontal_rule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_horizontal_rule" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_image">
+<span class="sig-name descname"><span class="pre">convert_image</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Image" title="markupit.structure.inline.Image"><span class="pre">Image</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_image"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_image" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_line_break">
+<span class="sig-name descname"><span class="pre">convert_line_break</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.LineBreak" title="markupit.structure.inline.LineBreak"><span class="pre">LineBreak</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_line_break"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_line_break" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_link">
+<span class="sig-name descname"><span class="pre">convert_link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Link" title="markupit.structure.inline.Link"><span class="pre">Link</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_link"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_link" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_note">
+<span class="sig-name descname"><span class="pre">convert_note</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Note" title="markupit.structure.inline.Note"><span class="pre">Note</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_note"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_note" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_ordered_list">
+<span class="sig-name descname"><span class="pre">convert_ordered_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.OrderedList" title="markupit.structure.block.OrderedList"><span class="pre">OrderedList</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nesting</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_ordered_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_ordered_list" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_para">
+<span class="sig-name descname"><span class="pre">convert_para</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Para" title="markupit.structure.block.Para"><span class="pre">Para</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_para"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_para" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_plain">
+<span class="sig-name descname"><span class="pre">convert_plain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Plain" title="markupit.structure.block.Plain"><span class="pre">Plain</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_plain"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_plain" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_raw_block">
+<span class="sig-name descname"><span class="pre">convert_raw_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.RawBlock" title="markupit.structure.block.RawBlock"><span class="pre">RawBlock</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_raw_block"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_raw_block" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_raw_inline">
+<span class="sig-name descname"><span class="pre">convert_raw_inline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.RawInline" title="markupit.structure.inline.RawInline"><span class="pre">RawInline</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_raw_inline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_raw_inline" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_small_caps">
+<span class="sig-name descname"><span class="pre">convert_small_caps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.SmallCaps" title="markupit.structure.inline.SmallCaps"><span class="pre">SmallCaps</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_small_caps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_small_caps" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_soft_break">
+<span class="sig-name descname"><span class="pre">convert_soft_break</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.SoftBreak" title="markupit.structure.inline.SoftBreak"><span class="pre">SoftBreak</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_soft_break"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_soft_break" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_space">
+<span class="sig-name descname"><span class="pre">convert_space</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Space" title="markupit.structure.inline.Space"><span class="pre">Space</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_space"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_space" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_str">
+<span class="sig-name descname"><span class="pre">convert_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Str" title="markupit.structure.inline.Str"><span class="pre">Str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_str" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_strikeout">
+<span class="sig-name descname"><span class="pre">convert_strikeout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Strikeout" title="markupit.structure.inline.Strikeout"><span class="pre">Strikeout</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_strikeout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_strikeout" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_strong">
+<span class="sig-name descname"><span class="pre">convert_strong</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Strong" title="markupit.structure.inline.Strong"><span class="pre">Strong</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_strong"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_strong" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_subscript">
+<span class="sig-name descname"><span class="pre">convert_subscript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Subscript" title="markupit.structure.inline.Subscript"><span class="pre">Subscript</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_subscript"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_subscript" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_superscript">
+<span class="sig-name descname"><span class="pre">convert_superscript</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Superscript" title="markupit.structure.inline.Superscript"><span class="pre">Superscript</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_superscript"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_superscript" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_table">
+<span class="sig-name descname"><span class="pre">convert_table</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.block.Table" title="markupit.structure.block.Table"><span class="pre">Table</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_table"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_table" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="markupit.writers.TypstWriter.convert_underline">
+<span class="sig-name descname"><span class="pre">convert_underline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="markupit.structure.html#markupit.structure.inline.Underline" title="markupit.structure.inline.Underline"><span class="pre">Underline</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/markupit/writers/typst_writer.html#TypstWriter.convert_underline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#markupit.writers.TypstWriter.convert_underline" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="markupit.structure.html" class="btn btn-neutral float-left" title="markupit.structure package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jakub Bąba, Hubert Brzóskniewicz, Nikita Sushko.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
